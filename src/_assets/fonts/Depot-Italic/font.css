@@ -1,0 +1,12 @@
+@font-face {
+  font-family: 'Depot-Italic';
+  src: url('Depot-Italic.eot');
+  src: url('Depot-Italic.woff2') format('woff2'),
+       url('Depot-Italic.woff') format('woff'),
+       url('Depot-Italic.ttf') format('truetype'),
+       url('Depot-Italic.svg#Depot-Italic') format('svg'),
+       url('Depot-Italic.eot?#iefix') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+

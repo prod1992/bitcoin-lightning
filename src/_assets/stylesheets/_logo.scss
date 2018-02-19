@@ -1,0 +1,73 @@
+.blt-logo {
+  font-family: 'Gotham', sans-serif;
+  font-weight: 700;
+  z-index: 1000;
+  position: relative;
+  a {
+    color: #fff;
+    font-size: 25px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    width: 100%;
+  }
+  b{
+    white-space: nowrap;
+    font-size: 23px;
+    @media (min-width: 1200px) {
+      font-size: 25px;
+    }
+  }
+
+  @media (min-width: 1200px) {
+    width: 400px;
+    max-width: 400px;
+    a {
+      color: #fff;
+      font-size: 35px;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      width: 100%;
+    }
+  }
+
+}
+
+.blt-logo--lgh {
+  fill: url(#radial-gradient);
+}
+
+.btl-logo--round {
+  fill: #fff;
+}
+
+.blt-logo--lightning {
+  position: absolute;
+  width: 100%;
+
+}
+
+.blt-logo--whites {
+  position: relative;
+  z-index: 1;
+}
+
+.blt-logo--icon {
+  height: 70px;
+  width: auto;
+  margin-right: 15px;
+  @media (min-width: 1200px) {
+    height: 125px;
+  }
+  @media (min-width: 992px) {
+    height: 100px;
+  }
+}
+
+.blt-logo--b {
+  fill: transparent;
+  .lodaded & {
+    fill: #ffffff;
+  }
+}

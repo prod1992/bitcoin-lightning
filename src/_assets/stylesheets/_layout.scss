@@ -1,0 +1,169 @@
+.container-fluid {
+  max-width: 1280px;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 15px;
+  padding-left: 15px;
+  &.smaller {
+	max-width: 580px;
+  }
+}
+
+
+.page-section {
+  position: relative;
+  padding: 50px 0;
+  &.bg-white {
+	background-color: white;
+	color: #616161;
+	h2 {
+	  color: #464646;
+	}
+  }
+  h1 {
+	font-size: 25px;
+	margin-bottom: 10px;
+	@media (min-width: 768px) {
+	  font-size: 35px;
+	}
+	@media (min-width: 992px) {
+	  font-size: 45px;
+	}
+	.bg-white & {
+	  color: #464646;
+	}
+  }
+
+  @media(min-width: 992px) {
+	padding: 45px 0 90px 0;
+  }
+}
+
+.page-specifications {
+  background-image: linear-gradient(#0a1e4e, #0a182f);
+  color: #FFF;
+  position: relative;
+  font-family: 'Depot', 'Gotham', sans-serif;
+  h1 {
+	font-size: 25px;
+	font-weight: 500;
+	color: #FFF;
+	@media (min-width: 768px) {
+	  font-size: 35px;
+	}
+	@media (min-width: 992px) {
+	  font-size: 42px;
+	}
+  }
+  h3 {
+	font-size: 13px;
+	font-weight: 500;
+	@media (min-width: 768px) {
+	  font-size: 18px;
+	}
+  }
+  p {
+	font-size: 14px;
+	font-weight: 300;
+	color: #ccced2;
+	text-align: center;
+	@media (min-width: 576px) {
+	  text-align: left;
+	}
+  }
+}
+.page-specifications--header {
+  p {
+	font-size: 16px;
+  }
+  @media (min-width: 992px) {
+	padding-top: 50px;
+  }
+  .specification-header--top {
+	position: relative;
+	padding-bottom: 50px;
+	-webkit-backface-visibility: hidden;
+	&:after {
+	  position: absolute;
+	  content: '';
+	  width: 53px;
+	  height: 2px;
+	  background-color: #00a8dc;
+	  bottom: 0;
+	  left: 50%;
+	  top: 70%;
+	  transform: translate(-50%, -75%);
+	}
+  }
+  
+}
+.page-specifications--body {
+  padding: 15px 0;
+  @media (min-width: 1200px) {
+	padding: 15px 100px;
+  }
+}
+.specifications-block {
+  padding: 15px 0;
+  max-width: 325px;
+  width: 100%;
+  @media (max-width: 767px) {
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 400px;
+  }
+}
+.specifications-block--body {
+  padding: 0 35px;
+}
+
+.bg-blue--gradient {
+  position: relative;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding-bottom: 24%;
+  .image {
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	background-position: bottom center;
+	background-size: 85%;
+	background-repeat: no-repeat;
+	background-image: url("/images/os-window.png");
+  }
+}
+
+.page-about {
+  text-align: center;
+  p {
+	font-size: 16px;
+	font-weight: 300;
+	@media (min-width: 1200px) {
+	  font-size: 18px;
+	}
+  }
+  img {
+	margin-bottom: -10px;
+  }
+  @media (min-width: 992px) {
+	text-align: left;
+  }
+}
+
+@keyframes blink {
+	0% {
+		opacity: .2;
+	}
+	20% {
+		opacity: 1;
+	}
+	100% {
+		opacity: .2;
+	}
+}
+
+
+

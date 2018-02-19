@@ -1,0 +1,29 @@
+/* apply a natural box layout model to all elements, but allowing components to change */
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  -webkit-overflow-scrolling: touch;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: 'Depot', sans-serif;
+  line-height: 1.45;
+  .blt-nav--open{
+    overflow: hidden;
+    position: fixed;
+  }
+}
+a {
+  transition: 0.2s;
+}
+button, input, optgroup, select, textarea{
+  font-family: 'Depot', sans-serif;
+}
+
+svg:not(:root) {
+  width: 100%;
+}

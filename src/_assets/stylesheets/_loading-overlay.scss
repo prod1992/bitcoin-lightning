@@ -1,0 +1,34 @@
+//.blt-loading--overlay {
+//   position: fixed;
+//   left: 0;
+//   top: 0;
+//   bottom: 0;
+//   right: 0;
+//   width: 100%;
+//   height: 100%;
+//   text-align: center;
+//   z-index: 1;
+//   .blt-loading--spinner {
+//     display: inline-block;
+//     border-radius: 50%;
+//     width: 70px;
+//     height: 70px;
+//     border: 8px solid #516d9c;
+//     border-top-color: #ffffff;
+//     animation: spin 1s infinite linear;
+//     transition: 0.15s transform;
+//     will-change: transform;
+//     margin-top: calc((100vh - 70px) / 2);
+//   }
+// }
+//
+//@keyframes spin {
+//  0% {
+//    -webkit-transform: rotate(0deg);
+//    transform: rotate(0deg);
+//  }
+//  100% {
+//    -webkit-transform: rotate(359deg);
+//    transform: rotate(359deg);
+//  }
+//}

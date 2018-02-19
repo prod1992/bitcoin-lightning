@@ -1,0 +1,19 @@
+{
+  "name": "btl",
+  "description": "Bitcoin Lightning",
+  "main": "",
+  "authors": [
+    "prod1992 <levon1.grigoryan@gmail.com>"
+  ],
+  "license": "private",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components"
+  ],
+  "dependencies": {
+    "normalize-css": "normalize.css#^7.0.0",
+    "jquery": "^3.3.1"
+  }
+}

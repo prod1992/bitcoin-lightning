@@ -1,0 +1,69 @@
+button {
+  text-transform: uppercase;
+  font-size: 15px;
+  padding: 13px 0;
+  width: 125px;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: 0.2s all;
+  &:active, &:focus, &:visited {
+	outline: none;
+  }
+  &:hover {
+	background-color: darken(#0769d7, 10%);
+	border: 1px solid darken(#0769d7, 10%);
+  }
+}
+
+.button-reg {
+  background-color: transparent;
+  border: 1px solid #fff;
+  &:hover {
+	background-color: #FFF;
+	color: #0769d7;
+	border: 1px solid darken(#0769d7, 10%);
+  }
+}
+
+.button-sign {
+  background-color: #0769d7;
+  border: 1px solid #0769d7;
+  margin-left: 14px;
+}
+
+.button-download {
+  position: relative;
+  display: block;
+  max-width: 280px;
+  background-color: #FFF;
+  color: #0769d7;
+  font-size: 14px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  padding: 11px 25px 10px 55px;
+  font-weight: 500;
+  text-transform: uppercase;
+  i {
+	position: absolute;
+	left: 15px;
+	font-size: 24px;
+	top: 50%;
+	transform: translate(0, -50%);
+	line-height: 1;
+	@media (min-width: 576px) {
+	  font-size: 26px;
+	  left: 20px;
+	}
+  }
+  span {
+	vertical-align: middle;
+  }
+  @media (min-width: 576px) {
+	font-size: 18px;
+	max-width: 345px;
+	padding: 14px 25px 13px 62.5px;
+  }
+}

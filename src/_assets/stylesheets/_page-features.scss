@@ -1,0 +1,110 @@
+
+.page-features {
+  position: relative;
+}
+
+.page-features--header {
+  color: #464646;
+  h2 {
+	font-weight: 500;
+  }
+  p {
+	font-size: 16px;
+	font-weight: 400;
+	font-family: 'Gotham', sans-serif;
+  }
+  @media (min-width: 992px) {
+	padding: 35px 0;
+	p {
+	  font-size: 18px;
+	}
+  }
+}
+
+.page-features--body {
+  position: relative;
+  padding: 0;
+  &:after {
+	position: absolute;
+	content: '';
+	max-width: 750px;
+	left: 0;
+	margin-left: auto;
+	margin-right: auto;
+	right: 0;
+	background-color: #eeeeee;
+	height: 2px;
+	top: 115px;
+	@media (max-width: 769px) {
+	  content: none;
+	}
+  }
+  @media (min-width: 768px) {
+	padding: 25px 0 50px;
+  }
+  
+}
+
+.page-features--footer {
+  margin-top: 30px;
+  position: relative;
+  &:before {
+	content: '';
+	height: 1px;
+	background-color: #ccc;
+	display: block;
+	margin-bottom: 30px;
+	@media(min-width: 768px) {
+	  margin-bottom: 60px;
+	}
+  }
+}
+
+.page-features--block {
+  max-width: 350px;
+  width: 100%;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  img {
+	max-width: 100%;
+  }
+  @media (min-width: 768px) {
+	margin-top: 0;
+	margin-bottom: 50px;
+	
+  }
+}
+
+.features-block--wrapper {
+  position: relative;
+  background-color: #FFF;
+  z-index: 5;
+  max-width: 220px;
+  margin-right: auto;
+  margin-left: auto;
+  @media (min-width: 992px) {
+	width: 255px;
+  }
+}
+
+.features-block--heading {
+  font-size: 16px;
+  color: #213447;
+  
+}
+
+.features-block--body {
+  padding-top: 25px;
+  font-family: "Gotham", sans-serif;
+  h3 {
+	text-transform: uppercase;
+  }
+  p {
+	color: #7c8893;
+	font-weight: 300;
+	font-size: 14px;
+	@media (min-width: 992px) {
+	  font-size: 16px;
+	}
+  }
+}

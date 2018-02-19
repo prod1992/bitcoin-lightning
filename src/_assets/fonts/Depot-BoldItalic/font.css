@@ -1,0 +1,12 @@
+@font-face {
+  font-family: 'Depot-BoldItalic';
+  src: url('Depot-BoldItalic.eot');
+  src: url('Depot-BoldItalic.woff2') format('woff2'),
+       url('Depot-BoldItalic.woff') format('woff'),
+       url('Depot-BoldItalic.ttf') format('truetype'),
+       url('Depot-BoldItalic.svg#Depot-BoldItalic') format('svg'),
+       url('Depot-BoldItalic.eot?#iefix') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+

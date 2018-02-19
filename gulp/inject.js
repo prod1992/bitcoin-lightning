@@ -22,7 +22,7 @@ function injectTask() {
     ], {read: false});
 
     var injectScripts = gulp.src([
-        path.join(conf.paths.src, '/**/*.js'),
+        path.join(conf.paths.src, '/**/*.js')
     ]);
 
 

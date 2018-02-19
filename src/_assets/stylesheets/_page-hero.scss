@@ -42,27 +42,51 @@
 }
 
 .page-hero--logo {
-  max-width: 60px;
-  .blt-logo--round {
-
+  width: 135px;
+  height: 135px;
+  border-radius: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 55px;
+  &:before {
+    content: '';
+    display: block;
+    width: 135px;
+    height: 135px;
+    border-radius: 50%;
+    border: 10px solid #ffffff;
+    position: absolute;
+    z-index: 1;
+    transform: scale(0);
+    transition: 0.2s 1.5s transform ease-in;
+    .loaded & {
+      transform: scale(1);
+    }
   }
   .blt-logo--lgh {
-    transform: translate(0,-300%);
-    transition: 0.9s 1s transform ease-in;
+    transform: translate(0, -300%) scale3d(2,2,2);
+    transition: 0.33s 1.7s transform ease-in;
+    position: absolute;
+    height: 220px;
     .loaded & {
-      transform: translate(0, 0);
+      transform: translate(0, 0) scale3d(1,1,1);
     }
   }
   .blt-logo--b {
-    transition: 1s 0.5s transform ease-in;
+    transition: 0.33s 1.67s transform ease-in;
     transform: rotate(720deg) scale(0);
     transform-origin: 50% 50%;
+    height: 90px;
+    margin: 20px auto;
+    position: relative;
+    z-index: 1;
     .loaded & {
       transform: rotate(0) scale(1);
     }
-  }
-  @media (min-width: 768px) {
-    max-width: 135px;
   }
 }
 
@@ -72,7 +96,7 @@
   transition: 0.3s 1s all;
   opacity: 0;
   visibility: hidden;
-  transform: scale(.9);
+  transform: scale(.9) translate(0, 100px);
   will-change: visibility, transform;
   position: relative;
   z-index: 2;
@@ -108,10 +132,13 @@
       display: inline-block;
     }
   }
+  @include media-breakpoint-up(md) {
+    bottom: 30px;
+  }
 }
 
 .blt-roi--values {
-  width: 240px;
+  width: 270px;
   margin: auto;
   padding: 10px 15px;
   background-color: #00103e;
@@ -119,6 +146,7 @@
   color: #fff;
   line-height: 1;
   position: relative;
+  font-size: 20px;
 }
 
 .blt-live--dot {
@@ -136,7 +164,6 @@
 }
 
 .blt-roi--label {
-  font-size: 20px;
   font-weight: 400;
   padding: 0;
 }
@@ -188,7 +215,7 @@
 }
 
 .blt-roi--date {
-  font-size: 12px;
+  font-size: 1em;
   line-height: 1.5;
   color: #ccc;
   display: block;

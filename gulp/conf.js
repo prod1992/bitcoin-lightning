@@ -16,7 +16,7 @@ exports.paths = {
   dist: '.dist',
   tmp: '.tmp',
   generated: 'generated',
-  favicons: 'favicons',
+  favicons: 'favicons'
 };
 
 /**

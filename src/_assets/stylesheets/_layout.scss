@@ -165,5 +165,55 @@
 	}
 }
 
+.blt-section--download{
+	background-image: url("../images/footer.jpg");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	color: #fff;
+	.blt-download{
+		position: relative;
+		display: inline-block;
+		background-repeat: no-repeat;
+		background-position: center;
+		background-color: #fff;
+		border-radius: 4px;
+		background-size: 40%;
+		width: 150px;
+		height:	100px;
 
-
+		&:before{
+			content: '';
+			position: absolute;
+			left: 4px;
+			top: 4px;
+			right: 4px;
+			bottom: 4px;
+			border: 1px dashed #999999;
+			background-size: 3px 1px;
+			border-radius: 4px;
+		}
+	}
+}
+.blt-section--social{
+	background-image: url("../images/footer.jpg");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	color: #fff;
+	.btl-social--network{
+		width: 70px;
+		height: 70px;
+		border: 3px solid #fff;
+		border-radius: 10em;
+	}
+}
+.blt-section--message{
+	h2{
+		text-transform: uppercase;
+		color: #505050;
+	}
+	p{
+		color: #858585;
+	}
+}

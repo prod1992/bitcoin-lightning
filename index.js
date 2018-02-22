@@ -1,5 +1,6 @@
 (function () {
 
+
     "use strict";
 
     const conf = require("./gulp/conf");
@@ -99,4 +100,32 @@
     }
 
     app.listen(8080);
+
+  
+  /*//MAIL SEND
+  
+  var transporter = nodemailer.createTransport({
+    service: 'gmail',
+    auth: {
+      user: 'levon1.grigoryan@gmail.com',
+      pass: ''
+    }
+  });
+  
+  var mailOptions = {
+    from: userData.username,
+    to: userData.email,
+    subject: userData.phone,
+    text: userData.message
+  };
+  
+  transporter.sendMail(mailOptions, function(error, info){
+    if (error) {
+      console.log(error);
+    } else {
+      console.log('Email sent: ' + info.response);
+    }
+  });
+  */
+
 })();

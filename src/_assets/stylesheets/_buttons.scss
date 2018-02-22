@@ -11,12 +11,13 @@
   cursor: pointer;
   font-weight: 500;
   transition: 0.2s all;
+  border: 1px solid;
   &:active, &:focus, &:visited {
 	outline: none;
   }
   &:hover {
 	background-color: darken(#0769d7, 10%);
-	border: 1px solid darken(#0769d7, 10%);
+	border-color: darken(#0769d7, 10%);
   }
 }
 
@@ -31,13 +32,22 @@
   &:hover {
 	background-color: #FFF;
 	color: #0769d7;
-	border: 1px solid darken(#0769d7, 10%);
+	border-color: darken(#0769d7, 10%);
   }
 }
 
 .btn.btn-primary {
   background-color: #0769d7;
-  border: 1px solid #0769d7;
+  border-color: #0769d7;
+}
+
+.btn.btn-primary--darker {
+  background-color: #1b2e69;
+  border-color: #1b2e69;
+  @include hover-focus-active {
+	background-color: lighten(#1b2e69, 10%);
+	border-color: lighten(#1b2e69, 10%);
+  }
 }
 
 .btn.button-download {

@@ -99,8 +99,23 @@
                 scrollTop: $target.offset().top
             }, 500);
         })
+        .on('click', '#contactForm button', function (e) {
 
+            var $form = $("#contactForm");
 
+            e.preventDefault();
 
+            $.ajax({
+                type: "POST",
+                url: "/contact-request",
+                data: $form.serialize(),
+                success: function (res) {
+                    console.log(res);
+                },
+                error: function (err) {
+                    console.log(err);
+                },
+            });
+        })
 
 })(jQuery);

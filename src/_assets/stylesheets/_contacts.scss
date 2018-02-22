@@ -1,0 +1,32 @@
+.blt-section--contacts {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  form {
+    margin-bottom: 50px;
+    @include media-breakpoint-up(md) {
+      margin-bottom: 0;
+    }
+  }
+  textarea {
+	min-height: 190px;
+  }
+  
+}
+
+.blt-contact--info {
+  li {
+    & + li {
+      margin-top: 10px;
+    }
+  }
+  i {
+    color: #0a1e4e;
+    font-size: 20px;
+  }
+}
+
+.blt-contact--info__heading {
+  color: #0a1e4e;
+}
+

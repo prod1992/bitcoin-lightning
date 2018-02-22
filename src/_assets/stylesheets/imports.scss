@@ -1,19 +1,24 @@
-@import 'flex-grid';
-@import 'colors';
-@import 'icons';
-@import 'fonts';
-@import 'typo';
-@import 'helpers';
-@import 'buttons';
-@import 'forms';
-@import 'general';
-@import 'header';
-@import 'logo';
-@import 'layout';
-@import 'page-hero';
-@import 'page-features';
+@import "mixins/hover";
+@import "grid/flex-grid";
 
-@import 'footer';
+
+
+@import "helpers";
+@import "colors";
+@import "icons";
+@import "fonts";
+@import "typo";
+@import "buttons";
+@import "forms";
+@import "general";
+@import "header";
+@import "logo";
+@import "layout";
+@import "page-hero";
+@import "page-features";
+@import "contacts";
+@import "social";
+@import "footer";
 
 
 

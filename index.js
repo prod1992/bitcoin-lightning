@@ -2,6 +2,14 @@
   
   'use strict';
   
+  var userData = {
+    username: '',
+    email: '',
+    phone: '',
+    message: ''
+  };
+    var validForm = false;
+  
   var express = require('express');
   var proxyMiddleware = require('http-proxy-middleware');
   var conf = require('./gulp/conf');
@@ -34,28 +42,59 @@
   app.listen(8080);
   
   //FORM PARAMS
-  /*app.use(bodyParser());
+  app.use(bodyParser());
   
   app.post('/', function(request, response){
-    console.log(request.body.user.name);
-    console.log(request.body.user.email);
-  });*/
+    var takeInfo = request.body.user;
+    userData.username = takeInfo.name;
+    userData.email = takeInfo.email;
+    userData.phone = takeInfo.phone;
+    userData.message = takeInfo.message;
+    var phoneCheck = /^\d{10}$/;
+    function validate(){
+      //email
+      if (/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(userData.email))
+      {
+        return true;
+      }
+      //username
+      if (userData.username !== null && userData.username !== "") {
+        return true;
+      }
+      //phone
+      if (userData.phone.match(phoneCheck)) {
+        return true;
+      }
+      //message
+      if (userData.message !== null && userData.message !== "") {
+        return true;
+      }
+      else{
+        return false;
+      }
+    }
+    if(validate()){
+      console.log(true);
+    } else{
+      console.log(false);
+    }
+  });
   
-  //MAIL SEND
+  /*//MAIL SEND
   
-  /*var transporter = nodemailer.createTransport({
+  var transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
       user: 'levon1.grigoryan@gmail.com',
-      pass: 'notl8zpx8z36'
+      pass: ''
     }
   });
   
   var mailOptions = {
-    from: 'levon1.grigoryan@gmail.com',
-    to: 'serget.antonyan@tumo.org',
-    subject: 'Sending Email using Node.js',
-    text: 'That was easy!'
+    from: userData.username,
+    to: userData.email,
+    subject: userData.phone,
+    text: userData.message
   };
   
   transporter.sendMail(mailOptions, function(error, info){
@@ -64,6 +103,6 @@
     } else {
       console.log('Email sent: ' + info.response);
     }
-  });*/
-  
+  });
+  */
 })();

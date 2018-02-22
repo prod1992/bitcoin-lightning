@@ -403,21 +403,21 @@
         <div class="col-12">
           <div class="row">
             <div class="col-6">
-              <form action="">
+              <form method="post" action="/">
                 <div class="form-group">
-                  <input type="text" class="form-control" placeholder="Name">
+                  <input type="text" class="form-control" placeholder="Name" name="user[name]">
                 </div>
                 <div class="form-group">
-                  <input type="text" class="form-control" placeholder="Email Address">
+                  <input type="text" class="form-control" placeholder="Email Address" name="user[email]">
                 </div>
                 <div class="form-group">
-                  <input type="text" class="form-control" placeholder="Phone">
+                  <input type="text" class="form-control" placeholder="Phone" name="user[phone]">
                 </div>
                 <div class="form-group">
-                  <textarea type="text" class="form-control" placeholder="Name"></textarea>
+                  <textarea type="text" class="form-control" placeholder="Name" name="user[message]"></textarea>
                 </div>
                 <div class="form-group">
-                  <button class="btn btn-block btn-primary">Submit</button>
+                  <button class="btn btn-block btn-primary" type="submit">Submit</button>
                 </div>
               </form>
             </div>

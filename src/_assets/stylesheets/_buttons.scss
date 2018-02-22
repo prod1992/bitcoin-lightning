@@ -1,8 +1,11 @@
-button {
+:focus {
+  outline: 0;
+}
+
+.btn {
   text-transform: uppercase;
   font-size: 15px;
   padding: 13px 0;
-  width: 125px;
   color: #fff;
   border-radius: 5px;
   cursor: pointer;
@@ -17,7 +20,12 @@ button {
   }
 }
 
-.button-reg {
+.btn-block {
+  display: block;
+  width: 100%;
+}
+
+.btn.button-reg {
   background-color: transparent;
   border: 1px solid #fff;
   &:hover {
@@ -27,13 +35,12 @@ button {
   }
 }
 
-.button-sign {
+.btn.btn-primary {
   background-color: #0769d7;
   border: 1px solid #0769d7;
-  margin-left: 14px;
 }
 
-.button-download {
+.btn.button-download {
   position: relative;
   display: block;
   max-width: 280px;

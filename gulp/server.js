@@ -66,7 +66,7 @@
         app.use('/api', proxyMiddleware(proxyOptions));
 
         app.get('/', function(req, res, next) {
-            res.sendFile('index.html', {root: baseDir });;
+            res.sendFile('index.html', {root: baseDir });
         });
 
         app.listen(process.env.PORT || 80, '127.0.0.1:8080');

@@ -57,6 +57,7 @@
     "node": ">=4.2.1"
   },
   "devDependencies": {
-    "critical": "^1.1.0"
+    "critical": "^1.1.0",
+    "penthouse": "^1.4.0"
   }
 }

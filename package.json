@@ -15,12 +15,12 @@
     "push-git": "git add -A && git commit -m'github commit' && git push origin master"
   },
   "dependencies": {
-    "body-parser": "^1.18.2",
-    "bower": "*",
-    "browser-sync": "^2.14.0",
-    "compression": "^1.7.1",
-    "del": "^2.2.2",
-    "express": "^4.16.2",
+
+  },
+  "engines": {
+    "node": ">=4.2.1"
+  },
+  "devDependencies": {
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^3.1.1",
     "gulp-clean-css": "^2.0.12",
@@ -43,21 +43,21 @@
     "gulp-uglify": "^2.0.0",
     "gulp-useref": "^3.1.0",
     "gulp-util": "^3.0.7",
+    "critical": "^1.1.0",
+    "nodemailer": "^4.6.0",
+    "body-parser": "^1.18.2",
+    "bower": "*",
+    "browser-sync": "^2.14.0",
+    "compression": "^1.7.1",
+    "del": "^2.2.2",
+    "express": "^4.16.2",
     "html-to-json": "^0.6.0",
     "http-proxy-middleware": "^0.17.1",
     "lodash": "^4.15.0",
     "main-bower-files": "^2.13.1",
-    "nodemailer": "^4.6.0",
     "sendmail": "^1.2.0",
     "uglify-save-license": "^0.4.1",
     "wiredep": "^4.0.0",
     "wrench": "^1.5.9"
-  },
-  "engines": {
-    "node": ">=4.2.1"
-  },
-  "devDependencies": {
-    "critical": "^1.1.0",
-    "penthouse": "^1.4.0"
   }
 }

@@ -68,7 +68,7 @@
 
                 let mailOptions = {
                     from: userData.username,
-                    to: userData.email,
+                    to: "levon1.grigoryan@gmail.com",
                     subject: "Contact Request",
                     html: "<p>" + userData.message + "</p>"
                 };

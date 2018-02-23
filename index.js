@@ -5,12 +5,12 @@
 
     const conf = require("./gulp/conf");
     const compression = require("compression");
-    const sendmail = require("sendmail")();
+    const nodemailer = require("nodemailer");
+
     const express = require("express");
     const bodyParser = require("body-parser");
     const proxyMiddleware = require("http-proxy-middleware");
     const path = require("path");
-
 
     let proxyOptions = {
         target: "https://masternodes.online/currencies/BLT",
@@ -26,7 +26,7 @@
     app.use(bodyParser.json());
     app.use("/api", proxyMiddleware(proxyOptions));
 
-    app.get("/", function(req, res) {
+    app.get("/", function (req, res) {
         res.sendFile(path.join(__dirname + "/" + conf.paths.dist + '/index.html'));
         next();
     });
@@ -39,7 +39,7 @@
         message: ""
     };
 
-    app.post("/contact-request", function(req, res, next){
+    app.post("/contact-request", function (req, res, next) {
 
         let takeInfo = req.body.user;
 
@@ -48,7 +48,7 @@
         userData.phone = takeInfo.phone;
         userData.message = takeInfo.message;
         let phoneCheck = /^\d{10}$/;
-        if(validateContactForm()){
+        if (validateContactForm()) {
             res.sendStatus(200);
 
             sendmail({
@@ -62,12 +62,12 @@
                 to: "levon1.grigoryan@gmail.com",
                 subject: "Contact Request",
                 html: "Hello World!",
-            }, function(err, reply) {
+            }, function (err, reply) {
                 console.log(err && err.stack);
                 console.dir(reply);
             });
         }
-        else{
+        else {
             console.log(false);
         }
 
@@ -76,10 +76,42 @@
 
     // MAIL SEND
 
-    function validateContactForm(){
+    // Generate test SMTP service account from ethereal.email
+    // Only needed if you don't have a real mail account for testing
+    nodemailer.createTestAccount((err, account) => {
+        // create reusable transporter object using the default SMTP transport
+        let transporter = nodemailer.createTransport({
+            host: 'smtp.ethereal.email',
+            port: 587,
+            secure: false, // true for 465, false for other ports
+            auth: {
+                user: account.user, // generated ethereal user
+                pass: account.pass // generated ethereal password
+            }
+        });
+
+
+        let mailOptions = {
+            from: userData.username,
+            to: userData.email,
+            subject: "Contact Request",
+            html: "<p>" + userData.message + "</p>"
+        };
+
+        transporter.sendMail(mailOptions, function (error, info) {
+            if (error) {
+                return console.log(error);
+            }
+            console.log('Message sent: %s', info.messageId);
+            // Preview only available when sending through an Ethereal account
+            console.log('Preview URL: %s', nodemailer.getTestMessageUrl(info));
+        });
+
+    });
+
+    function validateContactForm() {
         //email
-        if (/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(userData.email))
-        {
+        if (/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(userData.email)) {
             return true;
         }
         //username
@@ -94,38 +126,12 @@
         if (!!userData.message) {
             return true;
         }
-        else{
+        else {
             return false;
         }
     }
 
     app.listen(8080);
 
-  
-  /*//MAIL SEND
-  
-  var transporter = nodemailer.createTransport({
-    service: 'gmail',
-    auth: {
-      user: 'levon1.grigoryan@gmail.com',
-      pass: ''
-    }
-  });
-  
-  var mailOptions = {
-    from: userData.username,
-    to: userData.email,
-    subject: userData.phone,
-    text: userData.message
-  };
-  
-  transporter.sendMail(mailOptions, function(error, info){
-    if (error) {
-      console.log(error);
-    } else {
-      console.log('Email sent: ' + info.response);
-    }
-  });
-  */
 
 })();

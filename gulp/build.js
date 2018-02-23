@@ -9,6 +9,8 @@
     var $ = require('gulp-load-plugins')({
         pattern: ['gulp-*', 'main-bower-files', 'uglify-save-license', 'del']
     });
+    var critical = require("critical").stream;
+    var gutil = require("gulp-util");
 
     function htmlTask() {
 
@@ -50,6 +52,14 @@
         });
     });
 
+    // Generate & Inline Critical-path CSS
+    gulp.task('critical', function () {
+        gulp.src(path.join(conf.paths.dist, '/*.html'))
+            .pipe(critical({base: path.join(conf.paths.dist, '/'), minify: true, inline: true, extract: true, ignore: ['@font-face']}))
+            .on('error', function(err) { gutil.log(gutil.colors.red(err.message)); })
+            .pipe(gulp.dest(path.join(conf.paths.dist, '/')));
+    });
+
     gulp.task('other', function () {
         var fileFilter = $.filter(function (file) {
             return file.stat.isFile();
@@ -70,6 +80,8 @@
 
     gulp.task('html', ['inject'], htmlTask);
 
-    gulp.task('build', ['html', 'other', 'images', 'fonts', 'purifycss']);
+    gulp.task('build', ['html', 'other', 'images', 'fonts', 'purifycss'], function() {
+        gulp.start('critical');
+    });
 
 })();

@@ -6,10 +6,18 @@
         $roiLiveEl = $('.blt-roi--values'),
         $roiValueEl = $('.blt-roi--value'),
         $roiPrc = $('#blt-roi--prc'),
-        $roiDays = $('#blt-roi--days');
+        $roiDays = $('#blt-roi--days'),
+        $contactForm = $("#contactForm");
 
+    $(window).on('load', function () {
 
-    var fetchROI = function (parentElString, callback) {
+        setTimeout(function () {
+            $bodyEl.addClass('loaded');
+        }, 0);
+
+    });
+
+    const fetchROI = function (parentElString, callback) {
         var htmlRes,
             percentage,
             days;
@@ -61,26 +69,9 @@
     };
 
     fetchROI('TabStats', function () {
-        setInterval(function() {
+        setInterval(function () {
             fetchROI('TabStats');
         }, 10000);
-    });
-
-    $(window).on('load', function () {
-
-        setTimeout(function () {
-            $bodyEl.addClass('loaded');
-        }, 300);
-
-
-        setTimeout(function () {
-            $('.blt-logo--chars .blt-logo--wh').each(function (i, el) {
-                setTimeout(function () {
-                    $(el).addClass('revealed');
-                }, i + (i-1) * 20 )
-            });
-        }, 1000);
-
     });
 
     $bodyEl
@@ -101,14 +92,12 @@
         })
         .on('click', '#contactForm button', function (e) {
 
-            var $form = $("#contactForm");
-
             e.preventDefault();
 
             $.ajax({
                 type: "POST",
                 url: "/contact-request",
-                data: $form.serialize(),
+                data: $contactForm.serialize(),
                 success: function (res) {
                     console.log(res);
                 },

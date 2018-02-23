@@ -75,7 +75,6 @@
                 base: path.join(conf.paths.dist, '/'),
                 inline: true,
                 extract: true,
-                minify: true,
                 assetPaths: ['images', 'fonts'],
                 ignore: ['@font-face']
             }))
@@ -85,7 +84,17 @@
             .pipe(gulp.dest(path.join(conf.paths.dist, '/')));
     });
 
-    gulp.task('cssfinalminify', ['critical'], function () {
+    gulp.task('purifycss', ['critical'], function () {
+        var content = [
+            path.join(conf.paths.dist, '/**/*.{js,html}')
+        ];
+        var css = [path.join(conf.paths.dist, '/styles/*.css')];
+        purifyCss(content, css, { info: true, rejected: true}, function(res) {
+            console.info('purified', res);
+        });
+    });
+
+    gulp.task('cssfinalminify', ['purifycss'], function () {
         return gulp.src(path.join(conf.paths.dist, '/styles/*.css'))
             .pipe($.cleanCss({debug: true}, (details) => {
                 console.log(`${details.name}: ${details.stats.originalSize}`);
@@ -93,12 +102,6 @@
             }))
             .pipe(gulp.dest(path.join(conf.paths.dist, '/styles/')))
             .pipe($.size({title: path.join(conf.paths.dist, '/styles/'), showFiles: true}));
-    });
-
-    gulp.task('purifycss', ['cssfinalminify'], function () {
-        var content = [path.join(conf.paths.tmp, '/*.html'), path.join(conf.paths.dist, '/scripts/*.js')];
-        var css = [path.join(conf.paths.dist, '/styles/*.css')];
-        purifyCss(content, css, {info: true, rejected: true, minify: true});
     });
 
 

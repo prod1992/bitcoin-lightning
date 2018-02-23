@@ -6,7 +6,6 @@
     const conf = require("./gulp/conf");
     const compression = require("compression");
     const nodemailer = require("nodemailer");
-
     const express = require("express");
     const bodyParser = require("body-parser");
     const proxyMiddleware = require("http-proxy-middleware");
@@ -49,17 +48,15 @@
         userData.message = takeInfo.message;
 
         if (validateContactForm()) {
-            res.sendStatus(200);
 
             let transporter = nodemailer.createTransport({
                 host: "smtp.ethereal.email",
-                port: 587,
-                secure: false, // true for 465, false for other ports
                 auth: {
                     user: "hhb6e72okmkggopp@ethereal.email", // generated ethereal user
                     pass: "ASppCxYCXJSu4JuuYA" // generated ethereal password
                 }
             });
+
             let mailOptions = {
                 from: userData.username + "<" + userData.email + ">",
                 to: "levon1.grigoryan@gmail.com",
@@ -75,6 +72,8 @@
                 // Preview only available when sending through an Ethereal account
                 console.log('Preview URL: %s', nodemailer.getTestMessageUrl(info));
             });
+
+            res.sendStatus(200);
         }
         else {
             return alert("form is not valid");

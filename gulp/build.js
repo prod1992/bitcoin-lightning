@@ -75,6 +75,7 @@
                 base: path.join(conf.paths.dist, '/'),
                 inline: true,
                 extract: true,
+                minify: true,
                 assetPaths: ['images', 'fonts'],
                 ignore: ['@font-face']
             }))

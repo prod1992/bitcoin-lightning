@@ -52,7 +52,7 @@
             let transporter = nodemailer.createTransport({
                 service: "gmail",
                 auth: {
-                    user: "blt.contact.request@gmail.com", // generated ethereal user
+                    user: "bltcoin.contact.request@gmail.com", // generated ethereal user
                     pass: "dearijogi777" // generated ethereal password
                 }
             });

@@ -4,6 +4,7 @@
     "use strict";
 
     const conf = require("./gulp/conf");
+    const pkg = require("./package");
     const compression = require("compression");
     const nodemailer = require("nodemailer");
     const express = require("express");
@@ -25,7 +26,7 @@
     app.use(bodyParser.json());
     app.use("/api", proxyMiddleware(proxyOptions));
 
-    app.get("/", function (req, res) {
+    app.get("/", function (req, res, next) {
         res.sendFile(path.join(__dirname + "/" + conf.paths.dist + '/index.html'));
         next();
     });
@@ -58,8 +59,8 @@
             });
 
             let mailOptions = {
-                from: userData.username + "<" + userData.email + ">",
-                to: "levon1.grigoryan@gmail.com",
+                from: userData["username"] + "<" + userData["email"] + ">",
+                to: pkg["contact-email"],
                 subject: "Contact Request",
                 html: "<p>" + userData.message + "</p>"
             };

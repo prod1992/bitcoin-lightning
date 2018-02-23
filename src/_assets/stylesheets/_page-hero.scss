@@ -24,7 +24,7 @@
     }
   }
   .container-fluid > .row:first-child {
-    min-height: 576px;
+    min-height: 640px;
     @media(min-width: 992px) {
       height: 100vh;
     }
@@ -46,8 +46,8 @@
 }
 
 .page-hero--logo {
-  width: 135px;
-  height: 135px;
+  width: 100px;
+  height: 100px;
   border-radius: 100px;
   display: flex;
   flex-direction: column;
@@ -55,21 +55,31 @@
   justify-content: center;
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: 55px;
+  margin-bottom: 30px;
   position: relative;
+  @media (min-width: 768px) {
+    width: 135px;
+    height: 135px;
+    margin-bottom: 55px;
+  }
   &:before {
     content: '';
     display: block;
-    width: 135px;
-    height: 135px;
+    width: 100px;
+    height: 100px;
     border-radius: 50%;
-    border: 10px solid #ffffff;
+    border: 7px solid #ffffff;
     position: absolute;
     z-index: 1;
     transform: scale(0);
     transition: 0.2s 1.5s transform ease-in;
     .loaded & {
       transform: scale(1);
+    }
+    @media (min-width: 768px) {
+      width: 135px;
+      height: 135px;
+      border: 10px solid #ffffff;
     }
   }
   .blt-logo--lgh {
@@ -103,6 +113,7 @@
   will-change: visibility, transform;
   position: relative;
   z-index: 2;
+  margin-top: -5%;
   .loaded & {
     opacity: 1;
     visibility: visible;

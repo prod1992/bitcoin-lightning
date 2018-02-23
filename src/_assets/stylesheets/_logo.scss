@@ -56,12 +56,12 @@
 .blt-logo--icon {
   height: 70px;
   width: auto;
-  margin-right: 15px;
-  @media (min-width: 1200px) {
-    height: 125px;
-  }
   @media (min-width: 992px) {
     height: 100px;
+    margin-right: 15px;
+  }
+  @media (min-width: 1200px) {
+    height: 125px;
   }
 }
 

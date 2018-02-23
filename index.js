@@ -50,7 +50,7 @@
         if (validateContactForm()) {
 
             let transporter = nodemailer.createTransport({
-                host: "smtp.ethereal.email",
+                service: "smtp.ethereal.email",
                 auth: {
                     user: "hhb6e72okmkggopp@ethereal.email", // generated ethereal user
                     pass: "ASppCxYCXJSu4JuuYA" // generated ethereal password

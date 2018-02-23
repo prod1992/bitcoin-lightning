@@ -35,8 +35,12 @@
   p {
     font-size: 16px;
     font-weight: 300;
+    max-width: 680px;
+    margin-left: auto;
+    margin-right: auto;
     @media (min-width: 768px) {
       font-size: 22px;
+      margin-top: 0;
     }
   }
 }
@@ -70,7 +74,7 @@
   }
   .blt-logo--lgh {
     transform: translate(0, -300%) scale3d(2,2,2);
-    transition: 0.33s 1.7s transform ease-in;
+    transition: 0.33s 1.6s transform ease-in;
     position: absolute;
     height: 155%;
     .loaded & {
@@ -91,8 +95,6 @@
   }
 }
 
-
-
 .page-hero--content {
   transition: 0.3s 1s all;
   opacity: 0;
@@ -110,7 +112,7 @@
 
 .blt-roi--row {
   position: absolute;
-  bottom: 10px;
+  bottom: 15px;
   width: 100%;
   left: 0;
   margin: 0;
@@ -225,10 +227,6 @@
 
 #blt-roi--prc {
   font-weight: 700;
-}
-
-#blt-roi--days {
-  margin-left: 10px;
 }
 
 #boltsAnimation {

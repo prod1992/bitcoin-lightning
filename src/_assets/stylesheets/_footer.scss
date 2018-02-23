@@ -52,7 +52,25 @@
 	  text-align: center;
 	}
   }
+  .icon-youtube:before {
+	content: "\e901";
+	color: #da918c
+  }
   
+  .icon-linkedin:before {
+	content: "\e902";
+	color: #78afc5
+  }
+  
+  .icon-twitter:before {
+	content: "\e903";
+	color: #709dd8
+  }
+  
+  .icon-facebook:before {
+	content: "\e904";
+	color: #90a1b7
+  }
 }
 
 .blt-footer--top {
@@ -93,25 +111,5 @@
 	  }
 	}
   }
-  .icon-youtube:before {
-	content: "\e901";
-	color: #da918c
-  }
-  
-  .icon-linkedin:before {
-	content: "\e902";
-	color: #78afc5
-  }
-  
-  .icon-twitter:before {
-	content: "\e903";
-	color: #709dd8
-  }
-  
-  .icon-facebook:before {
-	content: "\e904";
-	color: #90a1b7
-  }
-  
-  
 }
+

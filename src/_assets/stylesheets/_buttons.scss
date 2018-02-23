@@ -82,8 +82,8 @@
 	background-color: #e8e8e8;
   }
   @media (min-width: 576px) {
-	font-size: 18px;
-	max-width: 345px;
-	padding: 15px 25px 13px 60px;
+	font-size: 18px !important;
+	max-width: 345px !important;
+	padding: 15px 25px 13px 60px !important;
   }
 }

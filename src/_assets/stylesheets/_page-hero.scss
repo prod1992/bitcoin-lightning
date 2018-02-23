@@ -18,10 +18,10 @@
     background-size: cover;
     transition: 0.5s opacity;
     will-change: opacity;
-    opacity: 0;
-    .loaded &{
-      opacity: 1;
-    }
+    //opacity: 0;
+    //.loaded &{
+    //  opacity: 1;
+    //}
   }
   .container-fluid > .row:first-child {
     min-height: 640px;
@@ -71,11 +71,11 @@
     border: 7px solid #ffffff;
     position: absolute;
     z-index: 1;
-    transform: scale(0);
-    transition: 0.2s 1.5s transform ease-in;
-    .loaded & {
-      transform: scale(1);
-    }
+    //transform: scale(0);
+    //transition: 0.2s 1.5s transform ease-in;
+    //.loaded & {
+    //  transform: scale(1);
+    //}
     @media (min-width: 768px) {
       width: 135px;
       height: 135px;
@@ -83,42 +83,42 @@
     }
   }
   .blt-logo--lgh {
-    transform: translate(0, -300%) scale3d(2,2,2);
+    //transform: translate(0, -300%) scale3d(2,2,2);
     transition: 0.33s 1.6s transform ease-in;
     position: absolute;
     height: 155%;
-    .loaded & {
-      transform: translate(0, 0) scale3d(1,1,1);
-    }
+    //.loaded & {
+    //  transform: translate(0, 0) scale3d(1,1,1);
+    //}
   }
   .blt-logo--b {
     transition: 0.33s 1.67s transform ease-in;
-    transform: rotate(720deg) scale(0);
+    //transform: rotate(720deg) scale(0);
     transform-origin: 50% 50%;
     height: 65%;
     margin: 20px auto;
     position: relative;
     z-index: 1;
-    .loaded & {
-      transform: rotate(0) scale(1);
-    }
+    //.loaded & {
+    //  transform: rotate(0) scale(1);
+    //}
   }
 }
 
 .page-hero--content {
   transition: 0.3s 1s all;
-  opacity: 0;
-  visibility: hidden;
-  transform: scale(.9) translate(0, 100px);
+  //opacity: 0;
+  //visibility: hidden;
+  //transform: scale(.9) translate(0, 100px);
   will-change: visibility, transform;
   position: relative;
   z-index: 2;
   margin-top: -5%;
-  .loaded & {
-    opacity: 1;
-    visibility: visible;
-    transform: scale(1);
-  }
+  //.loaded & {
+  //  opacity: 1;
+  //  visibility: visible;
+  //  transform: scale(1);
+  //}
 }
 
 .blt-roi--row {
@@ -129,15 +129,15 @@
   margin: 0;
   z-index: 20;
   transition: 0.3s 1.2s all;
-  opacity: 0;
-  visibility: hidden;
-  transform: translate(0, 100%) scale(.9);
+  //opacity: 0;
+  //visibility: hidden;
+  //transform: translate(0, 100%) scale(.9);
   will-change: visibility, transform;
-  .loaded & {
-    opacity: 1;
-    visibility: visible;
-    transform: translate(0, 0) scale(.9);
-  }
+  //.loaded & {
+  //  opacity: 1;
+  //  visibility: visible;
+  //  transform: translate(0, 0) scale(.9);
+  //}
   .saving {
     display: none;
   }

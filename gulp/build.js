@@ -67,11 +67,9 @@
 
     gulp.task('html', ['inject'], htmlTask);
 
-    gulp.task('build', ['html', 'other', 'images', 'fonts', 'critical'], function() {
-        gulp.start('purifycss');
-    });
+    gulp.task('build', ['html', 'other', 'images', 'fonts', 'purifycss']);
 
-    gulp.task('critical', ['html'], function () {
+    gulp.task('critical', function () {
         gulp.src(path.join(conf.paths.dist, '/*.html'))
             .pipe(critical({
                 base: path.join(conf.paths.dist, '/'), inline: true, minify: true, ignore: ['@font-face']
@@ -87,7 +85,7 @@
         var content = [path.join(conf.paths.dist, '/**/*.{html,js}'), 'bower_components/**/*.js'];
         var css = [path.join(conf.paths.dist, '/styles/**/*.css')];
         purifyCss(content, css, {info: true, rejected: true, minify: true}, function (result) {
-            console.log(result);
+            gulp.start('critical');
         });
     });
 

@@ -56,7 +56,7 @@
         });
 
         return gulp.src([
-            path.join(conf.paths.favicons, '/_assets/**/*'),
+            path.join(conf.paths.favicons),
             path.join(conf.paths.src, '/_assets/**/*'),
             path.join('!' + conf.paths.src, '/_assets/**/*.{html,css,js,scss}')
         ])

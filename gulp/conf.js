@@ -13,7 +13,7 @@ var gutil = require('gulp-util');
  */
 exports.paths = {
   src: 'src',
-  dist: '.dist',
+  dist: 'dist',
   tmp: '.tmp',
   generated: 'generated',
   favicons: './src/favicons'

@@ -6,16 +6,17 @@
   z-index: 40;
   color: #fff;
   padding: 10px 0;
-  //top: -100%;
-  .btn {
-	width: 125px;
+  .blt-logo--icon {
+	max-height: 70px;
+	width: auto;
+	@media (min-width: 992px) {
+	  max-height: 100px;
+	  margin-right: 15px;
+	}
+	@media (min-width: 1200px) {
+	  max-height: 125px;
+	}
   }
-  .btn-sign--in {
-	margin-left: 14px;
-  }
-  //.loaded & {
-	//top: 0;
-  //}
   .navbar-toggler {
 	position: relative;
 	cursor: pointer;

@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'icomoon';
-  src:  url('fonts/icomoon.eot?omsydy');
-  src:  url('fonts/icomoon.eot?omsydy#iefix') format('embedded-opentype'),
-    url('fonts/icomoon.ttf?omsydy') format('truetype'),
-    url('fonts/icomoon.woff?omsydy') format('woff'),
-    url('fonts/icomoon.svg?omsydy#icomoon') format('svg');
+  src:  url('fonts/icomoon.eot?bjcl52');
+  src:  url('fonts/icomoon.eot?bjcl52#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?bjcl52') format('truetype'),
+    url('fonts/icomoon.woff?bjcl52') format('woff'),
+    url('fonts/icomoon.svg?bjcl52#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -74,4 +74,7 @@
 }
 .icon-discord:before {
   content: "\e910";
+}
+.icon-logo-b:before {
+  content: "\e911";
 }

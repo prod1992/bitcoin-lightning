@@ -34,34 +34,13 @@
 
 }
 
-.blt-logo--lgh {
-  fill: url(#radial-gradient);
-}
-
-.btl-logo--round {
-  fill: #fff;
-}
-
-.blt-logo--lightning {
-  position: absolute;
-  width: 100%;
-
-}
-
-.blt-logo--whites {
-  position: relative;
-  z-index: 1;
-}
-
 .blt-logo--icon {
-  height: 70px;
-  width: auto;
-  @media (min-width: 992px) {
-    height: 100px;
-    margin-right: 15px;
-  }
-  @media (min-width: 1200px) {
-    height: 125px;
+  width: 100px;
+  height: 100px;
+  font-size: 70px;
+  @media (min-width: 768px) {
+    width: 135px;
+    height: 135px;
   }
 }
 
@@ -69,5 +48,114 @@
   fill: transparent;
   .lodaded & {
     fill: #ffffff;
+  }
+}
+
+.blt-logo--animation {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  &:before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 7px solid #ffffff;
+    position: absolute;
+    z-index: 1;
+    animation-name: logoCircle;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+    animation-delay: 0.5s;
+    opacity: 0;
+    .loaded & {
+      display: block;
+    }
+    @media (min-width: 768px) {
+      border: 10px solid #ffffff;
+    }
+  }
+  .blt-logo--b {
+    
+    transform-origin: 50% 50%;
+    margin: 20px auto;
+    position: relative;
+    z-index: 1;
+    animation-name: logoB;
+    animation-duration: 0.25s;
+    animation-fill-mode: forwards;
+    animation-delay: 1s;
+    display: none;
+    opacity: 0;
+    .loaded & {
+      display: block;
+    }
+  }
+  .blt-logo--lgh {
+    
+    position: absolute;
+    background-repeat: no-repeat;
+    background-image: url("/images/logo-lgh.svg");
+    background-size: 100%;
+    background-position: center;
+    padding-bottom: 281.25%;
+    width: 59.26%;
+    display: none;
+    opacity: 0;
+    animation-name: logoLightning;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+    animation-delay: 1s;
+    animation-timing-function: ease-in;
+    .loaded & {
+      display: block;
+    }
+  }
+  
+  
+  @media (min-width: 768px) {
+    width: 135px;
+    height: 135px;
+    font-size: 90px;
+    &:before {
+    
+    }
+  }
+}
+
+@keyframes logoCircle {
+  0% {
+    opacity: 0;
+    transform: scale3d(0,0,0);
+  }
+  100% {
+    transform: scale3d(1,1,1);
+    opacity: 1;
+  }
+}
+
+@keyframes logoLightning {
+  0% {
+    transform: translate(0, -300%) scale3d(2,2,2);
+    opacity: 0;
+  }
+  100% {
+    transform: translate(0,0) scale3d(1,1,1);
+    opacity: 1;
+  }
+}
+
+@keyframes logoB {
+  0% {
+    transform: rotate(720deg) scale3d(0,0,0);
+    opacity: 1;
+  }
+  100% {
+    transform: rotate(0) scale3d(1,1,1);
+    opacity: 1;
   }
 }

@@ -23,7 +23,7 @@
 		<div class="row align-items-sm-center justify-content-between">
 			<div class="col-auto">
 				<div class="blt-logo">
-					<a href="/"><img class="blt-logo--icon" src="/images/logo-small.svg" alt="Bitcoin Lightning"/> <b
+					<a href="/"><img class="blt-logo--icon" src="/images/logo-small.svg" alt="Bitcoin Lightning"/><b
 							class="d-none d-lg-block">Bitcoin Lightning</b></a>
 				</div>
 			</div>
@@ -64,9 +64,9 @@
 						<div class="row">
 							<div class="col-12 text-center">
 								<div class="page-hero--content">
-									<div class="page-hero--logo">
-										<img src="/images/logo-b.svg" alt="" class="img-responsive blt-logo--b"/> <img
-											src="/images/logo-lgh.svg" alt="" class="img-responsive blt-logo--lgh"/>
+									<div class="page-hero--logo blt-logo--icon blt-logo--animation">
+										<i class="icon-logo-b blt-logo--b"></i>
+										<i class="blt-logo--lgh"></i>
 									</div>
 									<div class="page-hero--inner text-center">
 										<h1 class="mt-0 mb-0">Transactions at the Speed of Light</h1>
@@ -83,35 +83,36 @@
 						</div>
 					</div>
 				</div>
-				<div class="row blt-roi--row align-items-center justify-content-center">
-					<div class="col-auto">
+			</div>
+			<div class="row align-items-center justify-content-center blt-roi--row">
+				<div class="col-auto">
         <span id="blt-roi--days" class="blt-roi--date">
 
         </span>
-					</div>
-					<div class="col-sm-12 text-center">
-						<div class="blt-roi--days"></div>
-						<div class="blt-roi--values">
-							<div class="row align-items-center">
-								<div class="col-auto pr-0">
+				</div>
+				<div class="col-sm-12 text-center">
+					<div class="blt-roi--days"></div>
+					<div class="blt-roi--values">
+						<div class="row align-items-center">
+							<div class="col-auto pr-0">
               <span class="blt-live--dot">
 
               </span>
-								</div>
-								<div class="col-auto">
-									<span class="blt-roi--label"><b>ROI</b></span>
-								</div>
-								<div class="col-auto ml-auto">
-									<span class="blt-roi--value" id="blt-roi--prc"></span>
-								</div>
 							</div>
-							<div class="blt-fetch--dots">
-								<span></span> <span></span> <span></span>
+							<div class="col-auto">
+								<span class="blt-roi--label"><b>ROI</b></span>
 							</div>
+							<div class="col-auto ml-auto">
+								<span class="blt-roi--value" id="blt-roi--prc"></span>
+							</div>
+						</div>
+						<div class="blt-fetch--dots">
+							<span></span> <span></span> <span></span>
 						</div>
 					</div>
 				</div>
 			</div>
+		</div>
 	</section>
 	<section id="features" class="page-section page-features bg-white">
 		<div class="container-fluid">
@@ -207,7 +208,7 @@
 			</div>
 		</div>
 	</section>
-	<section class="page-section page-specifications pb-0">
+	<section id="specifications" class="page-section page-specifications pb-0">
 		<div class="container-fluid">
 			<div class="page-specifications--header">
 				<div class="row justify-content-center">
@@ -353,16 +354,19 @@
 				<div class="col-12">
 					<div class="page-section--body">
 						<div class="row justify-content-center">
-							<div class="col-md-4">
+							<div class="col-sm-8 col-md-6">
 								<form id="contactForm" action="/contact-request" method="POST">
 									<div class="form-group icon-on--left">
-										<input type="text" class="form-control" placeholder="Name" name="user[name]"><i class="icon-user"></i>
+										<input type="text" class="form-control" placeholder="Name" name="user[name]"><i
+											class="icon-user"></i>
 									</div>
 									<div class="form-group icon-on--left">
-										<input type="text" class="form-control" placeholder="Email Address" name="user[email]"><i class="icon-envelope"></i>
+										<input type="text" class="form-control" placeholder="Email Address" name="user[email]"><i
+											class="icon-envelope"></i>
 									</div>
 									<div class="form-group icon-on--left">
-										<input type="text" class="form-control" placeholder="Phone" name="user[phone]"><i class="icon-call"></i>
+										<input type="text" class="form-control" placeholder="Phone" name="user[phone]"><i
+											class="icon-call"></i>
 									</div>
 									<div class="form-group icon-on--left">
 										<textarea type="text" class="form-control" placeholder="Message" name="user[message]"></textarea><i
@@ -373,18 +377,18 @@
 									</div>
 								</form>
 							</div>
-							<div class="col-md-4">
-								<h3 class="mt-0 blt-contact--info__heading">Contact Information</h3>
-								<ul class="p-0 blt-contact--info list-unstyled">
-									<li class="row mx-0 align-items-center">
-										<span class="col-auto px-0"><i class="icon-phone-receiver"></i></span> <span
-											class="col">123-456-9870</span>
-									</li>
-									<li class="row mx-0 align-items-center">
-										<span class="col-auto px-0"><i class="icon-location"></i></span> <span class="col">802 W Bannock St. Ste. 406 Boise, <br> ID 83702 </span>
-									</li>
-								</ul>
-							</div>
+							<!--<div class="col-md-4">-->
+							<!--<h3 class="mt-0 blt-contact&#45;&#45;info__heading">Contact Information</h3>-->
+							<!--<ul class="p-0 blt-contact&#45;&#45;info list-unstyled">-->
+							<!--<li class="row mx-0 align-items-center">-->
+							<!--<span class="col-auto px-0"><i class="icon-phone-receiver"></i></span> <span-->
+							<!--class="col">123-456-9870</span>-->
+							<!--</li>-->
+							<!--<li class="row mx-0 align-items-center">-->
+							<!--<span class="col-auto px-0"><i class="icon-location"></i></span> <span class="col">802 W Bannock St. Ste. 406 Boise, <br> ID 83702 </span>-->
+							<!--</li>-->
+							<!--</ul>-->
+							<!--</div>-->
 						</div>
 					</div>
 				</div>
@@ -427,7 +431,6 @@
 	</section>
 </main>
 <!--MAIN ends-->
-
 <!--MOBILE NAV start-->
 <nav class="blt-nav--mobile">
 	<div class="container-fluid">
@@ -456,36 +459,22 @@
 	</div>
 </nav>
 <!--MOBILE NAV end-->
-
 <footer id="contact" class="blt-footer">
 	<div class="blt-footer--top">
 		<div class="container-fluid">
 			<div class="row justify-content-around">
-				<div class="col-12 col-sm-auto align-self-start align-self-sm-center">
-					<div class="soc-link">
-						<ul class="p-0">
-							<li><a href="#"> <i class="icon-facebook"></i> </a></li>
-							<li><a href="#"> <i class="icon-twitter"></i> </a></li>
-							<li><a href="#"> <i class="icon-linkedin"></i> </a></li>
-							<li><a href="#"> <i class="icon-youtube"></i> </a></li>
-						</ul>
-					</div>
-				</div>
-				<div class="col-12 col-sm-auto">
+				<div class="col-12 col-sm-3">
 					<h4>What we do</h4>
 					<ul class="blt-footer--links p-0">
 						<li>
-							<a href="#">About Us</a>
+							<a href="#about">About Us</a>
 						</li>
 						<li>
-							<a href="#">Blog</a>
-						</li>
-						<li>
-							<a href="#">Product & Services</a>
+							<a href="#features">Our Features</a>
 						</li>
 					</ul>
 				</div>
-				<div class="col-12 col-sm-auto">
+				<div class="col-12 col-sm-3">
 					<h4>Support</h4>
 					<ul class="blt-footer--links p-0">
 						<li>
@@ -496,14 +485,12 @@
 						</li>
 					</ul>
 				</div>
-				<div class="col-12 col-sm-auto">
+				<div class="col-12 col-sm-3">
 					<h4>Contact Us</h4>
 					<ul class="blt-footer--links p-0">
 						<li class="d-flex">
-							<i class="icon-call"></i> <a href="#">Sales: 1-256-3000-1236</a>
-						</li>
-						<li class="d-flex">
-							<i class="icon-envelope"></i> <a href="#">support@BitCoinLightning</a>
+							<i class="icon-envelope"></i> <a
+								href="mailto:contact_us@bitcoinlightning.co.uk">support@BitCoinLightning</a>
 						</li>
 						<li>
 							<a class="media-info" href="#">Media Inquries</a>

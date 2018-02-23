@@ -77,7 +77,7 @@
                 minify: true,
                 extract: true,
                 assetPaths: ['images', 'fonts'],
-                ignore: ['@font-face', '@media']
+                ignore: ['@font-face', '@media', '(-web.+;\\n)|(-ms.+;\\n)|(.+:-web.+;\\n)|(.+:-ms.+;\\n)|(^\\s+)']
             }))
             .on('error', function (err) {
                 gutil.log(gutil.colors.red(err.message));

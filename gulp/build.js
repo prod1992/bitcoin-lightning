@@ -70,6 +70,7 @@
 
     gulp.task('build', ['html', 'other', 'images', 'fonts', 'critical', 'purifycss']);
 
+
     gulp.task('critical', ['purifycss'], function () {
         return gulp.src(path.join(conf.paths.dist, '/*.html'))
             .pipe(critical({base: path.join(conf.paths.dist, '/'), inline: true, minify: true, extract: true, ignore: ['@font-face']}))

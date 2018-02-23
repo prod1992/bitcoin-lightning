@@ -39,26 +39,14 @@
                 collapseWhitespace: true
             }))
             .pipe(htmlFilter.restore)
-            .pipe($.defer())
             .pipe(gulp.dest(path.join(conf.paths.dist, '/')))
-            .pipe($.size({title: path.join(conf.paths.dist, '/'), showFiles: true}));
+            .pipe($.size({title: path.join(conf.paths.dist, '/'), showFiles: true}))
+
     }
 
-    gulp.task('purifycss', function () {
-        var content = [path.join(conf.paths.dist, '/**/*.{html,js}'), 'bower_components/**/*.js'];
-        var css = [path.join(conf.paths.dist, '/styles/**/*.css'), 'bower_components/**/*.css'];
-        purifyCss(content, css, {info: true, rejected: true, minify: true}, function (result) {
-            console.log(result);
-        });
-    });
+
 
     // Generate & Inline Critical-path CSS
-    gulp.task('critical', function () {
-        gulp.src(path.join(conf.paths.dist, '/*.html'))
-            .pipe(critical({base: path.join(conf.paths.dist, '/'), minify: true, inline: true, extract: true, ignore: ['@font-face']}))
-            .on('error', function(err) { gutil.log(gutil.colors.red(err.message)); })
-            .pipe(gulp.dest(path.join(conf.paths.dist, '/')));
-    });
 
     gulp.task('other', function () {
         var fileFilter = $.filter(function (file) {
@@ -80,8 +68,21 @@
 
     gulp.task('html', ['inject'], htmlTask);
 
-    gulp.task('build', ['html', 'other', 'images', 'fonts', 'purifycss'], function() {
-        gulp.start('critical');
+    gulp.task('build', ['html', 'other', 'images', 'fonts', 'critical', 'purifycss']);
+
+    gulp.task('critical', ['html'], function () {
+        return gulp.src(path.join(conf.paths.dist, '/*.html'))
+            .pipe(critical({base: path.join(conf.paths.dist, '/'), inline: true, minify: true, extract: true, ignore: ['@font-face']}))
+            .on('error', function(err) { gutil.log(gutil.colors.red(err.message)); })
+            .pipe(gulp.dest(path.join(conf.paths.dist, '/')));
+    });
+
+    gulp.task('purifycss',['critical'], function () {
+        var content = [path.join(conf.paths.dist, '/**/*.{html,js}'), 'bower_components/**/*.js'];
+        var css = [path.join(conf.paths.dist, '/styles/**/*.css')];
+        purifyCss(content, css, {info: true, rejected: true, minify: true}, function (result) {
+            console.log(result);
+        });
     });
 
 })();

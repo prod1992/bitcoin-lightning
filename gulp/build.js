@@ -74,9 +74,10 @@
             .pipe(critical({
                 base: path.join(conf.paths.dist, '/'),
                 inline: true,
+                minify: true,
                 extract: true,
                 assetPaths: ['images', 'fonts'],
-                ignore: ['@font-face']
+                ignore: ['font-face', 'media']
             }))
             .on('error', function (err) {
                 gutil.log(gutil.colors.red(err.message));

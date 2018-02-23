@@ -183,38 +183,9 @@
   font-weight: 700;
 }
 
-.page-hero--inner, .page-hero--action {
-  display: none;
-  animation-name: heroHeights;
-  animation-fill-mode: forwards;
-  animation-iteration-count: 1;
-  animation-duration: 0.4s;
-  animation-timing-function: ease-in-out;
-  opacity: 0;
-  position: relative;
-  top: 50px;
-  .loaded & {
-	display: block;
-  }
-}
-.page-hero--action {
-  animation-delay: .05s;
-}
 .page-hero--inner {
   margin-top: 30px;
   @media (min-width: 768px) {
 	margin-top: 55px;
-  }
-}
-
-
-@keyframes heroHeights {
-  0% {
-	opacity: 0;
-	top: 50px;
-  }
-  100% {
-	opacity: 1;
-	top: 0;
   }
 }

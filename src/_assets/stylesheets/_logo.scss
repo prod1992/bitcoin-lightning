@@ -4,50 +4,50 @@
   z-index: 1000;
   position: relative;
   a {
-    color: #fff;
-    font-size: 25px;
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    width: 100%;
+	color: #fff;
+	font-size: 25px;
+	text-decoration: none;
+	display: flex;
+	align-items: center;
+	width: 100%;
   }
-  b{
-    white-space: nowrap;
-    font-size: 23px;
-    @media (min-width: 1200px) {
-      font-size: 25px;
-    }
+  b {
+	white-space: nowrap;
+	font-size: 23px;
+	@media (min-width: 1200px) {
+	  font-size: 25px;
+	}
   }
-
+  
   @media (min-width: 1200px) {
-    width: 400px;
-    max-width: 400px;
-    a {
-      color: #fff;
-      font-size: 35px;
-      text-decoration: none;
-      display: flex;
-      align-items: center;
-      width: 100%;
-    }
+	width: 400px;
+	max-width: 400px;
+	a {
+	  color: #fff;
+	  font-size: 35px;
+	  text-decoration: none;
+	  display: flex;
+	  align-items: center;
+	  width: 100%;
+	}
   }
-
+  
 }
 
 .blt-logo--icon {
   width: 100px;
   height: 100px;
   font-size: 70px;
-  @media (min-width: 768px) {
-    width: 135px;
-    height: 135px;
+  @media (min-width: 992px) {
+	width: 135px;
+	height: 135px;
   }
 }
 
 .blt-logo--b {
   fill: transparent;
   .lodaded & {
-    fill: #ffffff;
+	fill: #ffffff;
   }
 }
 
@@ -60,102 +60,132 @@
   margin-right: auto;
   position: relative;
   &:before {
-    content: '';
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    border: 7px solid #ffffff;
-    position: absolute;
-    z-index: 1;
-    animation-name: logoCircle;
-    animation-duration: 0.5s;
-    animation-fill-mode: forwards;
-    animation-delay: 0.5s;
-    opacity: 0;
-    .loaded & {
-      display: block;
-    }
-    @media (min-width: 768px) {
-      border: 10px solid #ffffff;
-    }
+	content: '';
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
+	border: 7px solid #ffffff;
+	position: absolute;
+	z-index: 1;
+	animation-name: logoCircle;
+	animation-duration: 0.5s;
+	animation-fill-mode: forwards;
+	animation-delay: 0.5s;
+	opacity: 0;
+	.loaded & {
+	  display: block;
+	}
+	@media (min-width: 992px) {
+	  border: 10px solid #ffffff;
+	}
   }
   .blt-logo--b {
-    
-    transform-origin: 50% 50%;
-    margin: 20px auto;
-    position: relative;
-    z-index: 1;
-    animation-name: logoB;
-    animation-duration: 0.25s;
-    animation-fill-mode: forwards;
-    animation-delay: 1s;
-    display: none;
-    opacity: 0;
-    .loaded & {
-      display: block;
-    }
+	
+	transform-origin: 50% 50%;
+	margin: 20px auto;
+	position: relative;
+	z-index: 1;
+	animation-name: logoB;
+	animation-duration: 0.25s;
+	animation-fill-mode: forwards;
+	animation-delay: 0.5s;
+	display: none;
+	opacity: 0;
+	.loaded & {
+	  display: block;
+	}
   }
   .blt-logo--lgh {
-    
-    position: absolute;
-    background-repeat: no-repeat;
-    background-image: url("/images/logo-lgh.svg");
-    background-size: 100%;
-    background-position: center;
-    padding-bottom: 281.25%;
-    width: 59.26%;
-    display: none;
-    opacity: 0;
-    animation-name: logoLightning;
-    animation-duration: 0.5s;
-    animation-fill-mode: forwards;
-    animation-delay: 1s;
-    animation-timing-function: ease-in;
-    .loaded & {
-      display: block;
-    }
+	
+	position: absolute;
+	background-repeat: no-repeat;
+	background-image: url("/images/logo-lgh.svg");
+	background-size: 100%;
+	background-position: center;
+	padding-bottom: 281.25%;
+	width: 59.26%;
+	display: none;
+	opacity: 0;
+	animation-name: logoLightning;
+	animation-duration: 0.5s;
+	animation-fill-mode: forwards;
+	animation-delay: 1s;
+	animation-timing-function: ease-in;
+	.loaded & {
+	  display: block;
+	}
   }
   
-  
-  @media (min-width: 768px) {
-    width: 135px;
-    height: 135px;
-    font-size: 90px;
-    &:before {
-    
-    }
+  @media (min-width: 992px) {
+	width: 135px;
+	height: 135px;
+	font-size: 90px;
+	&:before {
+	
+	}
+  }
+}
+
+.page-hero {
+  &:before {
+	content: '';
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	top: 0;
+	background: rgba(255, 255, 255, 1);
+	z-index: 999;
+	animation-name: lightenWhite;
+	animation-duration: 0.25s;
+	animation-fill-mode: forwards;
+	animation-delay: 1.75s;
+	opacity: 0;
+	pointer-events: none;
   }
 }
 
 @keyframes logoCircle {
   0% {
-    opacity: 0;
-    transform: scale3d(0,0,0);
+	opacity: 0;
+	transform: scale3d(0, 0, 0);
   }
   100% {
-    transform: scale3d(1,1,1);
-    opacity: 1;
+	transform: scale3d(1, 1, 1);
+	opacity: 1;
   }
 }
 
 @keyframes logoLightning {
   0% {
-    transform: translate(0, -300%) scale3d(2,2,2);
-    opacity: 0;
+	transform: translate(0, -300%) scale3d(2, 2, 2);
+	opacity: 0;
   }
   100% {
-    transform: translate(0,0) scale3d(1,1,1);
-    opacity: 1;
+	transform: translate(0, 0) scale3d(1, 1, 1);
+	opacity: 1;
   }
 }
 
 @keyframes logoB {
   0% {
-    transform: rotate(720deg) scale3d(0,0,0);
-    opacity: 1;
+	transform: rotate(720deg) scale3d(0, 0, 0);
+	opacity: 1;
   }
   100% {
-    transform: rotate(0) scale3d(1,1,1);
-    opacity: 1;
+	transform: rotate(0) scale3d(1, 1, 1);
+	opacity: 1;
+  }
+}
+
+@keyframes lightenWhite {
+  0% {
+	opacity: 0;
+  }
+  50% {
+	opacity: 1;
+  }
+  100% {
+	opacity: 0;
   }
 }

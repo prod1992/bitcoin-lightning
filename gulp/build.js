@@ -70,14 +70,14 @@
 
     gulp.task('build', ['html', 'other', 'images', 'fonts', 'critical', 'purifycss']);
 
-    gulp.task('critical', ['html'], function () {
+    gulp.task('critical', ['purifycss'], function () {
         return gulp.src(path.join(conf.paths.dist, '/*.html'))
             .pipe(critical({base: path.join(conf.paths.dist, '/'), inline: true, minify: true, extract: true, ignore: ['@font-face']}))
             .on('error', function(err) { gutil.log(gutil.colors.red(err.message)); })
             .pipe(gulp.dest(path.join(conf.paths.dist, '/')));
     });
 
-    gulp.task('purifycss',['critical'], function () {
+    gulp.task('purifycss',['html'], function () {
         var content = [path.join(conf.paths.dist, '/**/*.{html,js}'), 'bower_components/**/*.js'];
         var css = [path.join(conf.paths.dist, '/styles/**/*.css')];
         purifyCss(content, css, {info: true, rejected: true, minify: true}, function (result) {

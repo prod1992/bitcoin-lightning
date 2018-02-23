@@ -83,9 +83,13 @@
             }
 
         })
-        .on('click', '.blt-nav a', function (e) {
-            console.log(e);
+        .on('click', '.blt-nav a, .mobile-nav a', function (e) {
+            e.preventDefault();
             var $target = $($(this).attr('href'));
+
+            if ($(e.currentTarget).closest('.mobile-nav').length) {
+                $bodyEl.removeClass('blt-nav--open')
+            }
             $('html, body').animate({
                 scrollTop: $target.offset().top
             }, 500);

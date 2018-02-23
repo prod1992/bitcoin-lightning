@@ -26,11 +26,6 @@
     app.use(bodyParser.json());
     app.use("/api", proxyMiddleware(proxyOptions));
 
-    app.get("/", function (req, res, next) {
-        res.sendFile(path.join(__dirname + "/" + conf.paths.dist + '/index.html'));
-        next();
-    });
-
     //FORM PARAMS
     let userData = {
         username: "",
@@ -39,7 +34,10 @@
         message: ""
     };
 
-    app.post("/contact-request", function (req, res, next) {
+    app.get("/", function (req, res) {
+        res.sendFile(path.join(__dirname + "/" + conf.paths.dist + '/index.html'));
+    });
+    app.post("/contact-request", function (req, res) {
 
         let takeInfo = req.body.user;
 
@@ -48,63 +46,34 @@
         userData.phone = takeInfo.phone;
         userData.message = takeInfo.message;
 
-        if (validateContactForm()) {
 
-            let transporter = nodemailer.createTransport({
-                service: "gmail",
-                auth: {
-                    user: "bltcoin.contact.request@gmail.com", // generated ethereal user
-                    pass: "dearijogi777" // generated ethereal password
-                }
-            });
+        let transporter = nodemailer.createTransport({
+            service: "gmail",
+            auth: {
+                user: "bltcoin.contact.request@gmail.com", // generated ethereal user
+                pass: "dearijogi777" // generated ethereal password
+            }
+        });
 
-            let mailOptions = {
-                from: userData["username"] + "<" + userData["email"] + ">",
-                to: pkg["contact-email"],
-                subject: "Contact Request",
-                html: "<p>" + userData.message + "</p>"
-            };
+        let mailOptions = {
+            from: userData["username"] + "<" + userData["email"] + ">",
+            to: pkg["contact-email"],
+            subject: "Contact Request",
+            html: "<p>" + userData.message + "</p>"
+        };
 
-            transporter.sendMail(mailOptions, function (error, info) {
-                if (error) {
-                    return console.log(error);
-                }
-                console.log('Message sent: %s', info.messageId);
-                // Preview only available when sending through an Ethereal account
-                console.log('Preview URL: %s', nodemailer.getTestMessageUrl(info));
-            });
+        transporter.sendMail(mailOptions, function (error, info) {
+            if (error) {
+                return console.log(error);
+            }
+            console.log('Message sent: %s', info.messageId);
+            // Preview only available when sending through an Ethereal account
+            console.log('Preview URL: %s', nodemailer.getTestMessageUrl(info));
+        });
 
-            res.sendStatus(200);
-        }
-        else {
-            return alert("form is not valid");
-        }
+        res.sendStatus(200);
 
-        next();
     });
-
-
-    function validateContactForm() {
-        //email
-        if (/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(userData.email)) {
-            return true;
-        }
-        //username
-        if (userData.username !== null && userData.username !== "") {
-            return true;
-        }
-        //phone
-        if (userData.phone.match(phoneCheck)) {
-            return true;
-        }
-        //message
-        if (!!userData.message) {
-            return true;
-        }
-        else {
-            return false;
-        }
-    }
 
     app.listen(8080);
 

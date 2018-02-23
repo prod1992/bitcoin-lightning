@@ -78,6 +78,9 @@
   span {
 	vertical-align: middle;
   }
+  @include hover-focus-active {
+	background-color: #e8e8e8;
+  }
   @media (min-width: 576px) {
 	font-size: 18px;
 	max-width: 345px;

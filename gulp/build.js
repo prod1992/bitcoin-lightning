@@ -67,9 +67,9 @@
 
     gulp.task('html', ['inject'], htmlTask);
 
-    gulp.task('build', ['html', 'other', 'images', 'fonts', 'purifycss', 'critical']);
+    gulp.task('build', ['html', 'other', 'images', 'fonts', 'purifycss', 'critical', 'cssfinalminify']);
 
-    gulp.task('critical',['html'], function () {
+    gulp.task('critical', ['html'], function () {
         return gulp.src(path.join(conf.paths.dist, '/*.html'))
             .pipe(critical({
                 base: path.join(conf.paths.dist, '/'),
@@ -82,15 +82,24 @@
             .on('error', function (err) {
                 gutil.log(gutil.colors.red(err.message));
             })
-            .pipe(gulp.dest(path.join(conf.paths.dist, '/')))
+            .pipe(gulp.dest(path.join(conf.paths.dist, '/')));
+    });
+
+    gulp.task('cssfinalminify', ['critical'], function () {
+        return gulp.src(path.join(conf.paths.dist, '/styles/*.css'))
+            .pipe($.cleanCss({debug: true}, (details) => {
+                console.log(`${details.name}: ${details.stats.originalSize}`);
+                console.log(`${details.name}: ${details.stats.minifiedSize}`);
+            }))
+            .pipe(gulp.dest(path.join(conf.paths.dist, '/styles/')))
             .pipe($.size({title: path.join(conf.paths.dist, '/styles/'), showFiles: true}));
-
     });
 
-    gulp.task('purifycss',['critical'], function () {
-        var content = [path.join(conf.paths.dist, '/**/*.html'), path.join(conf.paths.dist, '/**/*.js')];
-        var css = [path.join(conf.paths.dist, '/**/*.css')];
-        purifyCss(content, css, {info: true, rejected: true});
+    gulp.task('purifycss', ['cssfinalminify'], function () {
+        var content = [path.join(conf.paths.tmp, '/*.html'), path.join(conf.paths.dist, '/scripts/*.js')];
+        var css = [path.join(conf.paths.dist, '/styles/*.css')];
+        purifyCss(content, css, {info: true, rejected: true, minify: true});
     });
+
 
 })();

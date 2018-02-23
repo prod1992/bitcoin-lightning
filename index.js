@@ -50,10 +50,10 @@
         if (validateContactForm()) {
 
             let transporter = nodemailer.createTransport({
-                service: "smtp.ethereal.email",
+                service: "gmail",
                 auth: {
-                    user: "hhb6e72okmkggopp@ethereal.email", // generated ethereal user
-                    pass: "ASppCxYCXJSu4JuuYA" // generated ethereal password
+                    user: "blt.contact.request@gmail.com", // generated ethereal user
+                    pass: "dearijogi777" // generated ethereal password
                 }
             });
 

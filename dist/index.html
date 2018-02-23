@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Bitcoin Lightning</title>
+	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+	<style type="text/css">
+		html{line-height:1.15;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}header,nav,section{display:block}h1{font-size:2em;margin:.67em 0}main{display:block}a{background-color:transparent;-webkit-text-decoration-skip:objects}b{font-weight:inherit}b{font-weight:bolder}img{border-style:none}button{font-family:sans-serif;font-size:100%;line-height:1.15;margin:0}button{overflow:visible}button{text-transform:none}button{-webkit-appearance:button}button::-moz-focus-inner{border-style:none;padding:0}button:-moz-focusring{outline:1px dotted ButtonText}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}.justify-content-center{-ms-flex-pack:center!important;justify-content:center!important}.justify-content-between{-ms-flex-pack:justify!important;justify-content:space-between!important}.align-items-center{-ms-flex-align:center!important;align-items:center!important}@media (min-width:768px){.align-items-sm-center{-ms-flex-align:center!important;align-items:center!important}}.row{display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;margin-right:-15px;margin-left:-15px}.col,.col-12,.col-auto,.col-md-10,.col-sm-12{position:relative;width:100%;min-height:1px;padding-right:15px;padding-left:15px}.col{-ms-flex-preferred-size:0;flex-basis:0;-ms-flex-positive:1;flex-grow:1;max-width:100%}.col-auto{-ms-flex:0 0 auto;flex:0 0 auto;width:auto;max-width:none}.col-12{-ms-flex:0 0 100%;flex:0 0 100%;max-width:100%}@media (min-width:768px){.col-sm-12{-ms-flex:0 0 100%;flex:0 0 100%;max-width:100%}}@media (min-width:992px){.col-md-10{-ms-flex:0 0 83.33333%;flex:0 0 83.33333%;max-width:83.33333%}}.p-0{padding:0!important}.pr-0{padding-right:0!important}.m-0{margin:0!important}.mt-0{margin-top:0!important}.mb-0{margin-bottom:0!important}.mx-auto{margin-left:auto!important;margin-right:auto!important}.ml-auto{margin-left:auto!important}.text-center{text-align:center!important}.img-responsive{max-width:100%;display:block}.d-none{display:none!important}@media (min-width:768px){.d-md-none{display:none!important}}@media (min-width:768px){.d-md-block{display:block!important}}@media (min-width:992px){.d-lg-block{display:block!important}}[class^=icon-]{font-family:icomoon!important;speak:none;font-style:normal;font-weight:400;font-variant:normal;text-transform:none;line-height:1;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.icon-download:before{content:"\e900"}h1{font-family:Gotham,sans-serif;font-weight:700;line-height:1.2}b{font-weight:700}:focus{outline:0}.btn{text-transform:uppercase;font-size:15px;padding:13px 0;color:#fff;border-radius:5px;font-weight:500;border:1px solid}.btn:visited{outline:0}.btn.button-download{position:relative;display:block;max-width:280px;background-color:#fff;color:#0769d7;font-size:14px;border:none;border-radius:12px;padding:11px 25px 10px 55px;font-weight:500;text-transform:uppercase}.btn.button-download i{position:absolute;left:15px;font-size:24px;top:50%;transform:translate(0,-50%);line-height:1}@media (min-width:576px){.btn.button-download i{font-size:26px;left:20px}}.btn.button-download span{vertical-align:middle}@media (min-width:576px){.btn.button-download{font-size:18px;max-width:345px;padding:14px 25px 13px 62.5px}}html{box-sizing:border-box}*,:after,:before{box-sizing:inherit}body{-webkit-overflow-scrolling:touch;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;font-family:Depot,sans-serif;line-height:1.45}button{font-family:Depot,sans-serif}.blt-header{position:absolute;left:0;right:0;z-index:40;color:#fff;padding:10px 0;top:-100%}.blt-header .navbar-toggler{position:relative;display:block;width:33px;height:33px;border:none;background-color:transparent;top:10px;z-index:100;padding:0}.blt-header .navbar-toggler .line{display:block;height:2px;background:#fff;margin-bottom:8px}.blt-header .navbar-toggler .line.bot{margin-bottom:0}@media (min-width:768px){.blt-header .navbar-toggler{padding:0;top:0}}.blt-header:before{content:'';position:fixed;width:100%;height:100%;top:0;right:0;left:0;transform:translate(-100%,0);background:#000f30;background:linear-gradient(to bottom,#000f30 0,#011559 100%);z-index:10}@media (min-width:768px){.blt-header:before{display:none!important}}.blt-header [class*=col]{z-index:30}@media (min-width:768px){.blt-header{padding:15px 0}}.blt-header--right{opacity:0;transform:translate(0,-100%)}.blt-nav{line-height:1}.blt-nav li{display:inline-block;list-style:none;vertical-align:middle;line-height:1}.blt-nav li+li{margin-left:20px}.blt-nav a{font-size:16px;text-transform:uppercase;font-family:Depot,sans-serif;font-weight:500;color:#fff;text-decoration:none;padding:10px}.blt-nav--mobile{position:fixed;top:80px;right:0;bottom:0;width:100%;z-index:40;left:-100%;display:-ms-flexbox;display:flex;-ms-flex-direction:column;flex-direction:column;-ms-flex-wrap:wrap;flex-wrap:wrap;-ms-flex-pack:center;justify-content:center;border:none}.blt-nav--mobile ul{margin-top:-20px}.blt-nav--mobile .mobile-btn{padding:25px 0}.blt-nav--mobile li{list-style-type:none;margin-bottom:10px}.blt-nav--mobile li a{color:#fff;text-decoration:none;font-size:36px;font-weight:700;transform:scale(1);-webkit-transform:scale(1);display:block;letter-spacing:1px}@media (min-width:768px){.blt-nav--mobile{display:none!important}}body:not(.loaded){overflow-y:hidden}body:not(.loaded){overflow-y:hidden;overflow-x:auto}.blt-logo{font-family:Gotham,sans-serif;font-weight:700;z-index:1000;position:relative}.blt-logo a{color:#fff;font-size:25px;text-decoration:none;display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;width:100%}.blt-logo b{white-space:nowrap;font-size:23px}@media (min-width:1200px){.blt-logo b{font-size:25px}}@media (min-width:1200px){.blt-logo{width:400px;max-width:400px}.blt-logo a{color:#fff;font-size:35px;text-decoration:none;display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;width:100%}}.blt-logo--lgh{fill:url(styles/#radial-gradient)}.blt-logo--icon{height:70px;width:auto}@media (min-width:992px){.blt-logo--icon{height:100px;margin-right:15px}}@media (min-width:1200px){.blt-logo--icon{height:125px}}.blt-logo--b{fill:transparent}.container-fluid{max-width:1280px;margin-right:auto;margin-left:auto;padding-right:15px;padding-left:15px}.page-section{position:relative;padding:50px 0}.page-section h1{font-size:25px;margin-bottom:10px}@media (min-width:768px){.page-section h1{font-size:35px}}@media (min-width:992px){.page-section h1{font-size:45px}}@media (min-width:992px){.page-section{padding:45px 0 90px 0}}@keyframes blink{0%{opacity:.2}20%{opacity:1}100%{opacity:.2}}.page-hero{color:#fff;font-family:Gotham,sans-serif;padding:0;background-color:#00103e;position:relative;overflow:hidden}.page-hero:after{content:'';position:absolute;left:0;right:0;top:0;bottom:0;background-image:url(images/hero.jpg);background-repeat:no-repeat;background-position:center;background-size:cover;will-change:opacity;opacity:0}.page-hero .container-fluid>.row:first-child{min-height:640px}@media (min-width:992px){.page-hero .container-fluid>.row:first-child{height:100vh}}.page-hero h1{font-weight:700}.page-hero p{font-size:16px;font-weight:300;max-width:680px;margin-left:auto;margin-right:auto}@media (min-width:768px){.page-hero p{font-size:22px;margin-top:0}}.page-hero--logo{width:100px;height:100px;border-radius:100px;display:-ms-flexbox;display:flex;-ms-flex-direction:column;flex-direction:column;-ms-flex-align:center;align-items:center;-ms-flex-pack:center;justify-content:center;margin-left:auto;margin-right:auto;margin-bottom:30px;position:relative}@media (min-width:768px){.page-hero--logo{width:135px;height:135px;margin-bottom:55px}}.page-hero--logo:before{content:'';display:block;width:100px;height:100px;border-radius:50%;border:7px solid #fff;position:absolute;z-index:1;transform:scale(0)}@media (min-width:768px){.page-hero--logo:before{width:135px;height:135px;border:10px solid #fff}}.page-hero--logo .blt-logo--lgh{transform:translate(0,-300%) scale3d(2,2,2);position:absolute;height:155%}.page-hero--logo .blt-logo--b{transform:rotate(720deg) scale(0);transform-origin:50% 50%;height:65%;margin:20px auto;position:relative;z-index:1}.page-hero--content{opacity:0;visibility:hidden;transform:scale(.9) translate(0,100px);will-change:visibility,transform;position:relative;z-index:2;margin-top:-5%}.blt-roi--row{position:absolute;bottom:15px;width:100%;left:0;margin:0;z-index:20;opacity:0;visibility:hidden;transform:translate(0,100%) scale(.9);will-change:visibility,transform}@media (min-width:992px){.blt-roi--row{bottom:30px}}.blt-roi--values{width:270px;margin:auto;padding:10px 15px;background-color:#00103e;border-radius:8px;color:#fff;line-height:1;position:relative;font-size:20px}.blt-live--dot{width:10px;height:10px;display:block;background-color:#3bc60b;border-radius:50%}.blt-roi--label{font-weight:400;padding:0}.blt-fetch--dots{position:absolute;top:50%;margin:0!important;right:15px;transform:translate(0,-50%);line-height:0;display:none}.blt-fetch--dots span{font-size:35px;display:inline-block;border-radius:50%;margin-right:2px;width:5px;height:5px;background-color:#fff;animation-name:blink;animation-duration:1.4s;animation-iteration-count:infinite;animation-fill-mode:both}.blt-fetch--dots span:nth-child(2){animation-delay:.2s}.blt-fetch--dots span:nth-child(3){animation-delay:.4s}.blt-roi--date{font-size:1em;line-height:1.5;color:#ccc;display:block;margin-bottom:5px}#blt-roi--prc{font-weight:700}
+	</style>
+	<link rel="preload" href="styles/all.min.5a3c6c00.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+	<noscript><link rel="stylesheet" href="styles/all.min.5a3c6c00.css"></noscript>
+	<script>!function(t){"use strict";t.loadCSS||(t.loadCSS=function(){});var e=loadCSS.relpreload={};if(e.support=function(){var e;try{e=t.document.createElement("link").relList.supports("preload")}catch(t){e=!1}return function(){return e}}(),e.bindMediaToggle=function(t){var e=t.media||"all";function a(){t.media=e}t.addEventListener?t.addEventListener("load",a):t.attachEvent&&t.attachEvent("onload",a),setTimeout(function(){t.rel="stylesheet",t.media="only x"}),setTimeout(a,3e3)},e.poly=function(){if(!e.support())for(var a=t.document.getElementsByTagName("link"),n=0;n<a.length;n++){var o=a[n];"preload"!==o.rel||"style"!==o.getAttribute("as")||o.getAttribute("data-loadcss")||(o.setAttribute("data-loadcss",!0),e.bindMediaToggle(o))}},!e.support()){e.poly();var a=t.setInterval(e.poly,500);t.addEventListener?t.addEventListener("load",function(){e.poly(),t.clearInterval(a)}):t.attachEvent&&t.attachEvent("onload",function(){e.poly(),t.clearInterval(a)})}"undefined"!=typeof exports?exports.loadCSS=loadCSS:t.loadCSS=loadCSS}("undefined"!=typeof global?global:this);</script>
+</head>
+<body>
+<div class="blt-loading--overlay">
+	<div class="blt-loading--spinner"></div>
+</div>
+<!--HEADER start-->
+<header class="blt-header">
+	<div class="container-fluid">
+		<div class="row align-items-sm-center justify-content-between">
+			<div class="col-auto">
+				<div class="blt-logo">
+					<a href="/"><img class="blt-logo--icon" src="/images/logo-small.svg" alt="Bitcoin Lightning"> <b class="d-none d-lg-block">Bitcoin Lightning</b></a>
+				</div>
+			</div>
+			<div class="col blt-header--right">
+				<div class="row align-items-center">
+					<div class="col-auto ml-auto d-none d-md-block">
+						<nav class="blt-nav">
+							<ul class="m-0 p-0">
+								<li><a href="#home">home</a></li>
+								<li><a href="#about">about us</a></li>
+								<li><a href="#features">features</a></li>
+								<li><a href="#contact">contact us</a></li>
+							</ul>
+						</nav>
+					</div>
+					<!--<div class="col-auto d-none d-md-block">-->
+					<!--<button class="btn button-reg">Register</button>-->
+					<!--<button class="btn btn-primary btn-sign&#45;&#45;in">Sign in</button>-->
+					<!--</div>-->
+					<div class="col-auto ml-auto d-md-none">
+						<button class="navbar-toggler">
+							<span class="line top"></span> <span class="line mid"></span> <span class="line bot"></span>
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</header>
+<!--HEADER end-->
+<!--MOBILE NAV start-->
+<nav class="blt-nav--mobile">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-12">
+				<ul class="mobile-nav text-center p-0">
+					<li><a href="#">HOME</a></li>
+					<li><a href="#">ABOUT US</a></li>
+					<li><a href="#">FEATURES</a></li>
+					<li><a href="#">CONTACT US</a></li>
+				</ul>
+			</div>
+			<div class="col-12">
+				<div class="mobile-btn">
+					<div class="row text-center">
+						<!--<div class="col-12">-->
+							<!--<button class="btn button-reg">Register</button>-->
+						<!--</div>-->
+						<!--<div class="col-12">-->
+							<!--<button class="btn btn-primary m-0">Sign in</button>-->
+						<!--</div>-->
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</nav>
+<!--MOBILE NAV end-->
+<!--MAIN start-->
+<main>
+	<section id="home" class="page-section page-hero">
+		<div class="container-fluid">
+			<div class="row justify-content-center align-items-center">
+				<div class="col-md-10">
+					<div class="">
+						<div class="row">
+							<div class="col-12 text-center">
+								<div class="page-hero--content">
+									<div class="page-hero--logo">
+										<img src="/images/logo-b.svg" alt="" class="img-responsive blt-logo--b"> <img src="/images/logo-lgh.svg" alt="" class="img-responsive blt-logo--lgh">
+									</div>
+									<div class="page-hero--inner text-center">
+										<h1 class="mt-0 mb-0">Transactions at the Speed of Light</h1>
+										<p>Masternodes. Masternodes are a second tier of the network making the super fast transaction speeds possible.</p>
+									</div>
+									<div class="page-hero--action">
+										<div class="page-hero--action">
+											<a class="btn button-download mx-auto"><i class="icon-download"></i>
+												<span>Download Whitepaper</span> </a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row blt-roi--row align-items-center justify-content-center">
+					<div class="col-auto">
+        <span id="blt-roi--days" class="blt-roi--date">
+
+        </span>
+					</div>
+					<div class="col-sm-12 text-center">
+						<div class="blt-roi--days"></div>
+						<div class="blt-roi--values">
+							<div class="row align-items-center">
+								<div class="col-auto pr-0">
+              <span class="blt-live--dot">
+
+              </span>
+								</div>
+								<div class="col-auto">
+									<span class="blt-roi--label"><b>ROI</b></span>
+								</div>
+								<div class="col-auto ml-auto">
+									<span class="blt-roi--value" id="blt-roi--prc"></span>
+								</div>
+							</div>
+							<div class="blt-fetch--dots">
+								<span></span> <span></span> <span></span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+	</div></section>
+	<section id="features" class="page-section page-features bg-white">
+		<div class="container-fluid">
+			<div class="page-features--header">
+				<div class="row justify-content-center">
+					<div class="col-12 col-xs-10 col-md-6 text-center">
+						<h2 class="mt-0">Our Features</h2>
+						<p class="mt-0">A team member focuses on a 'we' mentality that includes creating remarkable experiences with others in the company</p>
+					</div>
+				</div>
+			</div>
+			<div class="page-features--body">
+				<div class="row justify-content-center">
+					<div class="col-12 col-sm-4 text-center">
+						<div class="page-features--block mx-auto">
+							<div class="features-block--wrapper">
+								<img src="/images/features-1.png" alt="">
+							</div>
+							<div class="features-block--body">
+								<h3 class="features-block--heading">High ROI</h3>
+								<p class="mt-0"></p>
+							</div>
+						</div>
+					</div>
+					<div class="col-12 col-sm-4 text-center">
+						<div class="page-features--block mx-auto">
+							<div class="features-block--wrapper">
+								<img src="/images/features-2.png" alt="">
+							</div>
+							<div class="features-block--body">
+								<h3 class="features-block--heading">Decentralised</h3>
+								<p class="mt-0">Bitcoin Lightning Masternodes are being run all over the World.</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-12 col-sm-4 text-center">
+						<div class="page-features--block mx-auto">
+							<div class="features-block--wrapper">
+								<img src="/images/features-03.png" alt="">
+							</div>
+							<div class="features-block--body">
+								<h3 class="features-block--heading">Eco-friendly</h3>
+								<p class="mt-0">No power hungry mining.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="page-features--body">
+				<div class="row justify-content-center">
+					<div class="col-12 col-sm-4 text-center">
+						<div class="page-features--block mx-auto">
+							<div class="features-block--wrapper">
+								<img src="/images/features-1.png" alt="">
+							</div>
+							<div class="features-block--body">
+								<h3 class="features-block--heading">Masternodes and Staking</h3>
+								<p class="mt-0">multiply your coins</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-12 col-sm-4 text-center">
+						<div class="page-features--block mx-auto">
+							<div class="features-block--wrapper">
+								<img src="/images/features-2.png" alt="">
+							</div>
+							<div class="features-block--body">
+								<h3 class="features-block--heading">Lightning Fast</h3>
+								<p class="mt-0">send your coins in a flash</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-12 col-sm-4 text-center">
+						<div class="page-features--block mx-auto">
+							<div class="features-block--wrapper">
+								<img src="/images/features-03.png" alt="">
+							</div>
+							<div class="features-block--body">
+								<h3 class="features-block--heading">Anonymous</h3>
+								<p class="mt-0">send coins anonymously using Darksend</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="page-features--footer">
+				<div class="row justify-content-center">
+					<div class="col-12 col-xs-10 col-md-6 text-center">
+						<h2 class="mt-0">What are Masternodes and what is Staking?</h2>
+						<p class="mt-0">Masternodes are a second tier to the network making the lightning fast transaction speeds possible. They also provide the dark send feature keeping your transactions anonymous if you’d like, as they provide an important functionality to the network, masternode owners will be rewarded with block rewards (coins) giving them a far higher ROI than your local bank, but you don’t have to be a masternode owner to benefit from this as bitcoin lightning also stakes in your wallet. Essentially, the more coins you have the more weight you will have on the network and the faster your coins will grow. </p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="page-section page-specifications pb-0">
+		<div class="container-fluid">
+			<div class="page-specifications--header">
+				<div class="row justify-content-center">
+					<div class="col-12 col-xs-10 col-md-6 text-center">
+						<div class="specification-header--top">
+							<h1 class="m-0">Our Specifications</h1>
+						</div>
+						<div class="specification-header--bottom">
+							<p class="mt-0 text-center">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="page-specifications--body">
+				<div class="row justify-content-between">
+					<div class="col-12 col-xs-6 col-sm-4 text-center">
+						<div class="specifications-block">
+							<div class="specifications-block--header">
+								<img src="/images/specific-1.png" alt="">
+								<h3>CoinTicker : BLT</h3>
+							</div>
+							<div class="specifications-block--body">
+								<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-12 col-xs-6 col-sm-4 text-center">
+						<div class="specifications-block">
+							<div class="specifications-block--header">
+								<img src="/images/specific-2.png" alt="">
+								<h3>Max Supply: 70,000,000 coin</h3>
+							</div>
+							<div class="specifications-block--body">
+								<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-12 col-xs-6 col-sm-4 text-center">
+						<div class="specifications-block">
+							<div class="specifications-block--header">
+								<img src="/images/specific-3.png" alt="">
+								<h3> Block Time: 90 seconds</h3>
+							</div>
+							<div class="specifications-block--body">
+								<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-12 col-xs-6 col-sm-4 text-center">
+						<div class="specifications-block">
+							<div class="specifications-block--header">
+								<img src="/images/specific-1.png" alt="">
+								<h3>PoS Block Reward</h3>
+							</div>
+							<div class="specifications-block--body">
+								<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-12 col-xs-6 col-sm-4 text-center">
+						<div class="specifications-block">
+							<div class="specifications-block--header">
+								<img src="/images/specific-2.png" alt="">
+								<h3> Stake age : 6 Hr</h3>
+							</div>
+							<div class="specifications-block--body">
+								<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-12 col-xs-6 col-sm-4 text-center">
+						<div class="specifications-block">
+							<div class="specifications-block--header">
+								<img src="/images/specific-3.png" alt="">
+								<h3>75% Block Reward for masternodes</h3>
+							</div>
+							<div class="specifications-block--body">
+								<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="bg-blue--gradient d-none d-md-block">
+			<div class="image"></div>
+		</div>
+	</section>
+	<section id="about" class="page-section page-about bg-white ff-depot pb-0">
+		<div class="container-fluid">
+			<div class="row justify-content-between">
+				<div class="col-12 col-md-6 align-self-center">
+					<h2 class="mt-0">About Bitcoin Lightning</h2>
+					<p class="pt-0">Bitcoin Lightning is a coin designed to send fast, low-cost and secure transactions Worldwide. It is also an ideal coin for investment that gives a high-interest rate to investors through our Masternodes and staking.</p>
+				</div>
+				<div class="col-12 col-md-6 align-self-bottom">
+					<img class="img-responsive  mx-auto" src="/images/vector.png" alt="">
+				</div>
+			</div>
+		</div>
+	</section>
+	<section id="available" class="page-section blt-section--download">
+		<div class="container-fluid">
+			<div class="row text-center align-items-center">
+				<div class="col-12">
+					<a href="/"><img class="blt-logo--icon" src="/images/logo-small.svg" alt="Bitcoin Lightning"></a>
+				</div>
+				<div class="col-12">
+					<h2 class="mt-0 ff-depot">Our Wallet Available for mobile and desktop</h2>
+				</div>
+				<div class="col-12">
+					<div class="page-section--body">
+						<div class="row justify-content-center">
+							<div class="col-12 col-sm-auto">
+								<a class="blt-download mx-auto" href="https://www.bilbotel.fr/Bitcoin_Lightning-Qt-1.1.0.0.dmg"> <i class="icon-apple"></i> </a>
+							</div>
+							<div class="col-12 col-sm-auto">
+								<a class="blt-download mx-auto" href="https://www.bilbotel.fr/Bitcoin_Lightning-qt-1.1.0.0.tar.gz"> <i class="icon-linux"></i> </a>
+							</div>
+							<div class="col-12 col-sm-auto">
+								<a class="blt-download mx-auto" href="https://www.bilbotel.fr/Bitcoin_Lightning-qt-1.1.0.0.exe"> <i class="icon-windows"></i> </a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section id="message" class="page-section bg-white blt-section--contacts" style="background-image: url(images/world-map.png)">
+		<div class="container-fluid">
+			<div class="row align-items-center">
+				<div class="col-12 text-center">
+					<div class="page-section--header">
+						<h2 class="mt-0 ff-depot">Get In Touch</h2>
+						<p class="mt-0">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
+							<br> eu fugiat nulla pariatur.</p>
+					</div>
+				</div>
+				<div class="col-12">
+					<div class="page-section--body">
+						<div class="row justify-content-center">
+							<div class="col-md-4">
+								<form id="contactForm" action="/contact-request" method="POST">
+									<div class="form-group icon-on--left">
+										<input type="text" class="form-control" placeholder="Name" name="user[name]"><i class="icon-user"></i>
+									</div>
+									<div class="form-group icon-on--left">
+										<input type="text" class="form-control" placeholder="Email Address" name="user[email]"><i class="icon-envelope"></i>
+									</div>
+									<div class="form-group icon-on--left">
+										<input type="text" class="form-control" placeholder="Phone" name="user[phone]"><i class="icon-call"></i>
+									</div>
+									<div class="form-group icon-on--left">
+										<textarea type="text" class="form-control" placeholder="Message" name="user[message]"></textarea><i class="icon-speech-bubble"></i>
+									</div>
+									<div class="form-group">
+										<button class="btn btn-block btn-primary--darker" type="button">Submit</button>
+									</div>
+								</form>
+							</div>
+							<div class="col-md-4">
+								<h3 class="mt-0 blt-contact--info__heading">Contact Information</h3>
+								<ul class="p-0 blt-contact--info list-unstyled">
+									<li class="row mx-0 align-items-center">
+										<span class="col-auto px-0"><i class="icon-phone-receiver"></i></span> <span class="col">123-456-9870</span>
+									</li>
+									<li class="row mx-0 align-items-center">
+										<span class="col-auto px-0"><i class="icon-location"></i></span> <span class="col">802 W Bannock St. Ste. 406 Boise, <br> ID 83702 </span>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-6"></div>
+				<div class="col-6"></div>
+			</div>
+		</div>
+	</section>
+	<section id="social" class="page-section blt-section--social">
+		<div class="container-fluid">
+			<div class="row text-center align-items-center">
+				<div class="col-12">
+					<a href="/"><img class="blt-logo--icon mx-0" src="/images/logo-small.svg" alt="Bitcoin Lightning"></a>
+				</div>
+				<div class="col-12">
+					<h2 class="mt-0 ff-depot">Find Us on Social Networks</h2>
+					<p class="pt-0">-Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
+						<br> has been the industry's standard dummy text ever since th</p>
+				</div>
+				<div class="col-12">
+					<ul class="row no-gutters justify-content-center list-unstyled blt-social--list p-0">
+						<li class="col-auto">
+							<a href="https://github.com/Bitcoinlightning/Bitcoin-Lightning" class="btl-social--network" target="_blank"> <i class="icon-git"></i> </a>
+						</li>
+						<li class="col-auto">
+							<a href="https://twitter.com/bitcoinLT" class="btl-social--network" target="_blank"> <i class="icon-tw"></i> </a>
+						</li>
+						<li class="col-auto">
+							<a href="https://discord.gg/YXkHcY4" class="btl-social--network" target="_blank"> <i class="icon-discord"></i> </a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</section>
+</main>
+<!--MAIN ends-->
+<footer id="contact" class="blt-footer">
+	<div class="blt-footer--top">
+		<div class="container-fluid">
+			<div class="row justify-content-around">
+				<div class="col-12 col-sm-auto align-self-start align-self-sm-center">
+					<div class="soc-link">
+						<ul class="p-0">
+							<li><a href="#"> <i class="icon-facebook"></i> </a></li>
+							<li><a href="#"> <i class="icon-twitter"></i> </a></li>
+							<li><a href="#"> <i class="icon-linkedin"></i> </a></li>
+							<li><a href="#"> <i class="icon-youtube"></i> </a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-12 col-sm-auto">
+					<h4>What we do</h4>
+					<ul class="blt-footer--links p-0">
+						<li>
+							<a href="#">About Us</a>
+						</li>
+						<li>
+							<a href="#">Blog</a>
+						</li>
+						<li>
+							<a href="#">Product & Services</a>
+						</li>
+					</ul>
+				</div>
+				<div class="col-12 col-sm-auto">
+					<h4>Support</h4>
+					<ul class="blt-footer--links p-0">
+						<li>
+							<a href="#">Contact Us</a>
+						</li>
+						<li>
+							<a href="#">Knowledge Base</a>
+						</li>
+					</ul>
+				</div>
+				<div class="col-12 col-sm-auto">
+					<h4>Contact Us</h4>
+					<ul class="blt-footer--links p-0">
+						<li class="d-flex">
+							<i class="icon-call"></i> <a href="#">Sales: 1-256-3000-1236</a>
+						</li>
+						<li class="d-flex">
+							<i class="icon-envelope"></i> <a href="#">support@BitCoinLightning</a>
+						</li>
+						<li>
+							<a class="media-info" href="#">Media Inquries</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="blt-footer--bottom">
+		<div class="container-fluid">
+			<div class="row justify-contern-center">
+				<div class="col-12 text-center">
+					<p class="mt-0 mb-0">© 2018 BitCoin Lightning. All rights reserved.</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</footer>
+<script src="scripts/app.min.js" async charset="utf-8"></script>
+</body>
+</html>

@@ -1,0 +1,12 @@
+@font-face {
+  font-family: 'Depot-MediumItalic';
+  src: url('Depot-MediumItalic.eot');
+  src: url('Depot-MediumItalic.woff2') format('woff2'),
+       url('Depot-MediumItalic.woff') format('woff'),
+       url('Depot-MediumItalic.ttf') format('truetype'),
+       url('Depot-MediumItalic.svg#Depot-MediumItalic') format('svg'),
+       url('Depot-MediumItalic.eot?#iefix') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+

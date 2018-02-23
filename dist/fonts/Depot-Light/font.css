@@ -1,0 +1,12 @@
+@font-face {
+  font-family: 'Depot-Light';
+  src: url('Depot-Light.eot');
+  src: url('Depot-Light.woff2') format('woff2'),
+       url('Depot-Light.woff') format('woff'),
+       url('Depot-Light.ttf') format('truetype'),
+       url('Depot-Light.svg#Depot-Light') format('svg'),
+       url('Depot-Light.eot?#iefix') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+

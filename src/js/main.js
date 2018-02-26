@@ -103,11 +103,11 @@
                 url: "/contact-request",
                 data: $contactForm.serialize(),
                 success: function (res) {
-                    Notifications.pop('success', 'Message sent!');
+                    Notifications.pop('success', 'Message sent!', 5000);
                     console.log(res);
                 },
                 error: function (err) {
-                    Notifications.pop('error', 'Error, please try again!');
+                    Notifications.pop('error', 'Error, please try again!', 5000);
                     console.log(err);
                 },
                 complete: function () {

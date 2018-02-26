@@ -52,7 +52,6 @@ function buildScripts(watch) {
     }
 
     rebuildScripts();
-
 }
 
 gulp.task('scripts', scriptsTask);

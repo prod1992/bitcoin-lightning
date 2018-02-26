@@ -73,7 +73,7 @@
         res.sendStatus(200);
 
     });
-    app.post("/deploy.php", function (req, res) {
+    app.post("/deploy", function (req, res) {
         console.log(req,res);
         res.sendStatus(200);
 

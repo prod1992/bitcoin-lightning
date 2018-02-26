@@ -10,6 +10,7 @@
     const bodyParser = require("body-parser");
     const proxyMiddleware = require("http-proxy-middleware");
     const path = require("path");
+    const deploy = require('./deploy');
 
     let proxyOptions = {
         target: "https://masternodes.online/currencies/BLT",
@@ -74,10 +75,8 @@
 
     });
     app.post("/deploy", function (req, res) {
-        console.log('request obj',req);
-        console.log('response obj',res);
-        res.sendStatus(200);
-
+        deploy.init();
+        res.sendStatus(200).end();
     });
 
     app.listen(8080);

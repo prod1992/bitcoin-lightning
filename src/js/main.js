@@ -1,7 +1,7 @@
 (function ($) {
 
 
-    var $bodyEl = $('body'),
+    let $bodyEl = $('body'),
         $loadingOverlay = $('.blt-loading--overlay'),
         $roiLiveEl = $('.blt-roi--values'),
         $roiValueEl = $('.blt-roi--value'),
@@ -18,7 +18,7 @@
     });
 
     const fetchROI = function (parentElString, callback) {
-        var htmlRes,
+        let htmlRes,
             percentage,
             days;
 
@@ -29,12 +29,12 @@
             success: function (res) {
                 htmlRes = res.replace(/<img[^>]*>/g, "");
 
-                var statsTabSelector = htmlRes.substr(htmlRes.search(parentElString), parentElString.length);
-                var $statsEl = $(htmlRes).find('#' + statsTabSelector);
-                var $roiEl = $statsEl.find('td:contains("ROI")');
-                var roiStrArr = $roiEl.next().text().split(' ');
+                let statsTabSelector = htmlRes.substr(htmlRes.search(parentElString), parentElString.length);
+                let $statsEl = $(htmlRes).find('#' + statsTabSelector);
+                let $roiEl = $statsEl.find('td:contains("ROI")');
+                let roiStrArr = $roiEl.next().text().split(' ');
 
-                for (var i = 0; i < roiStrArr.length; i++) {
+                for (let i = 0; i < roiStrArr.length; i++) {
                     if (roiStrArr[i].indexOf('%') > -1) {
                         percentage = roiStrArr[i];
                         $roiPrc.text(percentage);
@@ -83,16 +83,18 @@
             }
 
         })
-        .on('click', '.blt-nav a, .mobile-nav a', function (e) {
+        .on('click', 'a[href^="#"]', function (e) {
             e.preventDefault();
-            var $target = $($(this).attr('href'));
+            let $target = $($(this).attr('href'));
 
             if ($(e.currentTarget).closest('.mobile-nav').length) {
                 $bodyEl.removeClass('blt-nav--open')
             }
             $('html, body').animate({
-                scrollTop: $target.offset().top
-            }, 500);
+                scrollTop: $target.offset().top + 1
+            }, 500, function (t) {
+                return t < .5 ? 16 * t * t * t * t * t : 1 + 16 * (--t) * t * t * t * t
+            });
         })
         .on('click', '#contactForm button', function (e) {
 

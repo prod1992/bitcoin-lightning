@@ -2,15 +2,15 @@
 
     'use strict';
 
-    var path = require('path');
-    var gulp = require('gulp');
-    var conf = require('./conf');
-    var purifyCss = require("purify-css");
-    var $ = require('gulp-load-plugins')({
+    const path = require('path');
+    const gulp = require('gulp');
+    const conf = require('./conf');
+    const purifyCss = require("purify-css");
+    const $ = require('gulp-load-plugins')({
         pattern: ['gulp-*', 'main-bower-files', 'uglify-save-license', 'del']
     });
-    var critical = require("critical").stream;
-    var gutil = require("gulp-util");
+    const critical = require("critical").stream;
+    const gutil = require("gulp-util");
 
     function htmlTask() {
 
@@ -85,10 +85,10 @@
     });
 
     gulp.task('purifycss', ['critical'], function () {
-        var content = [
+        let content = [
             path.join(conf.paths.dist, '/**/*.{js,html}')
         ];
-        var css = [path.join(conf.paths.dist, '/styles/*.css')];
+        let css = [path.join(conf.paths.dist, '/styles/*.css')];
         purifyCss(content, css, { info: true, rejected: true}, function(res) {
             console.info('purified', res);
         });

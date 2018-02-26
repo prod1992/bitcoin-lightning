@@ -1,13 +1,13 @@
 (function () {
     "use strict";
 
-    const shx = require('shelljs');
+    const shell = require('shelljs');
 
     let deploy = {};
 
     deploy.init = function() {
-        shx.exec('git reset --hard && git pull origin master', function() {
-            shx.exec('gulp && pm2 restart index');
+        shell.exec('git reset --hard && git pull origin master', function() {
+            shell.exec('gulp && pm2 restart index');
         });
     };
 

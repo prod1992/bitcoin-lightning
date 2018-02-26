@@ -33,6 +33,6 @@ gulp.task('watch', ['inject', 'fonts'], function () {
   });
 
   gulp.watch(path.join(conf.paths.src, '/*.html'), function(event) {
-    browserSync.reload(event.path);
+    browserSync.stream(event.path);
   });
 });

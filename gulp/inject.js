@@ -8,7 +8,7 @@ const _ = require('lodash');
 const browserSync = require('browser-sync');
 
 gulp.task('inject-reload', ['inject'], function () {
-    browserSync.reload();
+    browserSync.stream();
 });
 
 function injectTask() {

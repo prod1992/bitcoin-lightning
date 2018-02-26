@@ -14,7 +14,7 @@
         $roiDays = $('#blt-roi--days'),
         $contactForm = $("#contactForm");
 
-    console.log('test',Notifications);
+    console.log('test', Notifications);
 
     let fetchROI = function (parentElString, callback) {
         let htmlRes,
@@ -52,7 +52,7 @@
                 $roiValueEl.text('?');
                 $roiLiveEl.addClass('fetch-error');
             },
-            complete: function() {
+            complete: function () {
                 $roiLiveEl.removeClass('fetching');
 
             }
@@ -92,8 +92,11 @@
             });
         })
         .on('click', '#contactForm button', function (e) {
-
             e.preventDefault();
+            let $btn = $(this),
+                $btnTxt = $btn.text();
+
+            $(this).prop('disabled', true).text('Sending...');
 
             $.ajax({
                 type: "POST",
@@ -104,9 +107,12 @@
                     console.log(res);
                 },
                 error: function (err) {
-                    Notifications.pop('success', 'Message sent!');
+                    Notifications.pop('error', 'Error, please try again!');
                     console.log(err);
                 },
+                complete: function () {
+                    $btn.text($btnTxt).prop('disabled', false);
+                }
             });
         })
 

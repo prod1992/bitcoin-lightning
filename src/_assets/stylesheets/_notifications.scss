@@ -1,0 +1,63 @@
+.blt-notification {
+  position: fixed;
+  background-color: #fff;
+  border-radius: 8px;
+  top: 15px;
+  right: 15px;
+  z-index: 100;
+  box-shadow: 0 0 8px 2px rgba(0, 0, 0, 0.15);
+  //animation-name: notify;
+  animation-duration: 5s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: 1;
+  display: none;
+  flex-direction: row;
+  align-items: center;
+  line-height: 1;
+  &.appearing {
+    display: flex;
+  }
+  .text-success {
+    color: #3bc60c;
+  }
+  .text-error {
+    color: #f77a13;
+  }
+}
+
+.blt-notification--icon {
+  text-align: center;
+  padding: 10px 0 0;
+  font-size: 20px;
+  line-height: 1;
+  .icon-error {
+
+    color: #f77a13;
+  }
+  .icon-success {
+    color: #3bc60c;
+  }
+}
+
+.blt-notification--title {
+  padding: 12px 15px 10px;
+  text-align: center;
+}
+
+@keyframes notify {
+
+  0% {
+    transform: translate3d(200%, 0, 0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.5;
+  }
+  15% {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}

@@ -14,17 +14,14 @@ const gutil = require('gulp-util');
 
 gulp.task('scripts-reload', function () {
 
-    let reload = process.argv;
-
-    console.log(reload);
-
-    buildScripts()
-        .pipe(browserSync.reload());
+    buildScripts(function() {
+        browserSync.stream();
+    });
 });
 
 function scriptsTask() {
 
-    return buildScripts();
+    buildScripts();
 }
 
 function buildScripts(watch) {

@@ -2,26 +2,26 @@
 
     'use strict';
 
-    var pkg = require('../package.json');
-    var path = require('path');
-    var gulp = require('gulp');
-    var conf = require('./conf');
-    var browserSync = require('browser-sync');
-    var express = require('express');
-    var proxyMiddleware = require('http-proxy-middleware');
-    var util = require('util');
+    const pkg = require('../package.json');
+    const path = require('path');
+    const gulp = require('gulp');
+    const conf = require('./conf');
+    const browserSync = require('browser-sync');
+    const express = require('express');
+    const proxyMiddleware = require('http-proxy-middleware');
+    const util = require('util');
 
     function browserSyncInit(baseDir, browser) {
         browser = browser === undefined ? 'default' : browser;
 
-        var routes = null;
+        let routes = null;
         if (baseDir === conf.paths.src || (util.isArray(baseDir) && baseDir.indexOf(conf.paths.src) !== -1)) {
             routes = {
                 '/bower_components': 'bower_components'
             };
         }
 
-        var proxyOptions = {
+        let proxyOptions = {
             target: 'https://masternodes.online/currencies/BLT',
             changeOrigin: true
             // logLevel: 'debug',
@@ -30,7 +30,7 @@
             //  }
         };
 
-        var server = {
+        let server = {
             baseDir: baseDir,
             middleware : proxyMiddleware('/api', proxyOptions),
             routes: routes
@@ -50,7 +50,7 @@
 
     function prodServerInit(baseDir) {
 
-        var proxyOptions = {
+        let proxyOptions = {
             target: 'https://masternodes.online/currencies/BLT',
             changeOrigin: true
             // logLevel: 'debug',
@@ -59,7 +59,7 @@
             // }
         };
 
-        var app = express();
+        let app = express();
 
         app.use(express.static(baseDir));
 

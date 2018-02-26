@@ -1,9 +1,9 @@
 'use strict';
 
-var path = require('path');
-var gulp = require('gulp');
-var conf = require('./conf');
-var imagemin = require('gulp-imagemin');
+const path = require('path');
+const gulp = require('gulp');
+const conf = require('./conf');
+const imagemin = require('gulp-imagemin');
 
 
 // move fonts

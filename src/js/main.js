@@ -1,23 +1,20 @@
-(function ($) {
+(function ($, Notifications) {
 
+    $(window).on('load', function () {
 
-    let $bodyEl = $('body'),
-        $loadingOverlay = $('.blt-loading--overlay'),
-        $roiLiveEl = $('.blt-roi--values'),
+        setTimeout(function () {
+            $('body').addClass('loaded');
+        }, 0);
+
+    });
+
+    let $roiLiveEl = $('.blt-roi--values'),
         $roiValueEl = $('.blt-roi--value'),
         $roiPrc = $('#blt-roi--prc'),
         $roiDays = $('#blt-roi--days'),
         $contactForm = $("#contactForm");
 
-    $(window).on('load', function () {
-
-        setTimeout(function () {
-            $bodyEl.addClass('loaded');
-        }, 0);
-
-    });
-
-    const fetchROI = function (parentElString, callback) {
+    let fetchROI = function (parentElString, callback) {
         let htmlRes,
             percentage,
             days;
@@ -27,8 +24,8 @@
         $.ajax({
             url: '/api',
             success: function (res) {
-                htmlRes = res.replace(/<img[^>]*>/g, "");
 
+                htmlRes = res.replace(/<img[^>]*>/g, "");
                 let statsTabSelector = htmlRes.substr(htmlRes.search(parentElString), parentElString.length);
                 let $statsEl = $(htmlRes).find('#' + statsTabSelector);
                 let $roiEl = $statsEl.find('td:contains("ROI")');
@@ -53,12 +50,8 @@
                 $roiValueEl.text('?');
                 $roiLiveEl.addClass('fetch-error');
             },
-            complete: function () {
-
-                setTimeout(function () {
-                    $roiLiveEl.removeClass('fetching');
-                    $roiLiveEl.removeClass('fetchError');
-                }, 500)
+            complete: function() {
+                $roiLiveEl.removeClass('fetching');
 
             }
         });
@@ -74,12 +67,12 @@
         }, 10000);
     });
 
-    $bodyEl
+    $('body')
         .on('click', '.navbar-toggler', function (e) {
-            if (!$bodyEl.hasClass('blt-nav--open')) {
-                $bodyEl.addClass('blt-nav--open');
+            if (!$('body').hasClass('blt-nav--open')) {
+                $('body').addClass('blt-nav--open');
             } else {
-                $bodyEl.removeClass('blt-nav--open');
+                $('body').removeClass('blt-nav--open');
             }
 
         })
@@ -88,7 +81,7 @@
             let $target = $($(this).attr('href'));
 
             if ($(e.currentTarget).closest('.mobile-nav').length) {
-                $bodyEl.removeClass('blt-nav--open')
+                $('body').removeClass('blt-nav--open')
             }
             $('html, body').animate({
                 scrollTop: $target.offset().top + 1
@@ -105,12 +98,15 @@
                 url: "/contact-request",
                 data: $contactForm.serialize(),
                 success: function (res) {
+                    Notifications.pop('success', 'Message sent!');
                     console.log(res);
                 },
                 error: function (err) {
+                    Notifications.pop('success', 'Message sent!');
                     console.log(err);
                 },
             });
         })
 
-})(jQuery);
+})(require('jquery'), require('../modules/notifications'));
+

@@ -14,20 +14,24 @@
 
     function htmlTask() {
 
-        var htmlFilter = $.filter('*.html', {restore: true, dot: true});
-        var jsFilter = $.filter('**/*.js', {restore: true, dot: true});
-        var cssFilter = $.filter('**/*.css', {restore: true, dot: true});
+        const htmlFilter = $.filter('*.html', {restore: true, dot: true});
+        const jsFilter = $.filter('**/*.js', {restore: true, dot: true});
+        const cssFilter = $.filter('**/*.css', {restore: true, dot: true});
 
         return gulp.src(path.join(conf.paths.tmp, '/serve/*.html'))
             .pipe($.useref())
             .pipe(jsFilter)
-            .pipe($.uglify({preserveComments: $.uglifySaveLicense})).on('error', conf.errorHandler('Uglify'))
-            // .pipe($.rev())
-            // .pipe($.sourcemaps.write('maps'))
+            .pipe($.uglify())
+            .on('error', function (err) {
+                gutil.log(gutil.colors.red('[Error]'), err.toString());
+                this.emit('end');
+            })
+            .pipe($.sourcemaps.init({loadMaps: true}))
+            .pipe($.sourcemaps.write('./'))
             .pipe(jsFilter.restore)
             .pipe(cssFilter)
             .pipe($.cleanCss({processImport: false}))
-            // .pipe($.rev())
+            .pipe($.rev())
             // .pipe($.sourcemaps.write('maps'))
             .pipe(cssFilter.restore)
             .pipe($.revReplace())
@@ -48,7 +52,7 @@
     // Generate & Inline Critical-path CSS
 
     gulp.task('other', function () {
-        var fileFilter = $.filter(function (file) {
+        const fileFilter = $.filter(function (file) {
             return file.stat.isFile();
         });
 
@@ -90,15 +94,14 @@
         ];
         let css = [path.join(conf.paths.dist, '/styles/*.css')];
         purifyCss(content, css, { info: true, rejected: true}, function(res) {
-            console.info('purified', res);
+
         });
     });
 
     gulp.task('cssfinalminify', ['purifycss'], function () {
         return gulp.src(path.join(conf.paths.dist, '/styles/*.css'))
             .pipe($.cleanCss({debug: true}, (details) => {
-                console.log(`${details.name}: ${details.stats.originalSize}`);
-                console.log(`${details.name}: ${details.stats.minifiedSize}`);
+
             }))
             .pipe(gulp.dest(path.join(conf.paths.dist, '/styles/')))
             .pipe($.size({title: path.join(conf.paths.dist, '/styles/'), showFiles: true}));

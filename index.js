@@ -1,6 +1,5 @@
 (function () {
 
-
     "use strict";
 
     const conf = require("./gulp/conf");

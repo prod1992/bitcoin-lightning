@@ -15,7 +15,6 @@
     "deploy": "git reset --hard HEAD && git pull origin master && gulp && pm2 restart server "
   },
   "dependencies": {
-    "express-github-webhook": "^1.0.6",
     "jquery": "^3.3.1",
     "normalize.scss": "*"
   },

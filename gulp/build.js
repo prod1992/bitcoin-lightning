@@ -90,7 +90,8 @@
 
     gulp.task('purifycss', ['critical'], function () {
         let content = [
-            path.join(conf.paths.tmp, '/**/*.{js,html}'),
+            path.join(conf.paths.dist, '/**/*.{js,html}'),
+           'node_modules/jquery/dist/jquery.js',
         ];
         let css = [path.join(conf.paths.dist, '/styles/*.css')];
         purifyCss(content, css, { info: true, rejected: true}, function(res) {

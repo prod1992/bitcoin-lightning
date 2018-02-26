@@ -18,7 +18,7 @@ gulp.task('scripts-reload', function () {
 
     console.log(reload);
 
-    return buildScripts()
+    buildScripts()
         .pipe(browserSync.reload());
 });
 
@@ -29,7 +29,7 @@ function scriptsTask() {
 
 function buildScripts(watch) {
 
-    let bundler = watchify(browserify('./src/js/main.js', {debug: true}).transform(babel));
+    let bundler = browserify('./src/js/main.js', {debug: true}).transform(babel);
 
     function rebuildScripts() {
         bundler

@@ -14,7 +14,7 @@
         $roiDays = $('#blt-roi--days'),
         $contactForm = $("#contactForm");
 
-    console.log(Notifications);
+    console.log('test',Notifications);
 
     let fetchROI = function (parentElString, callback) {
         let htmlRes,

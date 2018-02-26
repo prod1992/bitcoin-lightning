@@ -1,5 +1,7 @@
 (function ($, Notifications) {
 
+    console.log(Notifications);
+
     $(window).on('load', function () {
 
         setTimeout(function () {

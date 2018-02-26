@@ -15,7 +15,7 @@ const gutil = require('gulp-util');
 gulp.task('scripts-reload', function () {
 
     buildScripts(function() {
-        browserSync.stream();
+        browserSync.reload();
     });
 });
 
@@ -29,7 +29,7 @@ function buildScripts(watch) {
     let bundler = browserify('./src/js/main.js', {debug: true}).transform(babel);
 
     function rebuildScripts() {
-        bundler
+        return bundler
             .bundle()
             .on('error', function (err) {
                 console.error(err);

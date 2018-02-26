@@ -37,7 +37,7 @@
         };
 
 
-        browserSync.instance = browserSync.init({
+        browserSync({
             startPath: '/',
             server: server,
             open: process.env.PORT ? false : true,

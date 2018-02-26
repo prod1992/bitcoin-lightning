@@ -108,7 +108,8 @@
                 },
                 complete: function () {
                     $btn.text($btnTxt).prop('disabled', false);
-                }
+                },
+                timeout: 3000
             });
         })
 

@@ -74,9 +74,7 @@
 
     });
     app.post("/deploy.php", function (req, res) {
-
         console.log(req,res);
-
         res.sendStatus(200);
 
     });

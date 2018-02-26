@@ -1,6 +1,4 @@
-(function ($, Notifications) {
-
-    console.log(Notifications);
+(function ($) {
 
     $(window).on('load', function () {
 
@@ -15,6 +13,8 @@
         $roiPrc = $('#blt-roi--prc'),
         $roiDays = $('#blt-roi--days'),
         $contactForm = $("#contactForm");
+
+    let Notifications = require('../modules/notifications');
 
     let fetchROI = function (parentElString, callback) {
         let htmlRes,
@@ -110,5 +110,5 @@
             });
         })
 
-})(require('jquery'), require('../modules/notifications'));
+})(require('jquery'));
 

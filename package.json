@@ -11,9 +11,11 @@
   "license": "ISC",
   "private": true,
   "scripts": {
-    "push-git": "git add -A && git commit -m'github commit' && git push origin master"
+    "push-git": "git add -A && git commit -m'github commit' && git push origin master",
+    "deploy": "git reset --hard HEAD && git pull origin master && gulp && pm2 restart server "
   },
   "dependencies": {
+    "express-github-webhook": "^1.0.6",
     "jquery": "^3.3.1",
     "normalize.scss": "*"
   },

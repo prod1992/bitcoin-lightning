@@ -74,7 +74,8 @@
 
     });
     app.post("/deploy", function (req, res) {
-        console.log(req,res);
+        console.log('request obj',req);
+        console.log('response obj',res);
         res.sendStatus(200);
 
     });

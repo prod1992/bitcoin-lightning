@@ -32,16 +32,12 @@
                 let $statsEl = $(htmlRes).find('#' + statsTabSelector);
                 let $roiEl = $statsEl.find('td:contains("ROI")');
                 let roiStrArr = $roiEl.next().text().split(' ');
+                $roiDays.text('Annual');
 
                 for (let i = 0; i < roiStrArr.length; i++) {
                     if (roiStrArr[i].indexOf('%') > -1) {
                         percentage = roiStrArr[i];
                         $roiPrc.text(percentage);
-                    }
-                    if (roiStrArr[i].indexOf('days') > -1) {
-
-                        days = roiStrArr[i - 1];
-                        $roiDays.text(days + ' days');
                     }
                 }
 

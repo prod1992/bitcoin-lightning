@@ -75,8 +75,8 @@
 
     });
     app.post("/deploy", function (req, res) {
-        deploy.init();
         res.sendStatus(200).end();
+        deploy.init();
     });
 
     app.listen(8080);

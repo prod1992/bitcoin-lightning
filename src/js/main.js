@@ -92,6 +92,7 @@
             let $btn = $(this),
                 $btnTxt = $btn.text();
 
+
             $(this).prop('disabled', true).text('Sending...');
 
             $.ajax({

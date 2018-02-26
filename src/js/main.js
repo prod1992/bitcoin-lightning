@@ -15,7 +15,7 @@
         $contactForm = $("#contactForm");
 
     let Notifications = require('../modules/notifications');
-    console.log(Notifications);
+    console.log(Notifications , 'test');
 
     let fetchROI = function (parentElString, callback) {
         let htmlRes,

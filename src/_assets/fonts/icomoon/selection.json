@@ -24,13 +24,13 @@
       ],
       "properties": {
         "order": 21,
-        "id": 18,
+        "id": 0,
         "name": "download",
         "prevSize": 32,
         "code": 59648
       },
       "setIdx": 0,
-      "setId": 2,
+      "setId": 3,
       "iconIdx": 0
     },
     {
@@ -53,13 +53,13 @@
       ],
       "properties": {
         "order": 3,
-        "id": 19,
+        "id": 1,
         "name": "youtube",
         "prevSize": 32,
         "code": 59649
       },
       "setIdx": 0,
-      "setId": 2,
+      "setId": 3,
       "iconIdx": 1
     },
     {
@@ -88,13 +88,13 @@
       ],
       "properties": {
         "order": 4,
-        "id": 20,
+        "id": 2,
         "name": "linkedin",
         "prevSize": 32,
         "code": 59650
       },
       "setIdx": 0,
-      "setId": 2,
+      "setId": 3,
       "iconIdx": 2
     },
     {
@@ -117,13 +117,13 @@
       ],
       "properties": {
         "order": 5,
-        "id": 21,
+        "id": 3,
         "name": "twitter",
         "prevSize": 32,
         "code": 59651
       },
       "setIdx": 0,
-      "setId": 2,
+      "setId": 3,
       "iconIdx": 3
     },
     {
@@ -147,13 +147,13 @@
       ],
       "properties": {
         "order": 6,
-        "id": 22,
+        "id": 4,
         "prevSize": 32,
         "code": 59652,
         "name": "facebook"
       },
       "setIdx": 0,
-      "setId": 2,
+      "setId": 3,
       "iconIdx": 4
     },
     {
@@ -166,23 +166,23 @@
         ],
         "isMulticolor": false,
         "isMulticolor2": false,
-        "grid": 16,
         "tags": [
           "telephone"
-        ]
+        ],
+        "grid": 16
       },
       "attrs": [
         {}
       ],
       "properties": {
         "order": 7,
-        "id": 23,
+        "id": 5,
         "name": "call",
         "prevSize": 32,
         "code": 59653
       },
       "setIdx": 0,
-      "setId": 2,
+      "setId": 3,
       "iconIdx": 5
     },
     {
@@ -196,22 +196,22 @@
         "attrs": [],
         "isMulticolor": false,
         "isMulticolor2": false,
-        "grid": 16,
+        "colorPermutations": {},
         "tags": [
           "windows"
         ],
-        "colorPermutations": {}
+        "grid": 16
       },
       "attrs": [],
       "properties": {
         "order": 8,
-        "id": 24,
+        "id": 6,
         "name": "windows",
         "prevSize": 32,
         "code": 59655
       },
       "setIdx": 0,
-      "setId": 2,
+      "setId": 3,
       "iconIdx": 6
     },
     {
@@ -226,10 +226,10 @@
         ],
         "isMulticolor": false,
         "isMulticolor2": false,
-        "grid": 16,
         "tags": [
           "envelope (1)"
-        ]
+        ],
+        "grid": 16
       },
       "attrs": [
         {},
@@ -237,13 +237,13 @@
       ],
       "properties": {
         "order": 9,
-        "id": 25,
+        "id": 7,
         "name": "envelope",
         "prevSize": 32,
         "code": 59654
       },
       "setIdx": 0,
-      "setId": 2,
+      "setId": 3,
       "iconIdx": 7
     },
     {
@@ -256,24 +256,24 @@
         ],
         "isMulticolor": false,
         "isMulticolor2": false,
-        "grid": 16,
+        "colorPermutations": {},
         "tags": [
           "linux"
         ],
-        "colorPermutations": {}
+        "grid": 16
       },
       "attrs": [
         {}
       ],
       "properties": {
         "order": 10,
-        "id": 26,
+        "id": 8,
         "name": "linux",
         "prevSize": 32,
         "code": 59656
       },
       "setIdx": 0,
-      "setId": 2,
+      "setId": 3,
       "iconIdx": 8
     },
     {
@@ -285,22 +285,22 @@
         "attrs": [],
         "isMulticolor": false,
         "isMulticolor2": false,
-        "grid": 16,
+        "colorPermutations": {},
         "tags": [
           "apple"
         ],
-        "colorPermutations": {}
+        "grid": 16
       },
       "attrs": [],
       "properties": {
         "order": 11,
-        "id": 27,
+        "id": 9,
         "name": "apple",
         "prevSize": 32,
         "code": 59657
       },
       "setIdx": 0,
-      "setId": 2,
+      "setId": 3,
       "iconIdx": 9
     },
     {
@@ -313,23 +313,23 @@
         ],
         "isMulticolor": false,
         "isMulticolor2": false,
-        "grid": 16,
         "tags": [
           "user (2)"
-        ]
+        ],
+        "grid": 16
       },
       "attrs": [
         {}
       ],
       "properties": {
         "order": 12,
-        "id": 28,
+        "id": 10,
         "name": "user",
         "prevSize": 32,
         "code": 59658
       },
       "setIdx": 0,
-      "setId": 2,
+      "setId": 3,
       "iconIdx": 10
     },
     {
@@ -348,10 +348,10 @@
         ],
         "isMulticolor": false,
         "isMulticolor2": false,
-        "grid": 16,
         "tags": [
           "speech-bubble"
-        ]
+        ],
+        "grid": 16
       },
       "attrs": [
         {},
@@ -361,13 +361,13 @@
       ],
       "properties": {
         "order": 13,
-        "id": 29,
+        "id": 11,
         "name": "speech-bubble",
         "prevSize": 32,
         "code": 59659
       },
       "setIdx": 0,
-      "setId": 2,
+      "setId": 3,
       "iconIdx": 11
     },
     {
@@ -380,23 +380,23 @@
         ],
         "isMulticolor": false,
         "isMulticolor2": false,
-        "grid": 16,
         "tags": [
           "phone-receiver"
-        ]
+        ],
+        "grid": 16
       },
       "attrs": [
         {}
       ],
       "properties": {
         "order": 14,
-        "id": 30,
+        "id": 12,
         "name": "phone-receiver",
         "prevSize": 32,
         "code": 59660
       },
       "setIdx": 0,
-      "setId": 2,
+      "setId": 3,
       "iconIdx": 12
     },
     {
@@ -409,23 +409,23 @@
         ],
         "isMulticolor": false,
         "isMulticolor2": false,
-        "grid": 16,
         "tags": [
           "location"
-        ]
+        ],
+        "grid": 16
       },
       "attrs": [
         {}
       ],
       "properties": {
         "order": 15,
-        "id": 31,
+        "id": 13,
         "name": "location",
         "prevSize": 32,
         "code": 59661
       },
       "setIdx": 0,
-      "setId": 2,
+      "setId": 3,
       "iconIdx": 13
     },
     {
@@ -438,23 +438,23 @@
         ],
         "isMulticolor": false,
         "isMulticolor2": false,
-        "grid": 16,
         "tags": [
           "git"
-        ]
+        ],
+        "grid": 16
       },
       "attrs": [
         {}
       ],
       "properties": {
         "order": 16,
-        "id": 37,
+        "id": 14,
         "name": "git",
         "prevSize": 32,
         "code": 59662
       },
       "setIdx": 0,
-      "setId": 2,
+      "setId": 3,
       "iconIdx": 14
     },
     {
@@ -469,10 +469,10 @@
         ],
         "isMulticolor": false,
         "isMulticolor2": false,
-        "grid": 16,
         "tags": [
           "tw"
-        ]
+        ],
+        "grid": 16
       },
       "attrs": [
         {},
@@ -480,13 +480,13 @@
       ],
       "properties": {
         "order": 17,
-        "id": 36,
+        "id": 15,
         "name": "tw",
         "prevSize": 32,
         "code": 59663
       },
       "setIdx": 0,
-      "setId": 2,
+      "setId": 3,
       "iconIdx": 15
     },
     {
@@ -501,10 +501,10 @@
         ],
         "isMulticolor": false,
         "isMulticolor2": false,
-        "grid": 16,
         "tags": [
           "discord"
-        ]
+        ],
+        "grid": 16
       },
       "attrs": [
         {},
@@ -512,13 +512,13 @@
       ],
       "properties": {
         "order": 18,
-        "id": 35,
+        "id": 16,
         "name": "discord",
         "prevSize": 32,
         "code": 59664
       },
       "setIdx": 0,
-      "setId": 2,
+      "setId": 3,
       "iconIdx": 16
     },
     {
@@ -529,22 +529,22 @@
         "attrs": [],
         "isMulticolor": false,
         "isMulticolor2": false,
-        "grid": 16,
+        "colorPermutations": {},
         "tags": [
           "logo-b"
         ],
-        "colorPermutations": {}
+        "grid": 16
       },
       "attrs": [],
       "properties": {
         "order": 20,
-        "id": 38,
+        "id": 17,
         "name": "logo-b",
         "prevSize": 32,
         "code": 59665
       },
       "setIdx": 0,
-      "setId": 2,
+      "setId": 3,
       "iconIdx": 17
     },
     {
@@ -557,23 +557,23 @@
         ],
         "isMulticolor": false,
         "isMulticolor2": false,
-        "grid": 16,
         "tags": [
           "checked (2)"
-        ]
+        ],
+        "grid": 16
       },
       "attrs": [
         {}
       ],
       "properties": {
-        "order": 25,
-        "id": 40,
+        "order": 354,
+        "id": 18,
         "name": "success",
         "prevSize": 32,
         "code": 59666
       },
       "setIdx": 0,
-      "setId": 2,
+      "setId": 3,
       "iconIdx": 18
     },
     {
@@ -586,24 +586,53 @@
         ],
         "isMulticolor": false,
         "isMulticolor2": false,
-        "grid": 16,
         "tags": [
           "icon"
-        ]
+        ],
+        "grid": 16
       },
       "attrs": [
         {}
       ],
       "properties": {
         "order": 26,
-        "id": 39,
+        "id": 19,
         "name": "error",
         "prevSize": 32,
         "code": 59667
       },
       "setIdx": 0,
-      "setId": 2,
+      "setId": 3,
       "iconIdx": 19
+    },
+    {
+      "icon": {
+        "paths": [
+          "M1005.502 227.922l-89.846-89.846c-12.319-12.329-27.302-18.495-44.914-18.495-17.628 0-32.611 6.167-44.93 18.495l-433.389 434.044-194.231-194.893c-12.333-12.333-27.307-18.493-44.918-18.493-17.623 0-32.597 6.16-44.93 18.493l-89.846 89.848c-12.333 12.331-18.498 27.309-18.498 44.93 0 17.607 6.164 32.599 18.498 44.928l329.002 328.991c12.326 12.338 27.305 18.498 44.923 18.498 17.611 0 32.59-6.176 44.923-18.498l568.156-568.149c12.322-12.333 18.498-27.309 18.498-44.93 0.009-17.611-6.176-32.59-18.498-44.923z"
+        ],
+        "attrs": [
+          {}
+        ],
+        "grid": 16,
+        "tags": [
+          "check"
+        ],
+        "isMulticolor": false,
+        "isMulticolor2": false
+      },
+      "attrs": [
+        {}
+      ],
+      "properties": {
+        "order": 356,
+        "id": 20,
+        "name": "check",
+        "prevSize": 32,
+        "code": 59668
+      },
+      "setIdx": 0,
+      "setId": 3,
+      "iconIdx": 20
     }
   ],
   "height": 1024,

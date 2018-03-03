@@ -251,6 +251,7 @@
 }
 
 .page-roadmap--body {
+  padding: 60px 0;
   font-weight: 500;
   font-size: 18px;
   i {
@@ -262,7 +263,11 @@
 }
 
 .roadmap-direction {
+  position: relative;
   font-size: 0;
+  .col-2{
+    z-index: 5;
+  }
   .direction-up {
     transform: rotate(-45deg);
     transform-origin: 0;
@@ -294,9 +299,21 @@
 
     }
   }
-  //.direction-line {
-  //  width: 75px;
-  //  height: 3px;
-  //  background-color: #787878;
-  //}
+  &:after{
+    position: absolute;
+    content: '';
+    height: 8px;
+    background-color: #808080;
+    width: 100%;
+  }
+  &:before{
+    height: 100px;
+    width: 8px;
+    background-color: #808080;
+    position: absolute;
+    content: '';
+    top: -46px;
+    left: 0;
+  }
+
 }

@@ -251,7 +251,7 @@
 }
 
 .page-roadmap--body {
-  padding: 60px 0;
+  margin: 250px 0;
   font-weight: 500;
   font-size: 18px;
   i {
@@ -264,32 +264,45 @@
 
 .roadmap-direction {
   position: relative;
-  font-size: 0;
-  .col-2{
+  .col-2 {
     z-index: 5;
+    &.direction-up {
+      .rounded {
+        &:after {
+          left: 100%;
+          top: 0;
+          transform: rotate(-45deg);
+          transform-origin: 0;
+        }
+      }
+    }
+    &.direction-down {
+      .rounded {
+        &:after {
+          left: 0%;
+          top: 100%;
+          transform: rotate(135deg);
+          transform-origin: 0;
+        }
+      }
+    }
   }
-  .direction-up {
-    transform: rotate(-45deg);
-    transform-origin: 0;
-  }
-  .direction-down {
-    transform: rotate(135deg);
-    transform-origin: 0;
-  }
+
   span {
     display: inline-block;
     vertical-align: middle;
   }
   .rounded {
-    position: absolute;
+    position: relative;
     width: 26px;
     height: 26px;
     border: 6px solid #787878;
     border-radius: 50%;
+    z-index: 1;
     &:after {
-      left: 19px;
+      left: 50%;
       top: 50%;
-      transform: translate(0, -50%);
+      transform: translate(-50%, -50%);
       position: absolute;
       content: '';
       width: 75px;
@@ -299,14 +312,16 @@
 
     }
   }
-  &:after{
+  &:after {
     position: absolute;
     content: '';
     height: 8px;
     background-color: #808080;
     width: 100%;
+    top: 50%;
+    margin-top: -4px;
   }
-  &:before{
+  &:before {
     height: 100px;
     width: 8px;
     background-color: #808080;
@@ -316,4 +331,15 @@
     left: 0;
   }
 
+}
+
+.roadmap-content--block {
+  position: absolute;
+  text-align: left;
+  .direction-down & {
+    transform: translate(0, 100%);
+  }
+  .direction-up & {
+    transform: translate(0, -100%);
+  }
 }

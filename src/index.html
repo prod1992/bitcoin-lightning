@@ -1,696 +1,747 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Bitcoin Lightning</title>
-	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-	<!-- build:css({.tmp/serve,src}) styles/all.min.css -->
-	<!-- inject:css -->
-	<!-- css files will be automatically insert here -->
-	<!-- endinject -->
-	<!-- endbuild -->
-	<style>@media (min-width: 992px) {
-		.page-hero {
-			height: 100vh
-		}
-	}</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bitcoin Lightning</title>
+  <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+  <!-- build:css({.tmp/serve,src}) styles/all.min.css -->
+  <!-- inject:css -->
+  <!-- css files will be automatically insert here -->
+  <!-- endinject -->
+  <!-- endbuild -->
+  <style>@media (min-width: 992px) {
+    .page-hero {
+      height: 100vh
+    }
+  }</style>
 </head>
 <body>
-	<!--HEADER start-->
-	<header class="blt-header">
-		<div class="container-fluid">
-			<div class="row align-items-sm-center justify-content-between">
-				<div class="col-auto">
-					<div class="blt-logo">
-						<a href="/"><img class="blt-logo--icon" src="/images/logo-small.svg" alt="Bitcoin Lightning"/><b
-								class="d-none d-lg-block">Bitcoin Lightning</b></a>
-					</div>
-				</div>
-				<div class="col blt-header--right">
-					<div class="row align-items-center">
-						<div class="col-auto ml-auto d-none d-md-block">
-							<nav class="blt-nav">
-								<ul class="m-0 p-0">
-									<li><a href="#HeroSection">Home</a></li>
-									<li><a href="#AboutUs">About Us</a></li>
-									<li><a href="#OurWallet">Wallet</a></li>
-									<li><a href="#OurFeatures">Features</a></li>
-									<li><a href="#FindUs">Find Us</a></li>
-									<li><a href="#ContactUs">Contact Us</a></li>
-								</ul>
-							</nav>
-						</div>
-						<!--<div class="col-auto d-none d-md-block">-->
-						<!--<button class="btn button-reg">Register</button>-->
-						<!--<button class="btn btn-primary btn-sign&#45;&#45;in">Sign in</button>-->
-						<!--</div>-->
-						<div class="col-auto ml-auto d-md-none">
-							<button class="navbar-toggler">
-								<span class="line top"></span>
-								<span class="line mid"></span>
-								<span class="line bot"></span>
-							</button>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</header>
-	<!--HEADER end-->
-	<!--MAIN start-->
-	<main role="main">
-		<section id="HeroSection" class="page-section page-hero">
-			<div class="container-fluid">
-				<div class="row justify-content-center align-items-center">
-					<div class="col-md-10">
-						<div class="">
-							<div class="row">
-								<div class="col-12 text-center">
-									<div class="page-hero--content">
-										<div class="page-hero--logo blt-logo--icon blt-logo--animation">
-											<i class="icon-logo-b blt-logo--b"></i> <i class="blt-logo--lgh"></i>
-										</div>
-										<div class="page-hero--inner text-center">
-											<h1 class="mt-0">Transactions at the Speed of Light</h1>
-											<!--<p>Masternodes. Masternodes are a second tier of the network making the super fast transaction speeds possible.</p>-->
-										</div>
-										<div class="page-hero--action">
-											<div class="page-hero--action">
-												<!--<a class="btn button-download mx-auto"><i class="icon-download"></i>-->
-												<!--<span>Download Whitepaper</span> </a>-->
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="row align-items-center justify-content-center blt-roi--row">
-					<div class="col-auto">
+<!--HEADER start-->
+<header class="blt-header">
+  <div class="container-fluid">
+    <div class="row align-items-sm-center justify-content-between">
+      <div class="col-auto">
+        <div class="blt-logo">
+          <a href="/"><img class="blt-logo--icon" src="/images/logo-small.svg" alt="Bitcoin Lightning" /><b class="d-none d-lg-block">Bitcoin Lightning</b></a>
+        </div>
+      </div>
+      <div class="col blt-header--right">
+        <div class="row align-items-center">
+          <div class="col-auto ml-auto d-none d-md-block">
+            <nav class="blt-nav">
+              <ul class="m-0 p-0">
+                <li><a href="#HeroSection">Home</a></li>
+                <li><a href="#AboutUs">About Us</a></li>
+                <li><a href="#OurWallet">Wallet</a></li>
+                <li><a href="#OurFeatures">Features</a></li>
+                <li><a href="#FindUs">Find Us</a></li>
+                <li><a href="#ContactUs">Contact Us</a></li>
+              </ul>
+            </nav>
+          </div>
+          <!--<div class="col-auto d-none d-md-block">-->
+          <!--<button class="btn button-reg">Register</button>-->
+          <!--<button class="btn btn-primary btn-sign&#45;&#45;in">Sign in</button>-->
+          <!--</div>-->
+          <div class="col-auto ml-auto d-md-none">
+            <button class="navbar-toggler">
+              <span class="line top"></span>
+              <span class="line mid"></span>
+              <span class="line bot"></span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+<!--HEADER end-->
+<!--MAIN start-->
+<main role="main">
+  <section id="HeroSection" class="page-section page-hero">
+    <div class="container-fluid">
+      <div class="row justify-content-center align-items-center">
+        <div class="col-md-10">
+          <div class="">
+            <div class="row">
+              <div class="col-12 text-center">
+                <div class="page-hero--content">
+                  <div class="page-hero--logo blt-logo--icon blt-logo--animation">
+                    <i class="icon-logo-b blt-logo--b"></i> <i class="blt-logo--lgh"></i>
+                  </div>
+                  <div class="page-hero--inner text-center">
+                    <h1 class="mt-0">Transactions at the Speed of Light</h1>
+                    <!--<p>Masternodes. Masternodes are a second tier of the network making the super fast transaction speeds possible.</p>-->
+                  </div>
+                  <div class="page-hero--action">
+                    <div class="page-hero--action">
+                      <!--<a class="btn button-download mx-auto"><i class="icon-download"></i>-->
+                      <!--<span>Download Whitepaper</span> </a>-->
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row align-items-center justify-content-center blt-roi--row">
+        <div class="col-auto">
           <span id="blt-roi--days" class="blt-roi--date">
           
           </span>
-					</div>
-					<div class="col-sm-12 text-center">
-						<div class="blt-roi--days"></div>
-						<div class="blt-roi--values">
-							<div class="row align-items-center">
-								<div class="col-auto pr-0">
+        </div>
+        <div class="col-sm-12 text-center">
+          <div class="blt-roi--days"></div>
+          <div class="blt-roi--values">
+            <div class="row align-items-center">
+              <div class="col-auto pr-0">
                 <span class="blt-live--dot">
                 
                 </span>
-								</div>
-								<div class="col-auto">
-									<span class="blt-roi--label"><b>ROI</b></span>
-								</div>
-								<div class="col-auto ml-auto">
-									<span class="blt-roi--value" id="blt-roi--prc"></span>
-								</div>
-							</div>
-							<div class="blt-fetch--dots">
-								<span></span>
-								<span></span>
-								<span></span>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-		<section id="OurFeatures" class="page-section page-features bg-white">
-			<div class="container-fluid">
-				<div class="page-features--header">
-					<div class="row justify-content-center">
-						<div class="col-12 col-xs-10 col-md-6 text-center">
-							<h1 class="mt-0">Our Features</h1>
-							<p class="mt-0">A team member focuses on a 'we' mentality that includes creating remarkable experiences with others in the company</p>
-						</div>
-					</div>
-				</div>
-				<div class="page-features--body">
-					<div class="row justify-content-center">
-						<div class="col-12 col-sm-4 text-center">
-							<div class="page-features--block mx-auto">
-								<div class="features-block--wrapper">
-									<img src="/images/features-1.png" alt="">
-								</div>
-								<div class="features-block--body">
-									<h3 class="features-block--heading">High ROI</h3>
-									<p class="mt-0"></p>
-								</div>
-							</div>
-						</div>
-						<div class="col-12 col-sm-4 text-center">
-							<div class="page-features--block mx-auto">
-								<div class="features-block--wrapper">
-									<img src="/images/features-2.png" alt="">
-								</div>
-								<div class="features-block--body">
-									<h3 class="features-block--heading">Decentralised</h3>
-									<p class="mt-0">Bitcoin Lightning Masternodes are being run all over the World.</p>
-								</div>
-							</div>
-						</div>
-						<div class="col-12 col-sm-4 text-center">
-							<div class="page-features--block mx-auto">
-								<div class="features-block--wrapper">
-									<img src="/images/features-03.png" alt="">
-								</div>
-								<div class="features-block--body">
-									<h3 class="features-block--heading">Eco-friendly</h3>
-									<p class="mt-0">No power hungry mining.</p>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="page-features--body">
-					<div class="row justify-content-center">
-						<div class="col-12 col-sm-4 text-center">
-							<div class="page-features--block mx-auto">
-								<div class="features-block--wrapper">
-									<img src="/images/features-1.png" alt="">
-								</div>
-								<div class="features-block--body">
-									<h3 class="features-block--heading">Masternodes and Staking</h3>
-									<p class="mt-0">multiply your coins</p>
-								</div>
-							</div>
-						</div>
-						<div class="col-12 col-sm-4 text-center">
-							<div class="page-features--block mx-auto">
-								<div class="features-block--wrapper">
-									<img src="/images/features-2.png" alt="">
-								</div>
-								<div class="features-block--body">
-									<h3 class="features-block--heading">Lightning Fast</h3>
-									<p class="mt-0">send your coins in a flash</p>
-								</div>
-							</div>
-						</div>
-						<div class="col-12 col-sm-4 text-center">
-							<div class="page-features--block mx-auto">
-								<div class="features-block--wrapper">
-									<img src="/images/features-03.png" alt="">
-								</div>
-								<div class="features-block--body">
-									<h3 class="features-block--heading">Anonymous</h3>
-									<p class="mt-0">send coins anonymously using Darksend</p>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="page-features--footer">
-					<div class="row justify-content-center">
-						<div class="col-12 col-xs-10 col-md-6 text-center">
-							<h2 class="mt-0">What are Masternodes and what is Staking?</h2>
-							<p class="mt-0">Masternodes are a second tier to the network making the lightning fast transaction speeds possible. They also provide the dark send feature keeping your transactions anonymous if you’d like, as they provide an important functionality to the network, masternode owners will be rewarded with block rewards (coins) giving them a far higher ROI than your local bank, but you don’t have to be a masternode owner to benefit from this as bitcoin lightning also stakes in your wallet. Essentially, the more coins you have the more weight you will have on the network and the faster your coins will grow. </p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-		<section id="specifications" class="page-section page-specifications pb-0">
-			<div class="container-fluid">
-				<div class="page-specifications--header">
-					<div class="row justify-content-center">
-						<div class="col-12 col-xs-10 col-md-6 text-center">
-							<div class="specification-header--top">
-								<h1 class="m-0">Our Specifications</h1>
-							</div>
-							<div class="specification-header--bottom">
-								<p class="mt-0 text-center"></p>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="page-specifications--body">
-					<div class="row justify-content-between">
-						<div class="col-12 col-xs-6 col-sm-4 text-center">
-							<div class="specifications-block">
-								<div class="specifications-block--header">
-									<img src="/images/specific-1.png" alt="">
-									<h3>CoinTicker : BLTG</h3>
-								</div>
-								<div class="specifications-block--body">
-									<p></p>
-								</div>
-							</div>
-						</div>
-						<div class="col-12 col-xs-6 col-sm-4 text-center">
-							<div class="specifications-block">
-								<div class="specifications-block--header">
-									<img src="/images/specific-2.png" alt="">
-									<h3>Max Supply: 70,000,000 coin</h3>
-								</div>
-								<div class="specifications-block--body">
-									<p></p>
-								</div>
-							</div>
-						</div>
-						<div class="col-12 col-xs-6 col-sm-4 text-center">
-							<div class="specifications-block">
-								<div class="specifications-block--header">
-									<img src="/images/specific-3.png" alt="">
-									<h3> Block Time: 90 seconds</h3>
-								</div>
-								<div class="specifications-block--body">
-									<p></p>
-								</div>
-							</div>
-						</div>
-						<div class="col-12 col-xs-6 col-sm-4 text-center">
-							<div class="specifications-block">
-								<div class="specifications-block--header">
-									<img src="/images/specific-1.png" alt="">
-									<h3>PoS Block Reward</h3>
-								</div>
-								<div class="specifications-block--body">
-									<p></p>
-								</div>
-							</div>
-						</div>
-						<div class="col-12 col-xs-6 col-sm-4 text-center">
-							<div class="specifications-block">
-								<div class="specifications-block--header">
-									<img src="/images/specific-2.png" alt="">
-									<h3> Stake age : 6 Hr</h3>
-								</div>
-								<div class="specifications-block--body">
-									<p></p>
-								</div>
-							</div>
-						</div>
-						<div class="col-12 col-xs-6 col-sm-4 text-center">
-							<div class="specifications-block">
-								<div class="specifications-block--header">
-									<img src="/images/specific-3.png" alt="">
-									<h3>75% Block Reward for masternodes</h3>
-								</div>
-								<div class="specifications-block--body">
-									<p></p>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="bg-blue--gradient d-none d-md-block">
-				<div class="image"></div>
-			</div>
-		</section>
-		<section id="OurRoadmap" class="page-section page-roadmap bg-white">
-			<div class="container-fluid">
-				<div class="page-roadmap--header">
-					<div class="row justify-content-center">
-						<div class="col-12 col-xs-10 col-md-6 text-center">
-							<h1 class="mt-0">Our RoadMap</h1>
-						</div>
-					</div>
-				</div>
-				<div class="page-roadmap--body">
-					<div class="row">
-						
-						<!--<div class="col-12">-->
-						<!--<div class="row">-->
-						<!--<div class="col-auto">-->
-						<!--<div class="roadmap-block">-->
-						<!--<div class="roadmap-block&#45;&#45;img">-->
-						<!--<img class="img-responsive  mx-auto" src="/images/roadmap.png" alt="">-->
-						<!---->
-						<!--</div>-->
-						<!--<ul class="m-0 p-0">-->
-						<!--<li><i class="icon-check"></i><span>Windows wallet – done</span></li>-->
-						<!--<li><i class="icon-check"></i><span>Mac wallet – done</span></li>-->
-						<!--<li><i class="icon-check"></i><span>Linex wallet -done</span></li>-->
-						<!--</ul>-->
-						<!--</div>-->
-						<!--</div>-->
-						<!--<div class="col-auto align-self-end">-->
-						<!--<div class="roadmap-block">-->
-						<!--<div class="roadmap-block&#45;&#45;img">-->
-						<!--<img src="/images/roadmap-1.png" alt="">-->
-						<!---->
-						<!--</div>-->
-						<!--<ul class="m-0 p-0">-->
-						<!--<li><i class="icon-check"></i><span>Get on ranking sites - mntop done,</span></li>-->
-						<!--<li><i class="icon-check"></i><span>masternodes.online done, </span></li>-->
-						<!--<li><i class="icon-check"></i><span>masternado done, masternodo rank done,</span></li>-->
-						<!--</ul>-->
-						<!--</div>-->
-						<!--</div>-->
-						<!--<div class="col-auto align-self-end">-->
-						<!--<div class="roadmap-block">-->
-						<!--<div class="roadmap-block&#45;&#45;img">-->
-						<!--<img src="/images/roadmap-2.png" alt="">-->
-						<!---->
-						<!--</div>-->
-						<!--<ul class="m-0 p-0">-->
-						<!--<li><span>Web based wallet</span></li>-->
-						<!--<li><span>Whitepaper</span></li>-->
-						<!--<li><span>ISO wallet</span></li>-->
-						<!--</ul>-->
-						<!--</div>-->
-						<!--</div>-->
-						<!--</div>-->
-						<!--</div>-->
-						
-						<div class="col-12">
-							<div class="roadmap-direction">
-								<div class="row">
-									<div class="col-2 text-center direction-up">
-										<div class="roadmap-content--block">
-											<ul class="m-0 p-0">
-												<li>
-													WIndwaasd admak dak daosdad -asdadasd
-												</li>
-												<li>
-													WIndwaasd admak dak daosdad -asdadasd
-												</li>
-												<li>
-													WIndwaasd admak dak daosdad -asdadasd
-												</li>
-											</ul>
-										</div>
-										<span class="rounded bg-orange "></span>
-									</div>
-									<div class="col-2 text-center direction-down">
-										<div class="roadmap-content--block">
-											<ul class="m-0 p-0">
-												<li>
-													WIndwaasd admak dak daosdad -asdadasd
-												</li>
-												<li>
-													WIndwaasd admak dak daosdad -asdadasd
-												</li>
-												<li>
-													WIndwaasd admak dak daosdad -asdadasd
-												</li>
-											</ul>
-										</div>
-										<span class="rounded bg-orange"></span>
-									</div>
-									<div class="col-2 text-center direction-up">
-										<div class="roadmap-content--block">
-											<ul class="m-0 p-0">
-												<li>
-													WIndwaasd admak dak daosdad -asdadasd
-												</li>
-												<li>
-													WIndwaasd admak dak daosdad -asdadasd
-												</li>
-												<li>
-													WIndwaasd admak dak daosdad -asdadasd
-												</li>
-											</ul>
-										</div>
-										<span class="rounded bg-orange "></span>
-									</div>
-									<div class="col-2 text-center direction-down">
-										<div class="roadmap-content--block">
-											<ul class="m-0 p-0">
-												<li>
-													WIndwaasd admak dak daosdad -asdadasd
-												</li>
-												<li>
-													WIndwaasd admak dak daosdad -asdadasd
-												</li>
-												<li>
-													WIndwaasd admak dak daosdad -asdadasd
-												</li>
-											</ul>
-										</div>
-										<span class="rounded bg-white"></span>
-									</div>
-									<div class="col-2 text-center direction-up">
-										<div class="roadmap-content--block">
-											<ul class="m-0 p-0">
-												<li>
-													WIndwaasd admak dak daosdad -asdadasd
-												</li>
-												<li>
-													WIndwaasd admak dak daosdad -asdadasd
-												</li>
-												<li>
-													WIndwaasd admak dak daosdad -asdadasd
-												</li>
-											</ul>
-										</div>
-										<span class="rounded bg-white "></span>
-									</div>
-									<div class="col-2 text-center direction-down">
-										<div class="roadmap-content--block">
-											<ul class="m-0 p-0">
-												<li>
-													WIndwaasd admak dak daosdad -asdadasd
-												</li>
-												<li>
-													WIndwaasd admak dak daosdad -asdadasd
-												</li>
-												<li>
-													WIndwaasd admak dak daosdad -asdadasd
-												</li>
-											</ul>
-										</div>
-										<span class="rounded bg-white"></span>
-									</div>
-								</div>
-							</div>
-						
-						</div>
-						<div class="col-12"></div>
-					</div>
-				</div>
-			</div>
-		</section>
-		<section id="AboutUs" class="page-section page-about bg-gray ff-depot pb-0">
-			<div class="container-fluid">
-				<div class="row justify-content-between">
-					<div class="col-12 col-md-6 align-self-center">
-						<h2 class="mt-0">About Bitcoin Lightning</h2>
-						<p class="pt-0">Bitcoin Lightning is a coin designed to send fast, low-cost and secure transactions Worldwide. It is also an ideal coin for investment that gives a high-interest rate to investors through our Masternodes and staking.</p>
-					</div>
-					<div class="col-12 col-md-6 align-self-bottom">
-						<img class="img-responsive  mx-auto" src="/images/vector.png" alt="">
-					</div>
-				</div>
-			</div>
-		</section>
-		<section id="OurWallet" class="page-section blt-section--download">
-			<div class="container-fluid">
-				<div class="row text-center align-items-center">
-					<div class="col-12">
-						<a href="/"><img class="blt-logo--icon" src="/images/logo-small.svg"
-						                 alt="Bitcoin Lightning"/></a>
-					</div>
-					<div class="col-12">
-						<h2 class="mt-0 ff-depot">Our Wallet Available for mobile and desktop</h2>
-					</div>
-					<div class="col-12">
-						<div class="page-section--body">
-							<div class="row justify-content-center">
-								<div class="col-12 col-sm-auto">
-									<a class="blt-download mx-auto"
-									   href="https://www.bilbotel.fr/Bitcoin_Lightning-Qt-1.1.0.0.dmg">
-										<i class="icon-apple"></i> </a>
-								</div>
-								<div class="col-12 col-sm-auto">
-									<a class="blt-download mx-auto"
-									   href="https://www.bilbotel.fr/Bitcoin_Lightning-qt-1.1.0.0.tar.gz">
-										<i class="icon-linux"></i> </a>
-								</div>
-								<div class="col-12 col-sm-auto">
-									<a class="blt-download mx-auto"
-									   href="https://www.bilbotel.fr/Bitcoin_Lightning-qt-1.1.0.0.exe">
-										<i class="icon-windows"></i> </a>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-		<section id="ContactUs" class="page-section bg-white blt-section--contacts"
-		         style="background-image: url(images/world-map.png)">
-			<div class="container-fluid">
-				<div class="row align-items-center">
-					<div class="col-12 text-center">
-						<div class="page-section--header">
-							<h2 class="mt-0 ff-depot">Get In Touch</h2>
-							<p class="mt-0"></p>
-						</div>
-					</div>
-					<div class="col-12">
-						<div class="page-section--body">
-							<div class="row justify-content-center">
-								<div class="col-sm-8 col-md-6">
-									<form id="contactForm" action="/contact-request" method="POST">
-										<div class="form-group icon-on--left">
-											<input type="text" class="form-control" placeholder="Name"
-											       name="user[name]"><i class="icon-user"></i>
-										</div>
-										<div class="form-group icon-on--left">
-											<input type="text" class="form-control" placeholder="Email Address"
-											       name="user[email]"><i class="icon-envelope"></i>
-										</div>
-										<div class="form-group icon-on--left">
-											<input type="text" class="form-control" placeholder="Phone"
-											       name="user[phone]"><i class="icon-call"></i>
-										</div>
-										<div class="form-group icon-on--left">
-											<textarea type="text" class="form-control" placeholder="Message"
-											          name="user[message]"></textarea><i class="icon-speech-bubble"></i>
-										</div>
-										<div class="form-group">
-											<button class="btn btn-block btn-primary--darker" type="button">Submit
-											</button>
-										</div>
-									</form>
-								</div>
-								<!--<div class="col-md-4">-->
-								<!--<h3 class="mt-0 blt-contact&#45;&#45;info__heading">Contact Information</h3>-->
-								<!--<ul class="p-0 blt-contact&#45;&#45;info list-unstyled">-->
-								<!--<li class="row mx-0 align-items-center">-->
-								<!--<span class="col-auto px-0"><i class="icon-phone-receiver"></i></span> <span-->
-								<!--class="col">123-456-9870</span>-->
-								<!--</li>-->
-								<!--<li class="row mx-0 align-items-center">-->
-								<!--<span class="col-auto px-0"><i class="icon-location"></i></span> <span class="col">802 W Bannock St. Ste. 406 Boise, <br> ID 83702 </span>-->
-								<!--</li>-->
-								<!--</ul>-->
-								<!--</div>-->
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-6"></div>
-					<div class="col-6"></div>
-				</div>
-			</div>
-		</section>
-		<section id="FindUs" class="page-section blt-section--social">
-			<div class="container-fluid">
-				<div class="row text-center align-items-center">
-					<div class="col-12">
-						<a href="/"><img class="blt-logo--icon mx-0" src="/images/logo-small.svg"
-						                 alt="Bitcoin Lightning"/></a>
-					</div>
-					<div class="col-12">
-						<h2 class="mt-0 ff-depot">Find Us on Social Networks</h2>
-						<p class="pt-0"></p>
-					</div>
-					<div class="col-12">
-						<ul class="row no-gutters justify-content-center list-unstyled blt-social--list p-0">
-							<li class="col-auto">
-								<a href="https://github.com/Bitcoinlightning/Bitcoin-Lightning"
-								   class="btl-social--network" target="_blank">
-									<i class="icon-git"></i> </a>
-							</li>
-							<li class="col-auto">
-								<a href="https://twitter.com/bitcoinLT" class="btl-social--network" target="_blank">
-									<i class="icon-tw"></i> </a>
-							</li>
-							<li class="col-auto">
-								<a href="https://discord.gg/YXkHcY4" class="btl-social--network" target="_blank">
-									<i class="icon-discord"></i> </a>
-							</li>
-						</ul>
-					</div>
-				</div>
-			</div>
-		</section>
-	</main>
-	<!--MAIN ends-->
-	<!--MOBILE NAV start-->
-	<nav class="blt-nav--mobile">
-		<div class="container-fluid">
-			<div class="row">
-				<div class="col-12">
-					<ul class="mobile-nav text-center p-0 m-0">
-						<li><a href="#HeroSection">HOME</a></li>
-						<li><a href="#AboutUs">ABOUT US</a></li>
-						<li><a href="#OurFeatures">FEATURES</a></li>
-						<li><a href="#ContactUs">CONTACT US</a></li>
-					</ul>
-				</div>
-				<div class="col-12">
-					<div class="mobile-btn">
-						<div class="row text-center">
-							<!--<div class="col-12">-->
-							<!--<button class="btn button-reg">Register</button>-->
-							<!--</div>-->
-							<!--<div class="col-12">-->
-							<!--<button class="btn btn-primary m-0">Sign in</button>-->
-							<!--</div>-->
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</nav>
-	<!--MOBILE NAV end-->
-	<footer id="contact" class="blt-footer">
-		<div class="blt-footer--top">
-			<div class="container-fluid">
-				<div class="row justify-content-around">
-					<div class="col-12 col-sm">
-						<h4>What we do</h4>
-						<ul class="blt-footer--links p-0">
-							<li>
-								<a href="#AboutUs">About Us</a>
-							</li>
-							<li>
-								<a href="#OurFeatures">Our Features</a>
-							</li>
-							<li>
-								<a href="#OurWallet">Our Wallet</a>
-							</li>
-						</ul>
-					</div>
-					<div class="col-12 col-sm">
-						<h4>Support</h4>
-						<ul class="blt-footer--links p-0">
-							<li>
-								<a href="#ContactUs">Contact Us</a>
-							</li>
-							<li>
-								<a href="#FindUs">Find Us</a>
-							</li>
-						</ul>
-					</div>
-					<div class="col-12 col-sm">
-						<h4>Contact Us</h4>
-						<ul class="blt-footer--links p-0">
-							<li class="d-flex">
-								<i class="icon-envelope"></i>
-								<a href="mailto:contact_us@bitcoinlightning.co.uk">contact_us@bitcoinlightning.co.uk</a>
-							</li>
-							<li>
-								<a class="media-info" href="#">Media Inquries</a>
-							</li>
-						</ul>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="blt-footer--bottom">
-			<div class="container-fluid">
-				<div class="row justify-contern-center">
-					<div class="col-12 text-center">
-						<p class="mt-0 mb-0">© 2018 BitCoin Lightning. All rights reserved.</p>
-					</div>
-				</div>
-			</div>
-		</div>
-	</footer>
-	<!-- build:js({.tmp/serve, src}) scripts/app.min.js async charset="utf-8" -->
-	<!-- inject:js -->
-	<!-- js files will be automatically insert here -->
-	<!-- endinject -->
-	<!-- endbuild -->
+              </div>
+              <div class="col-auto">
+                <span class="blt-roi--label"><b>ROI</b></span>
+              </div>
+              <div class="col-auto ml-auto">
+                <span class="blt-roi--value" id="blt-roi--prc"></span>
+              </div>
+            </div>
+            <div class="blt-fetch--dots">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="OurFeatures" class="page-section page-features bg-white">
+    <div class="container-fluid">
+      <div class="page-features--header">
+        <div class="row justify-content-center">
+          <div class="col-12 col-xs-10 col-md-6 text-center">
+            <h1 class="mt-0">Our Features</h1>
+            <p class="mt-0">A team member focuses on a 'we' mentality that includes creating remarkable experiences with others in the company</p>
+          </div>
+        </div>
+      </div>
+      <div class="page-features--body">
+        <div class="row justify-content-center">
+          <div class="col-12 col-sm-4 text-center">
+            <div class="page-features--block mx-auto">
+              <div class="features-block--wrapper">
+                <img src="/images/features-1.png" alt="">
+              </div>
+              <div class="features-block--body">
+                <h3 class="features-block--heading">High ROI</h3>
+                <p class="mt-0"></p>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-sm-4 text-center">
+            <div class="page-features--block mx-auto">
+              <div class="features-block--wrapper">
+                <img src="/images/features-2.png" alt="">
+              </div>
+              <div class="features-block--body">
+                <h3 class="features-block--heading">Decentralised</h3>
+                <p class="mt-0">Bitcoin Lightning Masternodes are being run all over the World.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-sm-4 text-center">
+            <div class="page-features--block mx-auto">
+              <div class="features-block--wrapper">
+                <img src="/images/features-03.png" alt="">
+              </div>
+              <div class="features-block--body">
+                <h3 class="features-block--heading">Eco-friendly</h3>
+                <p class="mt-0">No power hungry mining.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="page-features--body">
+        <div class="row justify-content-center">
+          <div class="col-12 col-sm-4 text-center">
+            <div class="page-features--block mx-auto">
+              <div class="features-block--wrapper">
+                <img src="/images/features-1.png" alt="">
+              </div>
+              <div class="features-block--body">
+                <h3 class="features-block--heading">Masternodes and Staking</h3>
+                <p class="mt-0">multiply your coins</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-sm-4 text-center">
+            <div class="page-features--block mx-auto">
+              <div class="features-block--wrapper">
+                <img src="/images/features-2.png" alt="">
+              </div>
+              <div class="features-block--body">
+                <h3 class="features-block--heading">Lightning Fast</h3>
+                <p class="mt-0">send your coins in a flash</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-sm-4 text-center">
+            <div class="page-features--block mx-auto">
+              <div class="features-block--wrapper">
+                <img src="/images/features-03.png" alt="">
+              </div>
+              <div class="features-block--body">
+                <h3 class="features-block--heading">Anonymous</h3>
+                <p class="mt-0">send coins anonymously using Darksend</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="page-features--footer">
+        <div class="row justify-content-center">
+          <div class="col-12 col-xs-10 col-md-6 text-center">
+            <h2 class="mt-0">What are Masternodes and what is Staking?</h2>
+            <p class="mt-0">Masternodes are a second tier to the network making the lightning fast transaction speeds possible. They also provide the dark send feature keeping your transactions anonymous if you’d like, as they provide an important functionality to the network, masternode owners will be rewarded with block rewards (coins) giving them a far higher ROI than your local bank, but you don’t have to be a masternode owner to benefit from this as bitcoin lightning also stakes in your wallet. Essentially, the more coins you have the more weight you will have on the network and the faster your coins will grow. </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="specifications" class="page-section page-specifications pb-0">
+    <div class="container-fluid">
+      <div class="page-specifications--header">
+        <div class="row justify-content-center">
+          <div class="col-12 col-xs-10 col-md-6 text-center">
+            <div class="specification-header--top">
+              <h1 class="m-0">Our Specifications</h1>
+            </div>
+            <div class="specification-header--bottom">
+              <p class="mt-0 text-center"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="page-specifications--body">
+        <div class="row justify-content-between">
+          <div class="col-12 col-xs-6 col-sm-4 text-center">
+            <div class="specifications-block">
+              <div class="specifications-block--header">
+                <img src="/images/specific-1.png" alt="">
+                <h3>CoinTicker : BLTG</h3>
+              </div>
+              <div class="specifications-block--body">
+                <p></p>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-xs-6 col-sm-4 text-center">
+            <div class="specifications-block">
+              <div class="specifications-block--header">
+                <img src="/images/specific-2.png" alt="">
+                <h3>Max Supply: 70,000,000 coin</h3>
+              </div>
+              <div class="specifications-block--body">
+                <p></p>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-xs-6 col-sm-4 text-center">
+            <div class="specifications-block">
+              <div class="specifications-block--header">
+                <img src="/images/specific-3.png" alt="">
+                <h3> Block Time: 90 seconds</h3>
+              </div>
+              <div class="specifications-block--body">
+                <p></p>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-xs-6 col-sm-4 text-center">
+            <div class="specifications-block">
+              <div class="specifications-block--header">
+                <img src="/images/specific-1.png" alt="">
+                <h3>PoS Block Reward</h3>
+              </div>
+              <div class="specifications-block--body">
+                <p></p>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-xs-6 col-sm-4 text-center">
+            <div class="specifications-block">
+              <div class="specifications-block--header">
+                <img src="/images/specific-2.png" alt="">
+                <h3> Stake age : 6 Hr</h3>
+              </div>
+              <div class="specifications-block--body">
+                <p></p>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-xs-6 col-sm-4 text-center">
+            <div class="specifications-block">
+              <div class="specifications-block--header">
+                <img src="/images/specific-3.png" alt="">
+                <h3>75% Block Reward for masternodes</h3>
+              </div>
+              <div class="specifications-block--body">
+                <p></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="bg-blue--gradient d-none d-md-block">
+      <div class="image"></div>
+    </div>
+  </section>
+  <section id="OurRoadmap" class="page-section page-roadmap bg-white">
+    <div class="container-fluid">
+      <div class="page-roadmap--header">
+        <div class="row justify-content-center">
+          <div class="col-12 col-xs-10 col-md-6 text-center">
+            <h1 class="mt-0">Our RoadMap</h1>
+          </div>
+        </div>
+      </div>
+      <div class="page-roadmap--body">
+        <div class="row">
+          <!--<div class="col-12">-->
+            <!--<div class="row">-->
+              <!--<div class="col-auto">-->
+                <!--<div class="roadmap-block">-->
+                  <!--<div class="roadmap-block&#45;&#45;img">-->
+                    <!--<img class="img-responsive  mx-auto" src="/images/roadmap.png" alt="">-->
+          <!---->
+                  <!--</div>-->
+                  <!--<ul class="m-0 p-0">-->
+                    <!--<li><i class="icon-check"></i>-->
+                      <!--<span>Windows wallet – done</span>-->
+                    <!--</li>-->
+                    <!--<li><i class="icon-check"></i>-->
+                      <!--<span>Mac wallet – done</span>-->
+                    <!--</li>-->
+                    <!--<li><i class="icon-check"></i>-->
+                      <!--<span>Linex wallet -done</span>-->
+                    <!--</li>-->
+                  <!--</ul>-->
+                <!--</div>-->
+              <!--</div>-->
+              <!--<div class="col-auto align-self-end">-->
+                <!--<div class="roadmap-block">-->
+                  <!--<div class="roadmap-block&#45;&#45;img">-->
+                    <!--<img src="/images/roadmap-1.png" alt="">-->
+          <!---->
+                  <!--</div>-->
+                  <!--<ul class="m-0 p-0">-->
+                    <!--<li><i class="icon-check"></i>-->
+                      <!--<span>Get on ranking sites - mntop done,</span>-->
+                    <!--</li>-->
+                    <!--<li><i class="icon-check"></i>-->
+                      <!--<span>masternodes.online done,</span>-->
+                    <!--</li>-->
+                    <!--<li><i class="icon-check"></i>-->
+                      <!--<span>masternado done, masternodo rank done,</span>-->
+                    <!--</li>-->
+                  <!--</ul>-->
+                <!--</div>-->
+              <!--</div>-->
+              <!--<div class="col-auto align-self-end">-->
+                <!--<div class="roadmap-block">-->
+                  <!--<div class="roadmap-block&#45;&#45;img">-->
+                    <!--<img src="/images/roadmap-2.png" alt="">-->
+          <!---->
+                  <!--</div>-->
+                  <!--<ul class="m-0 p-0">-->
+                    <!--<li>-->
+                      <!--<span>Web based wallet</span>-->
+                    <!--</li>-->
+                    <!--<li>-->
+                      <!--<span>Whitepaper</span>-->
+                    <!--</li>-->
+                    <!--<li>-->
+                      <!--<span>ISO wallet</span>-->
+                    <!--</li>-->
+                  <!--</ul>-->
+                <!--</div>-->
+              <!--</div>-->
+            <!--</div>-->
+          <!--</div>-->
+          
+  
+          <div class="col-12">
+            <div class="roadmap-direction">
+              <div class="row">
+                
+                <div class="col-2 text-center">
+                  <div class="direction-up">
+                    <div class="roadmap-content--block">
+                      <div class="roadmap-block--img">
+                        <img class="img-responsive  mx-auto" src="/images/roadmap.png" alt="">
+  
+                      </div>
+                      <ul class="m-0 p-0">
+                        <li><i class="icon-check"></i>
+                          <span>Windows wallet – done</span>
+                        </li>
+                        <li><i class="icon-check"></i>
+                          <span>Mac wallet – done</span>
+                        </li>
+                        <li><i class="icon-check"></i>
+                          <span>Linex wallet -done</span>
+                        </li>
+                      </ul>
+                    </div>
+                    <span class="rounded bg-orange "></span>
+                  </div>
+                </div>
+                
+                <div class="col-2 text-center">
+                  <div class="direction-down">
+                    <div class="roadmap-content--block">
+                      <div class="roadmap-block--img">
+                        <img src="/images/roadmap-3.png" alt="">
+  
+                      </div>
+                      <ul class="m-0 p-0">
+                        <li><i class="icon-check"></i>
+                          <span>Premine and testing - done</span>
+                        </li>
+                        <li><i class="icon-check"></i>
+                          <span>Air drops - first round done</span>
+                        </li>
+                        <li><i class="icon-check"></i>
+                          <span>Get on the first exchange - done</span>
+                        </li>
+                      </ul>
+                    </div>
+                    <span class="rounded bg-orange"></span>
+                  </div>
+                </div>
+                
+                <div class="col-2 text-center">
+                  <div class="direction-up">
+                    <div class="roadmap-content--block">
+                      <div class="roadmap-block--img">
+                        <img src="/images/roadmap-1.png" alt="">
+  
+                      </div>
+                      <ul class="m-0 p-0">
+                        <li><i class="icon-check"></i>
+                          <span>Get on ranking sites - mntop done,</span>
+                        </li>
+                        <li><i class="icon-check"></i>
+                          <span>masternodes.online done,</span>
+                        </li>
+                        <li><i class="icon-check"></i>
+                          <span>masternado done, masternodo rank done,</span>
+                        </li>
+                      </ul>
+                    </div>
+                    <span class="rounded bg-orange "></span>
+                  </div>
+                </div>
+                
+                <div class="col-2 text-center">
+                  <div class="direction-down">
+                    <div class="roadmap-content--block">
+                      <div class="roadmap-block--img">
+                        <img src="/images/roadmap-4.png" alt="">
+    
+                      </div>
+                      <ul class="m-0 p-0">
+                        <li>
+                          <span>Marketing campaign</span>
+                        </li>
+                        <li>
+                          <span>AGet on more exchanges</span>
+                        </li>
+                        <li>
+                          <span>Android wallet</span>
+                        </li>
+                      </ul>
+                    </div>
+                    <span class="rounded bg-white"></span>
+                  </div>
+                </div>
+                
+                <div class="col-2 text-center">
+                  <div class="direction-up">
+                    <div class="roadmap-content--block">
+                      <div class="roadmap-block--img">
+                        <img src="/images/roadmap-2.png" alt="">
+  
+                      </div>
+                      <ul class="m-0 p-0">
+                        <li>
+                          <span>Web based wallet</span>
+                        </li>
+                        <li>
+                          <span>Whitepaper</span>
+                        </li>
+                        <li>
+                          <span>ISO wallet</span>
+                        </li>
+                      </ul>
+                    </div>
+                    <span class="rounded bg-white "></span>
+                  </div>
+                </div>
+                
+                <div class="col-2 text-center">
+                  <div class="direction-down">
+                    <div class="roadmap-content--block">
+                      <div class="roadmap-block--img">
+                        <img src="/images/roadmap-5.png" alt="">
+  
+                      </div>
+                      <ul class="m-0 p-0">
+                        <li>
+                          <span>BIP 38 intergration </span>
+                        </li>
+                        <li>
+                          <span>Bring out Bitcoin lighting </span>
+                        </li>
+                        <li>
+                          <span>branded debit card</span>
+                        </li>
+                        <li>
+                          <span>Get coin accepted by merchants</span>
+                        </li>
+                      </ul>
+                    </div>
+                    <span class="rounded bg-white"></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          
+          </div>
+          <div class="col-12"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="AboutUs" class="page-section page-about bg-gray ff-depot pb-0">
+    <div class="container-fluid">
+      <div class="row justify-content-between">
+        <div class="col-12 col-md-6 align-self-center">
+          <h2 class="mt-0">About Bitcoin Lightning</h2>
+          <p class="pt-0">Bitcoin Lightning is a coin designed to send fast, low-cost and secure transactions Worldwide. It is also an ideal coin for investment that gives a high-interest rate to investors through our Masternodes and staking.</p>
+        </div>
+        <div class="col-12 col-md-6 align-self-bottom">
+          <img class="img-responsive  mx-auto" src="/images/vector.png" alt="">
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="OurWallet" class="page-section blt-section--download">
+    <div class="container-fluid">
+      <div class="row text-center align-items-center">
+        <div class="col-12">
+          <a href="/"><img class="blt-logo--icon" src="/images/logo-small.svg" alt="Bitcoin Lightning" /></a>
+        </div>
+        <div class="col-12">
+          <h2 class="mt-0 ff-depot">Our Wallet Available for mobile and desktop</h2>
+        </div>
+        <div class="col-12">
+          <div class="page-section--body">
+            <div class="row justify-content-center">
+              <div class="col-12 col-sm-auto">
+                <a class="blt-download mx-auto" href="https://www.bilbotel.fr/Bitcoin_Lightning-Qt-1.1.0.0.dmg">
+                  <i class="icon-apple"></i> </a>
+              </div>
+              <div class="col-12 col-sm-auto">
+                <a class="blt-download mx-auto" href="https://www.bilbotel.fr/Bitcoin_Lightning-qt-1.1.0.0.tar.gz">
+                  <i class="icon-linux"></i> </a>
+              </div>
+              <div class="col-12 col-sm-auto">
+                <a class="blt-download mx-auto" href="https://www.bilbotel.fr/Bitcoin_Lightning-qt-1.1.0.0.exe">
+                  <i class="icon-windows"></i> </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="ContactUs" class="page-section bg-white blt-section--contacts" style="background-image: url(images/world-map.png)">
+    <div class="container-fluid">
+      <div class="row align-items-center">
+        <div class="col-12 text-center">
+          <div class="page-section--header">
+            <h2 class="mt-0 ff-depot">Get In Touch</h2>
+            <p class="mt-0"></p>
+          </div>
+        </div>
+        <div class="col-12">
+          <div class="page-section--body">
+            <div class="row justify-content-center">
+              <div class="col-sm-8 col-md-6">
+                <form id="contactForm" action="/contact-request" method="POST">
+                  <div class="form-group icon-on--left">
+                    <input type="text" class="form-control" placeholder="Name" name="user[name]"><i class="icon-user"></i>
+                  </div>
+                  <div class="form-group icon-on--left">
+                    <input type="text" class="form-control" placeholder="Email Address" name="user[email]"><i class="icon-envelope"></i>
+                  </div>
+                  <div class="form-group icon-on--left">
+                    <input type="text" class="form-control" placeholder="Phone" name="user[phone]"><i class="icon-call"></i>
+                  </div>
+                  <div class="form-group icon-on--left">
+											<textarea type="text" class="form-control" placeholder="Message" name="user[message]"></textarea><i class="icon-speech-bubble"></i>
+                  </div>
+                  <div class="form-group">
+                    <button class="btn btn-block btn-primary--darker" type="button">Submit
+                    </button>
+                  </div>
+                </form>
+              </div>
+              <!--<div class="col-md-4">-->
+              <!--<h3 class="mt-0 blt-contact&#45;&#45;info__heading">Contact Information</h3>-->
+              <!--<ul class="p-0 blt-contact&#45;&#45;info list-unstyled">-->
+              <!--<li class="row mx-0 align-items-center">-->
+              <!--<span class="col-auto px-0"><i class="icon-phone-receiver"></i></span> <span-->
+              <!--class="col">123-456-9870</span>-->
+              <!--</li>-->
+              <!--<li class="row mx-0 align-items-center">-->
+              <!--<span class="col-auto px-0"><i class="icon-location"></i></span> <span class="col">802 W Bannock St. Ste. 406 Boise, <br> ID 83702 </span>-->
+              <!--</li>-->
+              <!--</ul>-->
+              <!--</div>-->
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-6"></div>
+        <div class="col-6"></div>
+      </div>
+    </div>
+  </section>
+  <section id="FindUs" class="page-section blt-section--social">
+    <div class="container-fluid">
+      <div class="row text-center align-items-center">
+        <div class="col-12">
+          <a href="/"><img class="blt-logo--icon mx-0" src="/images/logo-small.svg" alt="Bitcoin Lightning" /></a>
+        </div>
+        <div class="col-12">
+          <h2 class="mt-0 ff-depot">Find Us on Social Networks</h2>
+          <p class="pt-0"></p>
+        </div>
+        <div class="col-12">
+          <ul class="row no-gutters justify-content-center list-unstyled blt-social--list p-0">
+            <li class="col-auto">
+              <a href="https://github.com/Bitcoinlightning/Bitcoin-Lightning" class="btl-social--network" target="_blank">
+                <i class="icon-git"></i> </a>
+            </li>
+            <li class="col-auto">
+              <a href="https://twitter.com/bitcoinLT" class="btl-social--network" target="_blank">
+                <i class="icon-tw"></i> </a>
+            </li>
+            <li class="col-auto">
+              <a href="https://discord.gg/YXkHcY4" class="btl-social--network" target="_blank">
+                <i class="icon-discord"></i> </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+<!--MAIN ends-->
+<!--MOBILE NAV start-->
+<nav class="blt-nav--mobile">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-12">
+        <ul class="mobile-nav text-center p-0 m-0">
+          <li><a href="#HeroSection">HOME</a></li>
+          <li><a href="#AboutUs">ABOUT US</a></li>
+          <li><a href="#OurFeatures">FEATURES</a></li>
+          <li><a href="#ContactUs">CONTACT US</a></li>
+        </ul>
+      </div>
+      <div class="col-12">
+        <div class="mobile-btn">
+          <div class="row text-center">
+            <!--<div class="col-12">-->
+            <!--<button class="btn button-reg">Register</button>-->
+            <!--</div>-->
+            <!--<div class="col-12">-->
+            <!--<button class="btn btn-primary m-0">Sign in</button>-->
+            <!--</div>-->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+<!--MOBILE NAV end-->
+<footer id="contact" class="blt-footer">
+  <div class="blt-footer--top">
+    <div class="container-fluid">
+      <div class="row justify-content-around">
+        <div class="col-12 col-sm">
+          <h4>What we do</h4>
+          <ul class="blt-footer--links p-0">
+            <li>
+              <a href="#AboutUs">About Us</a>
+            </li>
+            <li>
+              <a href="#OurFeatures">Our Features</a>
+            </li>
+            <li>
+              <a href="#OurWallet">Our Wallet</a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-12 col-sm">
+          <h4>Support</h4>
+          <ul class="blt-footer--links p-0">
+            <li>
+              <a href="#ContactUs">Contact Us</a>
+            </li>
+            <li>
+              <a href="#FindUs">Find Us</a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-12 col-sm">
+          <h4>Contact Us</h4>
+          <ul class="blt-footer--links p-0">
+            <li class="d-flex">
+              <i class="icon-envelope"></i>
+              <a href="mailto:contact_us@bitcoinlightning.co.uk">contact_us@bitcoinlightning.co.uk</a>
+            </li>
+            <li>
+              <a class="media-info" href="#">Media Inquries</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="blt-footer--bottom">
+    <div class="container-fluid">
+      <div class="row justify-contern-center">
+        <div class="col-12 text-center">
+          <p class="mt-0 mb-0">© 2018 BitCoin Lightning. All rights reserved.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- build:js({.tmp/serve, src}) scripts/app.min.js async charset="utf-8" -->
+<!-- inject:js -->
+<!-- js files will be automatically insert here -->
+<!-- endinject -->
+<!-- endbuild -->
 </body>
 </html>

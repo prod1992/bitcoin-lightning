@@ -7,7 +7,7 @@
     "levon1.grigoryan@gmail.com"
   ],
   "contact-email": "contact_us@bitcoinlightning.co.uk",
-  "api": "https://masternodes.online/currencies/BLT",
+  "api": "https://masternodes.online/currencies/BLTG",
   "license": "ISC",
   "private": true,
   "scripts": {

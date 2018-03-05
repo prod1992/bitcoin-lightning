@@ -264,26 +264,24 @@
 
 .roadmap-direction {
   position: relative;
-  .col-2 {
+  .direction-up {
     z-index: 5;
-    &.direction-up {
-      .rounded {
-        &:after {
-          left: 100%;
-          top: 0;
-          transform: rotate(-45deg);
-          transform-origin: 0;
-        }
+    .rounded {
+      &:after {
+        left: 100%;
+        top: 0;
+        transform: rotate(-45deg);
+        transform-origin: 0;
       }
     }
-    &.direction-down {
-      .rounded {
-        &:after {
-          left: 0%;
-          top: 100%;
-          transform: rotate(135deg);
-          transform-origin: 0;
-        }
+  }
+  .direction-down {
+    .rounded {
+      &:after {
+        left: 0;
+        top: 100%;
+        transform: rotate(135deg);
+        transform-origin: 0;
       }
     }
   }
@@ -291,14 +289,18 @@
   span {
     display: inline-block;
     vertical-align: middle;
+    font-weight: 500;
+    color: #707070;
   }
   .rounded {
-    position: relative;
+    position: absolute;
     width: 26px;
     height: 26px;
     border: 6px solid #787878;
     border-radius: 50%;
     z-index: 1;
+    top: 50%;
+    margin-top: -13px;
     &:after {
       left: 50%;
       top: 50%;
@@ -327,19 +329,21 @@
     background-color: #808080;
     position: absolute;
     content: '';
-    top: -46px;
+    top: 28px;
     left: 0;
   }
 
 }
 
 .roadmap-content--block {
-  position: absolute;
+  min-width: 250px;
   text-align: left;
+  margin-right: auto;
   .direction-down & {
     transform: translate(0, 100%);
   }
-  .direction-up & {
-    transform: translate(0, -100%);
+  .direction-up &{
+    transform: translate(25%, -100%);
+
   }
 }

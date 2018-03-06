@@ -10,8 +10,8 @@
     max-height: 70px;
     width: auto;
     @media (min-width: 992px) {
-      max-height: 100px;
-      margin-right: 15px;
+      max-height: 90px;
+      margin-right: 10px;
     }
     @media (min-width: 1200px) {
       max-height: 125px;
@@ -128,12 +128,9 @@
     list-style: none;
     vertical-align: middle;
     line-height: 1;
-    & + li {
-      margin-left: 15px;
-    }
   }
   a {
-    font-size: 16px;
+    font-size: 14px;
     text-transform: uppercase;
     font-family: 'Depot', sans-serif;
     font-weight: 500;
@@ -176,7 +173,7 @@
     a {
       color: #FFFFFF;
       text-decoration: none;
-      font-size: 36px;
+      font-size: 30px;
       font-weight: 700;
       transform: scale3d(1, 1, 1) translateZ(0);
       transition: 0.3s all;

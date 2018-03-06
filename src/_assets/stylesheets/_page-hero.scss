@@ -24,14 +24,17 @@
 	//}
   }
   .container-fluid > .row:first-child {
-	min-height: 640px;
+    height: 100vh;
+    @media(max-height: 992px) {
+      height: 100vh;
+    }
 	@media(min-width: 992px) {
 	  height: 100vh;
 	}
   }
   h1 {
 	font-weight: 700;
-    margin-bottom: 70px;
+    margin-bottom: 50px;
   }
   p {
 	font-size: 16px;

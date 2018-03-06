@@ -1,0 +1,228 @@
+.page-roadmap {
+  font-family: 'Depot',sans-serif;
+  h1 {
+    font-family: inherit;
+  }
+  li {
+    list-style-type: none;
+    display: flex;
+    & + li {
+      margin-top: 0.5em;
+    }
+    @media (min-width: 992px) {
+      align-items: center;
+      white-space: nowrap;
+      line-height: 1;
+    }
+  }
+}
+
+.page-roadmap--header {
+  @media (min-width: 992px) {
+    padding-top: 50px;
+  }
+
+}
+
+.page-roadmap--body {
+  font-weight: 500;
+  font-size: 18px;
+  color: #707070;
+  i {
+    color: #01259a;
+    margin-right: 10px;
+    line-height: inherit;
+  }
+  @media(min-width: 992px) {
+    margin: 250px 0;
+  }
+}
+
+.roadmap-direction {
+  font-size: 1em;
+  > .row {
+    > div {
+      margin: 30px 0;
+      &:first-child {
+        @media (max-width: 991px) {
+          .rounded {
+            display: none;
+          }
+          .roadmap-content--block {
+            margin-top: 0;
+            border-top: none;
+          }
+        }
+      }
+      &:last-child {
+        @media (max-width: 991px) {
+          .roadmap-content--block {
+            border-bottom: none;
+            margin-bottom: 0;
+          }
+        }
+      }
+      .roadmap-content--block {
+        margin: 60px auto 0;
+        padding: 15px 0;
+        max-width: 270px;
+      }
+      @media (max-width: 1400px) and (min-width: 992px) {
+        max-width: 15.666666%;
+        margin: 0;
+      }
+    }
+  }
+  span {
+    font-weight: 500;
+    color: #707070;
+  }
+  .rounded {
+    width: 26px;
+    height: 0;
+    line-height: 0;
+    border: none;
+    border-radius: 50%;
+    z-index: 1;
+    top: 50%;
+    margin-top: -13px;
+    display: inline-block;
+    position: relative;
+    &:after {
+      top: 100%;
+      left: 9px;
+      position: absolute;
+      content: '';
+      width: 2px;
+      border-radius: 5px;
+      height: 50px;
+      background-color: rgba(#787878, 0.1);
+      @media (min-width: 992px) {
+        width: 75px;
+        height: 3px;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        background-color: #787878;
+      }
+    }
+    &:before {
+      bottom: 100%;
+      left: 9px;
+      position: absolute;
+      content: '';
+      width: 2px;
+      border-radius: 5px;
+      height: 50px;
+      background-color: rgba(#787878, 0.1);
+      @media (min-width: 992px) {
+
+        display: none;
+        background-color: #787878;
+      }
+    }
+    @media (min-width: 992px) {
+      position: absolute;
+      border: 6px solid #787878;
+      height: 26px;
+    }
+    @media(max-width: 991px) {
+      &.bg-orange {
+        background-color: transparent;
+      }
+    }
+  }
+  &:after {
+    position: absolute;
+    content: '';
+    height: 8px;
+    background-color: #808080;
+    width: calc(100% - 30px);
+    top: 50%;
+    margin-top: -4px;
+    display: none;
+    @media (min-width: 992px) {
+      display: block;
+    }
+  }
+  &:before {
+    height: 100px;
+    width: 8px;
+    background-color: #808080;
+    position: absolute;
+    content: '';
+    top: -48.5px;
+    display: none;
+    @media (min-width: 992px) {
+      display: block;
+    }
+  }
+  ul {
+    text-align: left;
+    @media (min-width: 992px) {
+      display: block;
+    }
+  }
+  @media (max-width: 1400px) and (min-width: 992px) {
+    font-size: 0.875em;
+  }
+  @media (max-width: 1200px) and (min-width: 992px) {
+    font-size: 0.75em;
+  }
+  @media (min-width: 992px) {
+    padding-top: 0;
+    .direction-up {
+      z-index: 5;
+      .rounded {
+        &:after {
+          left: 100%;
+          top: 0;
+          transform: rotate(-45deg);
+          transform-origin: 0;
+        }
+      }
+    }
+    .direction-down {
+      .rounded {
+        &:after {
+          left: 0;
+          top: 100%;
+          transform: rotate(135deg);
+          transform-origin: 0;
+        }
+      }
+    }
+  }
+}
+
+.roadmap-content--block {
+  text-align: center;
+  .direction-down & {
+    top: 80px;
+    left: 0;
+  }
+  .direction-up & {
+    bottom: 80px;
+    left: 100px;
+
+  }
+  @media (min-width: 992px) {
+    position: absolute;
+    text-align: left;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+}
+
+.roadmap-block--img {
+  margin-bottom: 20px;
+  @media (min-width: 992px) {
+    text-align: left;
+    line-height: 1;
+    margin-bottom: 10px;
+    img {
+      max-height: 45px;
+      max-width: 54px;
+    }
+  }
+}

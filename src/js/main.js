@@ -83,7 +83,7 @@
             }
             $('html, body').animate({
                 scrollTop: $target.offset().top + 1
-            }, 500, function (t) {
+            }, 1000, function (t) {
                 return t < .5 ? 16 * t * t * t * t * t : 1 + 16 * (--t) * t * t * t * t
             });
         })

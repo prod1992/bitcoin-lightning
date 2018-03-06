@@ -23,14 +23,14 @@
         {}
       ],
       "properties": {
-        "order": 21,
+        "order": 52,
         "id": 0,
         "name": "download",
         "prevSize": 32,
         "code": 59648
       },
       "setIdx": 0,
-      "setId": 3,
+      "setId": 4,
       "iconIdx": 0
     },
     {
@@ -52,14 +52,14 @@
         {}
       ],
       "properties": {
-        "order": 3,
+        "order": 53,
         "id": 1,
         "name": "youtube",
         "prevSize": 32,
         "code": 59649
       },
       "setIdx": 0,
-      "setId": 3,
+      "setId": 4,
       "iconIdx": 1
     },
     {
@@ -87,14 +87,14 @@
         {}
       ],
       "properties": {
-        "order": 4,
+        "order": 54,
         "id": 2,
         "name": "linkedin",
         "prevSize": 32,
         "code": 59650
       },
       "setIdx": 0,
-      "setId": 3,
+      "setId": 4,
       "iconIdx": 2
     },
     {
@@ -116,14 +116,14 @@
         {}
       ],
       "properties": {
-        "order": 5,
+        "order": 55,
         "id": 3,
         "name": "twitter",
         "prevSize": 32,
         "code": 59651
       },
       "setIdx": 0,
-      "setId": 3,
+      "setId": 4,
       "iconIdx": 3
     },
     {
@@ -146,14 +146,14 @@
         {}
       ],
       "properties": {
-        "order": 6,
+        "order": 56,
         "id": 4,
         "prevSize": 32,
         "code": 59652,
         "name": "facebook"
       },
       "setIdx": 0,
-      "setId": 3,
+      "setId": 4,
       "iconIdx": 4
     },
     {
@@ -175,14 +175,14 @@
         {}
       ],
       "properties": {
-        "order": 7,
+        "order": 57,
         "id": 5,
         "name": "call",
         "prevSize": 32,
         "code": 59653
       },
       "setIdx": 0,
-      "setId": 3,
+      "setId": 4,
       "iconIdx": 5
     },
     {
@@ -204,14 +204,14 @@
       },
       "attrs": [],
       "properties": {
-        "order": 8,
+        "order": 58,
         "id": 6,
         "name": "windows",
         "prevSize": 32,
         "code": 59655
       },
       "setIdx": 0,
-      "setId": 3,
+      "setId": 4,
       "iconIdx": 6
     },
     {
@@ -236,14 +236,14 @@
         {}
       ],
       "properties": {
-        "order": 9,
+        "order": 59,
         "id": 7,
         "name": "envelope",
         "prevSize": 32,
         "code": 59654
       },
       "setIdx": 0,
-      "setId": 3,
+      "setId": 4,
       "iconIdx": 7
     },
     {
@@ -266,14 +266,14 @@
         {}
       ],
       "properties": {
-        "order": 10,
+        "order": 60,
         "id": 8,
         "name": "linux",
         "prevSize": 32,
         "code": 59656
       },
       "setIdx": 0,
-      "setId": 3,
+      "setId": 4,
       "iconIdx": 8
     },
     {
@@ -293,14 +293,14 @@
       },
       "attrs": [],
       "properties": {
-        "order": 11,
+        "order": 61,
         "id": 9,
         "name": "apple",
         "prevSize": 32,
         "code": 59657
       },
       "setIdx": 0,
-      "setId": 3,
+      "setId": 4,
       "iconIdx": 9
     },
     {
@@ -322,14 +322,14 @@
         {}
       ],
       "properties": {
-        "order": 12,
+        "order": 62,
         "id": 10,
         "name": "user",
         "prevSize": 32,
         "code": 59658
       },
       "setIdx": 0,
-      "setId": 3,
+      "setId": 4,
       "iconIdx": 10
     },
     {
@@ -360,14 +360,14 @@
         {}
       ],
       "properties": {
-        "order": 13,
+        "order": 63,
         "id": 11,
         "name": "speech-bubble",
         "prevSize": 32,
         "code": 59659
       },
       "setIdx": 0,
-      "setId": 3,
+      "setId": 4,
       "iconIdx": 11
     },
     {
@@ -389,14 +389,14 @@
         {}
       ],
       "properties": {
-        "order": 14,
+        "order": 64,
         "id": 12,
         "name": "phone-receiver",
         "prevSize": 32,
         "code": 59660
       },
       "setIdx": 0,
-      "setId": 3,
+      "setId": 4,
       "iconIdx": 12
     },
     {
@@ -418,14 +418,14 @@
         {}
       ],
       "properties": {
-        "order": 15,
+        "order": 65,
         "id": 13,
         "name": "location",
         "prevSize": 32,
         "code": 59661
       },
       "setIdx": 0,
-      "setId": 3,
+      "setId": 4,
       "iconIdx": 13
     },
     {
@@ -447,14 +447,14 @@
         {}
       ],
       "properties": {
-        "order": 16,
+        "order": 66,
         "id": 14,
         "name": "git",
         "prevSize": 32,
         "code": 59662
       },
       "setIdx": 0,
-      "setId": 3,
+      "setId": 4,
       "iconIdx": 14
     },
     {
@@ -479,14 +479,14 @@
         {}
       ],
       "properties": {
-        "order": 17,
+        "order": 67,
         "id": 15,
         "name": "tw",
         "prevSize": 32,
         "code": 59663
       },
       "setIdx": 0,
-      "setId": 3,
+      "setId": 4,
       "iconIdx": 15
     },
     {
@@ -511,14 +511,14 @@
         {}
       ],
       "properties": {
-        "order": 18,
+        "order": 68,
         "id": 16,
         "name": "discord",
         "prevSize": 32,
         "code": 59664
       },
       "setIdx": 0,
-      "setId": 3,
+      "setId": 4,
       "iconIdx": 16
     },
     {
@@ -537,14 +537,14 @@
       },
       "attrs": [],
       "properties": {
-        "order": 20,
+        "order": 69,
         "id": 17,
         "name": "logo-b",
         "prevSize": 32,
         "code": 59665
       },
       "setIdx": 0,
-      "setId": 3,
+      "setId": 4,
       "iconIdx": 17
     },
     {
@@ -566,14 +566,14 @@
         {}
       ],
       "properties": {
-        "order": 354,
+        "order": 70,
         "id": 18,
         "name": "success",
         "prevSize": 32,
         "code": 59666
       },
       "setIdx": 0,
-      "setId": 3,
+      "setId": 4,
       "iconIdx": 18
     },
     {
@@ -595,14 +595,14 @@
         {}
       ],
       "properties": {
-        "order": 26,
+        "order": 71,
         "id": 19,
         "name": "error",
         "prevSize": 32,
         "code": 59667
       },
       "setIdx": 0,
-      "setId": 3,
+      "setId": 4,
       "iconIdx": 19
     },
     {
@@ -613,26 +613,54 @@
         "attrs": [
           {}
         ],
-        "grid": 16,
+        "isMulticolor": false,
+        "isMulticolor2": false,
         "tags": [
           "check"
         ],
-        "isMulticolor": false,
-        "isMulticolor2": false
+        "grid": 16
       },
       "attrs": [
         {}
       ],
       "properties": {
-        "order": 356,
+        "order": 72,
         "id": 20,
         "name": "check",
         "prevSize": 32,
         "code": 59668
       },
       "setIdx": 0,
-      "setId": 3,
+      "setId": 4,
       "iconIdx": 20
+    },
+    {
+      "icon": {
+        "paths": [
+          "M794.549 466.734c-60.389-156.073-209.276-264.745-383.544-264.745-50.916 0-99.666 9.277-144.651 26.232l2.825-0.934c-3.743 1.8-8.138 2.852-12.779 2.852-3.071 0-6.035-0.461-8.826-1.317l0.213 0.056c-17.381-6.685-20.755-35.398-22.729-47.113-18.718-108.996-168.396-174.571-181.129-179.474-3.426-1.004-7.391-1.667-11.483-1.843l-0.105-0.004c-0.941-0.109-2.032-0.172-3.137-0.172-15.858 0-28.713 12.855-28.713 28.713 0 0.351 0.006 0.702 0.019 1.050l-0.001-0.050c0 322.658 0 555.356-0.382 595.593-0.022 1.253-0.034 2.732-0.034 4.213 0 10.225 0.591 20.312 1.74 30.228l-0.114-1.208c1.974 17.89 5.284 47.367 19.1 73.279 1.528 2.801 31.833 58.827 90.724 66.021 77.163 9.486 128.668-74.807 135.926-100.592 2.632-8.868 4.147-19.058 4.147-29.601 0-11.48-1.796-22.541-5.122-32.917l0.211 0.763c-24.257-94.353 49.277-183.612 144.267-195.072 92.124-11.142 177.818 58.509 188.705 153.434 12.733 110.078-100.21 208.060-206.595 176.418-9.122-3.388-19.661-5.349-30.657-5.349-8.552 0-16.827 1.186-24.669 3.402l0.638-0.154c-42.911 12.033-67.486 57.299-77.672 76.399-11.842 22.028-16.744 33.106-18.208 48.577-5.475 59.782 69.714 102.502 75.38 105.685 13.248 7.684 28.602 13.767 44.872 17.428l1.094 0.207c20.091 4.591 43.163 7.222 66.849 7.222s46.758-2.631 68.939-7.617l-2.090 0.395c24.494-5.839 45.843-13.44 66.073-23.018l-2.025 0.863c124.658-53.479 182.784-124.849 182.784-124.849 88.241-99.446 121.411-262.812 70.16-403.004z",
+          "M409.753 704.143c50.36 0.573 96.135-44.566 96.772-94.989 0-0.014 0-0.031 0-0.048 0-52.496-42.557-95.053-95.053-95.053s-95.053 42.557-95.053 95.053c0 51.892 41.582 94.072 93.244 95.036l0.090 0.001z"
+        ],
+        "attrs": [],
+        "width": 819,
+        "isMulticolor": false,
+        "isMulticolor2": false,
+        "grid": 16,
+        "tags": [
+          "b-wallet"
+        ],
+        "colorPermutations": {}
+      },
+      "attrs": [],
+      "properties": {
+        "order": 73,
+        "id": 21,
+        "name": "b-wallet",
+        "prevSize": 32,
+        "code": 59669
+      },
+      "setIdx": 0,
+      "setId": 4,
+      "iconIdx": 21
     }
   ],
   "height": 1024,

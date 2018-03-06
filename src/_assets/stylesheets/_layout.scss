@@ -69,10 +69,12 @@
     }
   }
   h3 {
-    font-size: 13px;
     font-weight: 500;
+    margin-bottom: 5px;
+    line-height: 1.5;
     @media (min-width: 768px) {
       font-size: 18px;
+      line-height: 1.2;
     }
   }
   p {
@@ -126,7 +128,7 @@
   @media (max-width: 767px) {
     margin-left: auto;
     margin-right: auto;
-    max-width: 400px;
+    max-width: 200px;
   }
 }
 
@@ -234,116 +236,5 @@
   }
   100% {
     opacity: .2;
-  }
-}
-
-.page-roadmap {
-  li {
-    list-style-type: none;
-  }
-}
-
-.page-roadmap--header {
-  @media (min-width: 992px) {
-    padding-top: 50px;
-  }
-
-}
-
-.page-roadmap--body {
-  margin: 250px 0;
-  font-weight: 500;
-  font-size: 18px;
-  i {
-    font-size: 14px;
-    color: #01259a;
-    margin-right: 10px;
-  }
-
-}
-
-.roadmap-direction {
-  position: relative;
-  .direction-up {
-    z-index: 5;
-    .rounded {
-      &:after {
-        left: 100%;
-        top: 0;
-        transform: rotate(-45deg);
-        transform-origin: 0;
-      }
-    }
-  }
-  .direction-down {
-    .rounded {
-      &:after {
-        left: 0;
-        top: 100%;
-        transform: rotate(135deg);
-        transform-origin: 0;
-      }
-    }
-  }
-
-  span {
-    display: inline-block;
-    vertical-align: middle;
-    font-weight: 500;
-    color: #707070;
-  }
-  .rounded {
-    position: absolute;
-    width: 26px;
-    height: 26px;
-    border: 6px solid #787878;
-    border-radius: 50%;
-    z-index: 1;
-    top: 50%;
-    margin-top: -13px;
-    &:after {
-      left: 50%;
-      top: 50%;
-      transform: translate(-50%, -50%);
-      position: absolute;
-      content: '';
-      width: 75px;
-      border-radius: 5px;
-      height: 3px;
-      background-color: #787878;
-
-    }
-  }
-  &:after {
-    position: absolute;
-    content: '';
-    height: 8px;
-    background-color: #808080;
-    width: 100%;
-    top: 50%;
-    margin-top: -4px;
-  }
-  &:before {
-    height: 100px;
-    width: 8px;
-    background-color: #808080;
-    position: absolute;
-    content: '';
-    top: 28px;
-    left: 0;
-  }
-
-}
-
-.roadmap-content--block {
-  min-width: 250px;
-  text-align: left;
-  margin-right: auto;
-  .direction-down & {
-    transform: translate(0, 100%);
-  }
-  .direction-up &{
-    transform: translate(25%, -100%);
-
   }
 }

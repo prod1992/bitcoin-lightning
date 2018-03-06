@@ -13,7 +13,7 @@
     const deploy = require('./deploy');
 
     let proxyOptions = {
-        target: "https://masternodes.online/currencies/BLT",
+        target: pkg.api,
         changeOrigin: true
     };
     let app = express();

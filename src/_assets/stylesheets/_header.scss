@@ -123,6 +123,9 @@
 
 .blt-nav {
   line-height: 1;
+  > ul {
+    font-size: 0;
+  }
   li {
     display: inline-block;
     list-style: none;

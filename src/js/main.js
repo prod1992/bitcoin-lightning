@@ -1,10 +1,16 @@
 (function ($, Notifications) {
+    $.extend($.easing, {
+        easeNav: function (t) {
+            return t < .5 ? 16 * t * t * t * t * t : 1 + 16 * (--t) * t * t * t * t
+        }
+    });
+
 
     $(window).on('load', function () {
 
         setTimeout(function () {
             $('body').addClass('loaded');
-        }, 0);
+        }, 1000);
 
     });
 
@@ -26,7 +32,7 @@
         $.ajax({
             url: '/api',
             success: function (res) {
-
+                console.log('ROI updated', new Date());
                 htmlRes = res.replace(/<img[^>]*>/g, "");
                 let statsTabSelector = htmlRes.substr(htmlRes.search(parentElString), parentElString.length);
                 let $statsEl = $(htmlRes).find('#' + statsTabSelector);
@@ -62,7 +68,7 @@
     fetchROI('TabStats', function () {
         setInterval(function () {
             fetchROI('TabStats');
-        }, 10000);
+        }, 30000);
     });
 
     $('body')
@@ -83,9 +89,7 @@
             }
             $('html, body').animate({
                 scrollTop: $target.offset().top + 1
-            }, 1000, function (t) {
-                return t < .5 ? 16 * t * t * t * t * t : 1 + 16 * (--t) * t * t * t * t
-            });
+            }, 700, 'easeNav');
         })
         .on('click', '#contactForm button', function (e) {
             e.preventDefault();

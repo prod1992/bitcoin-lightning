@@ -159,6 +159,7 @@
   }
   ul {
     text-align: left;
+    display: inline-block;
     @media (min-width: 992px) {
       display: block;
     }
@@ -216,12 +217,14 @@
 
 .roadmap-block--img {
   margin-bottom: 20px;
+  img {
+    max-height: 70px;
+  }
   @media (min-width: 992px) {
     text-align: left;
     line-height: 1;
     margin-bottom: 10px;
     img {
-      max-height: 45px;
       max-width: 54px;
     }
   }

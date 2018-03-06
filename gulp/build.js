@@ -73,7 +73,7 @@
 
     gulp.task('build', ['html', 'other', 'images', 'fonts', 'purifycss', 'critical', 'cssfinalminify']);
 
-    gulp.task('critical', ['html'], function () {
+    gulp.task('critical', ['purifycss'], function () {
         return gulp.src(path.join(conf.paths.dist, '/*.html'))
             .pipe(critical({
                 base: path.join(conf.paths.dist, '/'),
@@ -88,18 +88,19 @@
             .pipe(gulp.dest(path.join(conf.paths.dist, '/')));
     });
 
-    gulp.task('purifycss', ['critical'], function () {
+    gulp.task('purifycss', ['html'], function () {
         let content = [
-            path.join(conf.paths.src, '/**/*.{js,html}'),
-           'node_modules/jquery/dist/*.js',
+            path.join(conf.paths.tmp, '/*.html'),
+            path.join(conf.paths.tmp, '/js/*.js'),
+           'node_modules/jquery/dist/jquery.js',
         ];
-        let css = [path.join(conf.paths.dist, '/styles/*.css')];
+        let css = [path.join(conf.paths.tmp, '/styles/*.css')];
         purifyCss(content, css, { info: true, rejected: true}, function(res) {
 
         });
     });
 
-    gulp.task('cssfinalminify', ['purifycss'], function () {
+    gulp.task('cssfinalminify', ['purifycss', 'critical'], function () {
         return gulp.src(path.join(conf.paths.dist, '/styles/*.css'))
             .pipe($.cleanCss({debug: true}, (details) => {
 

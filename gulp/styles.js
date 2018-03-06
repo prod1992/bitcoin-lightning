@@ -22,7 +22,7 @@
             style: 'compressed',
             outputStyle: 'compressed',
             importer: require('sass-module-importer')()
-        }
+        };
 
         let injectFiles = gulp.src([
             path.join(conf.paths.src, '/_assets/stylesheets/**/*.scss'),

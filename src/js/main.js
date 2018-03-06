@@ -5,7 +5,6 @@
         }
     });
 
-
     $(window).on('load', function () {
 
         setTimeout(function () {
@@ -105,7 +104,7 @@
                 data: $contactForm.serialize(),
                 success: function (res) {
                     Notifications.pop('success', 'Message sent!', 5000);
-                    console.log(res);
+                    $contactForm.find('input, textarea').val('');
                 },
                 error: function (err) {
                     Notifications.pop('error', 'Error, please try again!', 5000);
@@ -120,3 +119,40 @@
 
 })(require('jquery'), require('../modules/notifications'));
 
+
+
+function antilopText($element) {
+    var $heroTxt = $element.text(),
+        charArr = $heroTxt.split(""),
+        $newHtml = '';
+
+    $.each(charArr, function(i, char) {
+
+        if (char !== ' ') {
+            $newHtml+= '<span style="display: inline-block;transition: 0.2s all;-webkit-transition: 0.2s all;vertical-align: middle;">'+char+'</span>';
+        }
+        else {
+            $newHtml+= '<span style="display:inline-block;vertical-align:middle;transition: 0.2s all;-webkit-transition: 0.2s all;">&nbsp;</span>';
+        }
+
+    });
+
+    $element.html($newHtml);
+
+    $element.find('> span').each(function(i, ch) {
+        let $chEl = $(ch),
+            $chTxt = $chEl.text(),
+            $chIsEmpty = !$chTxt;
+        if (!$chIsEmpty) {
+            $(window).on('scroll', function() {
+                var wScrolled = $(window).scrollTop(),
+                    mtpl = (Math.random() * 2 - 1)/5;
+                $chEl.css({
+                    'transform': 'translate(0, '+ (mtpl * wScrolled) + 'px)',
+                    '-webkit-transform': 'translate(0, '+ (mtpl * wScrolled) + 'px)',
+                    'opacity': 1 - (wScrolled / 200)
+                });
+            });
+        }
+    });
+}

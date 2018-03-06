@@ -34,6 +34,7 @@
         message: ""
     };
 
+
     app.get("/", function (req, res) {
         res.sendFile(path.join(__dirname + "/" + conf.paths.dist + '/index.html'));
     });

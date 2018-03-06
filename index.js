@@ -17,7 +17,6 @@
         changeOrigin: true
     };
     let app = express();
-
     app.use(compression());
     app.use(express.static(conf.paths.dist));
     app.use(bodyParser.urlencoded({

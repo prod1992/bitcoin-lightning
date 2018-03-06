@@ -26,7 +26,7 @@
                 gutil.log(gutil.colors.red('[Error]'), err.toString());
                 this.emit('end');
             })
-            .pipe($.sourcemaps.init({loadMaps: true}))
+            .pipe($.sourcemaps.init())
             .pipe($.sourcemaps.write('./'))
             .pipe(jsFilter.restore)
             .pipe(cssFilter)

@@ -24,7 +24,6 @@
     }));
     app.use(bodyParser.json());
     app.use("/api", proxyMiddleware(proxyOptions));
-
     //FORM PARAMS
     let userData = {
         username: "",
